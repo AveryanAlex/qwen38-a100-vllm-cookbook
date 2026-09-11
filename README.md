@@ -222,6 +222,8 @@ Original text-only tuned configuration, four repeated 256-token suites (the imag
 
 Decode rate excludes time to first token. Aggregate rate includes request startup, so it is not simply the per-request decode rate multiplied by concurrency. SSE can batch multiple tokens per chunk, especially with MTP; these are client-observed streaming estimates using API token counts. Compare the same prompts, output length, cache state, and load. Results are workload-specific, not a hardware-wide guarantee.
 
+**Context limit:** this deployment supports a configured **262,144-token total context**, not 1M. An exact 1,048,576-token admission test returned HTTP 400. [Test details and reproduction](docs/CONTEXT.md).
+
 ## 8. Verify a near-200K context with a real book
 
 Prepare the complete public-domain *A Tale of Two Cities* fixture:

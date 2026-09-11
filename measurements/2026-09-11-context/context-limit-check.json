@@ -1,0 +1,128 @@
+{
+  "timestamp_utc": "2026-09-11T17:30:57.811374+00:00",
+  "model": "qwen38-flash-next-uncensored",
+  "changed_server_configuration": false,
+  "tests": [
+    {
+      "case": "one_over_native",
+      "prompt_tokens_local_template": 262144,
+      "max_output_tokens": 1,
+      "total_token_budget": 262145,
+      "prompt_utf8_bytes": 524263,
+      "prompt_sha256": "f3aa58fc6d079a5381bd33f38962a5f3dfcf2d5016e5237627dd9a960091d972",
+      "http_status": 400,
+      "response": {
+        "error": {
+          "message": "This model's maximum context length is 262144 tokens. However, you requested 1 output tokens and your prompt contains at least 262144 input tokens, for a total of at least 262145 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=262144)",
+          "type": "BadRequestError",
+          "param": "input_tokens",
+          "code": 400
+        }
+      },
+      "elapsed_seconds": 0.8060469492338598
+    },
+    {
+      "case": "one_million_total",
+      "prompt_tokens_local_template": 1048512,
+      "max_output_tokens": 64,
+      "total_token_budget": 1048576,
+      "prompt_utf8_bytes": 2096999,
+      "prompt_sha256": "1f9d3cf50970d0f9ff8193f38a41257b23af87f97be58a17f60d9fcddf464de8",
+      "http_status": 400,
+      "response": {
+        "error": {
+          "message": "This model's maximum context length is 262144 tokens. However, you requested 64 output tokens and your prompt contains at least 262081 input tokens, for a total of at least 262145 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=262081)",
+          "type": "BadRequestError",
+          "param": "input_tokens",
+          "code": 400
+        }
+      },
+      "elapsed_seconds": 2.8149167499504983
+    },
+    {
+      "case": "small_health_control",
+      "prompt_tokens_local_template": 26,
+      "max_output_tokens": 32,
+      "total_token_budget": 58,
+      "prompt_utf8_bytes": 45,
+      "prompt_sha256": "2960fd84b83102220a5f1749c140899e8fa8965f1bdeab9c2279445f492f6ae9",
+      "http_status": 200,
+      "response": {
+        "id": "chatcmpl-90f3c5b16c269258",
+        "object": "chat.completion",
+        "created": 1789147865,
+        "model": "qwen38-flash-next-uncensored",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "323",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null,
+            "routed_experts": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.13.0-tp4-ep-aad939eb",
+        "usage": {
+          "prompt_tokens": 26,
+          "total_tokens": 30,
+          "completion_tokens": 4,
+          "prompt_tokens_details": null,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "prompt_text": null,
+        "kv_transfer_params": null,
+        "ec_transfer_params": null,
+        "metrics": null
+      },
+      "elapsed_seconds": 0.17845377326011658
+    }
+  ],
+  "advertised_model": {
+    "id": "qwen38-flash-next-uncensored",
+    "object": "model",
+    "created": 1789147857,
+    "owned_by": "vllm",
+    "root": "/model",
+    "parent": null,
+    "max_model_len": 262144,
+    "permission": [
+      {
+        "id": "modelperm-9e942a7ae0e89363",
+        "object": "model_permission",
+        "created": 1789147857,
+        "allow_create_engine": false,
+        "allow_sampling": true,
+        "allow_logprobs": true,
+        "allow_search_indices": false,
+        "allow_view": true,
+        "allow_fine_tuning": false,
+        "organization": "*",
+        "group": null,
+        "is_blocking": false
+      }
+    ]
+  },
+  "health_after": 200,
+  "native_model_config": {
+    "max_position_embeddings": 262144,
+    "rope_type": "default",
+    "rope_theta": 10000000,
+    "context_extension_configured": false
+  },
+  "measurement_scope": "API admission boundary only; rejected prompts were not evaluated by the model. Local full prompt count includes the actual chat template. The API error reports only an at-least count because validation stops once the configured limit is exceeded."
+}

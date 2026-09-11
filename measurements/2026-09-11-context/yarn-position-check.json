@@ -1,0 +1,25 @@
+{
+  "class": "MRotaryEmbedding",
+  "scaling_factor": 4.0,
+  "cache_max_position_num": 1048576,
+  "cache_shape": [
+    4194304,
+    64
+  ],
+  "max_tested_position": 1048575,
+  "text_and_multimodal_position_paths_finite": true,
+  "full_model_inference_tested": false,
+  "params": {
+    "rope_type": "yarn",
+    "rope_theta": 10000000,
+    "factor": 4.0,
+    "original_max_position_embeddings": 262144,
+    "partial_rotary_factor": 0.25,
+    "mrope_section": [
+      11,
+      11,
+      10
+    ],
+    "mrope_interleaved": true
+  }
+}
