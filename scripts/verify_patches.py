@@ -20,7 +20,7 @@ with tempfile.TemporaryDirectory(prefix='qwen38-patch-check-') as directory:
         dest = work / path
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(original)
-    for patch in sorted((root / 'patches').glob('0[1-4]-*.patch')):
+    for patch in sorted(p for p in (root / 'patches').glob('*.patch') if p.name != '05-custom-ar-threshold.patch'):
         subprocess.run(['git', 'apply', '--check', str(patch)], cwd=work, check=True)
         subprocess.run(['git', 'apply', str(patch)], cwd=work, check=True)
     for name, row in m['overlays'].items():

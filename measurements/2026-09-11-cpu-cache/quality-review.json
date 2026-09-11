@@ -1,0 +1,25 @@
+{
+  "book": {
+    "all_seven_targeted_answers_correct": true,
+    "four_markers_in_order_both": true,
+    "answers_byte_identical": true,
+    "limitations": [
+      "Both summaries incorrectly attribute presentation of Manette's letter to Madame Defarge; Ernest Defarge discovers and presents it. Passing retrieval checks does not establish fully factual summaries."
+    ]
+  },
+  "vision": {
+    "main_grounding_cases_passed": 8,
+    "ocr": "RAVEN 6247",
+    "flip_orientation_correct": true,
+    "crop_does_not_invent_Earth": true
+  },
+  "video_and_multi_input": {
+    "main_grounding_cases_passed": 6,
+    "forward_and_reversed_order_correct": true,
+    "three_video_order_correct": true,
+    "mixed_video_image_correct": true,
+    "limitations": [
+      "Reverse-clip timestamps are imprecise. Real-clip answer adds traffic cones and a construction interpretation that were not part of the grounded acceptance checks."
+    ]
+  }
+}

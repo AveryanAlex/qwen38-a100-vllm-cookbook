@@ -79,3 +79,9 @@ The multimodal experiment records distinguish the CPU thread-limit failure, OCR 
 The shipped `check-processor` command was run in the pinned image and passed both image and video paths with the final flat-video-size / image-override layout. This performs no model-weight loading and is separate from the live image/video answer checks.
 
 The final full-model production rollout with images and videos enabled passed 8 targeted image cases, 6 video/multi-input cases, 13 functional checks, 32 cache checks, the 190K book task and a quiet throughput repeat. The live argument/image/overlay/task-limit audit passed. Refer to VISION.md for known model inaccuracies and exact measurement scope.
+
+## CPU-cache rollout on 2026-09-11
+
+The native 128 GiB CPU cache required a new scratch-group projection patch. Its four CPU-only mapping tests passed in the pinned image; the updated portable launcher has 12 passing tests. Patch reconstruction and repository integrity checks cover the new overlay. The first unpatched startup failed and was rolled back; it is preserved as a failed attempt.
+
+The successful production rollout passed 13 functional and 32 prefix-cache checks, image/video grounding checks, and a 190,410-token book test after natural GPU eviction. CPU counters showed 189,600 restored prefix tokens, zero GPU prefix hits and 10.16 GiB transferred; cold/restored answers were byte-identical with seven factual answers and four codes correct. Exact measurements and remaining answer-quality/memory limitations are in the [CPU cache runbook](CPU_CACHE.md).

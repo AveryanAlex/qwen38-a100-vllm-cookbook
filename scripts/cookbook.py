@@ -33,7 +33,8 @@ def run(args, **kwargs):
 def config(path):
     c = json.loads(path.read_text())
     c.setdefault('vision', False)  # Preserve existing text-only configurations.
-    allowed = {'model_dir', 'state_dir', 'container_name', 'port', 'tuned_all_reduce', 'vision'}
+    c.setdefault('kv_offloading_gib', 0)  # Existing configs must opt into host RAM allocation.
+    allowed = {'model_dir', 'state_dir', 'container_name', 'port', 'tuned_all_reduce', 'vision', 'kv_offloading_gib'}
     if set(c) != allowed:
         raise ValueError(f'Config must contain exactly {sorted(allowed)}')
     for key in ['model_dir', 'state_dir']:
@@ -51,6 +52,8 @@ def config(path):
         raise ValueError('vision must be boolean')
     if type(c['tuned_all_reduce']) is not bool:
         raise ValueError('tuned_all_reduce must be boolean')
+    if type(c['kv_offloading_gib']) is not int or c['kv_offloading_gib'] < 0:
+        raise ValueError('kv_offloading_gib must be a nonnegative integer (GiB total across TP ranks)')
     if any(ch in str(ROOT) for ch in ':\n\r'):
         raise ValueError('Repository path cannot contain colon or newline')
     return c
@@ -92,6 +95,8 @@ def create_command(c):
     for name, info in MANIFEST['overlays'].items():
         if name == 'custom_all_reduce.py' and not c['tuned_all_reduce']:
             continue
+        if name == 'offloading_connector.py' and not c.get('kv_offloading_gib', 0):
+            continue
         args += ['--volume', f'{ROOT / "overlays" / name}:/usr/local/lib/python3.12/dist-packages/{info["package_path"]}:ro']
     if c['tuned_all_reduce']:
         args += ['--env', 'QWEN_SM80_AR_TUNING=1', '--env', 'PYTHONPATH=/opt/q38-ar',
@@ -105,6 +110,9 @@ def create_command(c):
              '--tool-call-parser', 'qwen3_xml', '--reasoning-parser', 'qwen3',
              '--compilation-config', json.dumps(COMPILATION),
              '--speculative-config', json.dumps({'method': 'mtp', 'num_speculative_tokens': 1})]
+    if c.get('kv_offloading_gib', 0):
+        args += ['--kv-offloading-size', str(c['kv_offloading_gib']),
+                 '--kv-offloading-backend', 'native']
     if c.get('vision', False):
         args += ['--limit-mm-per-prompt', json.dumps({'image': 999, 'video': 999}),
                  '--mm-processor-kwargs', json.dumps({'patch_size': 16, 'images_kwargs': {'min_pixels': 4096, 'max_pixels': 1048576},

@@ -1,0 +1,46 @@
+{
+  "time": 1789150401.3979032,
+  "checks": {
+    "health": true,
+    "running": true,
+    "all_overlay_hashes": true,
+    "max_context_262144": true,
+    "model_alias": true,
+    "functional_checks_13": true,
+    "lock_available": true,
+    "nccl_auto": true,
+    "args_match": true,
+    "image_pinned": true,
+    "tuned_env": true,
+    "hashed_files_mounted": true,
+    "model_readonly": true,
+    "vision_enabled": true,
+    "vision_processor_correct": true,
+    "vision_image_limit": true,
+    "pids_limit_8192": true
+  },
+  "container_running": true,
+  "container_oom_killed": false,
+  "container_started_at": "2026-09-11T21:00:56.745653521+03:00",
+  "restart_count": 0,
+  "offloading_gib": 128,
+  "backend": "native",
+  "image": "docker.io/lazymio/vllm-backport@sha256:349690323ab9aba712111529ed1ca60730199205d8202f67895ffde85b451be3",
+  "offload_overlay_sha256": "dcaecc47359fba4bdb4ffbbca54d470a454d4eb707f555a20fef728cda1932bf",
+  "startup_memory_lines": [
+    "(Worker_TP0_EP0 pid=170) INFO 09-11 18:05:32 [gpu_worker.py:660] Available KV cache memory: 10.55 GiB",
+    "(EngineCore pid=155) INFO 09-11 18:05:32 [kv_cache_utils.py:2324] GPU KV cache size: 769,519 tokens, Maximum concurrency for 262,144 tokens per request: 2.94x",
+    "(Worker_TP0_EP0 pid=170) INFO 09-11 18:05:32 [shared_offload_region.py:517] Created mmap file /dev/shm/vllm_offload_466b0b70-ffc7-496d-8bbf-3d690efd7864.mmap (137.41 GB)",
+    "(Worker_TP3_EP3 pid=173) INFO 09-11 18:05:32 [shared_offload_region.py:218] Offload region interleaved across NUMA nodes [0, 1]",
+    "(Worker_TP1_EP1 pid=171) INFO 09-11 18:05:32 [shared_offload_region.py:218] Offload region interleaved across NUMA nodes [0, 1]",
+    "(Worker_TP0_EP0 pid=170) INFO 09-11 18:05:32 [shared_offload_region.py:218] Offload region interleaved across NUMA nodes [0, 1]",
+    "(Worker_TP2_EP2 pid=172) INFO 09-11 18:05:32 [shared_offload_region.py:218] Offload region interleaved across NUMA nodes [0, 1]"
+  ],
+  "warning_counts": {
+    "memory allocation failed with OOM": 12,
+    "OutOfMemoryError": 0,
+    "Traceback": 0,
+    " ERROR ": 0
+  },
+  "health": 200
+}

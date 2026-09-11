@@ -1,0 +1,13 @@
+test_new_resumed_and_boundary_handoffs_use_same_mapping (__main__.ProjectionTests.test_new_resumed_and_boundary_handoffs_use_same_mapping) ... ok
+test_no_scratch_is_identity (__main__.ProjectionTests.test_no_scratch_is_identity) ... ok
+test_scratch_is_excluded_but_physical_ids_and_input_are_preserved (__main__.ProjectionTests.test_scratch_is_excluded_but_physical_ids_and_input_are_preserved) ... INFO 09-11 18:08:33 [kv_cache_utils.py:733] kv cache group sizes [800, 8, 800]
+INFO 09-11 18:08:33 [kv_cache_utils.py:734] kv lcm block sizes 800
+INFO 09-11 18:08:33 [kv_cache_utils.py:733] kv cache group sizes [800, 800]
+INFO 09-11 18:08:33 [kv_cache_utils.py:734] kv lcm block sizes 800
+ok
+test_unknown_noncacheable_group_fails_closed (__main__.ProjectionTests.test_unknown_noncacheable_group_fails_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK

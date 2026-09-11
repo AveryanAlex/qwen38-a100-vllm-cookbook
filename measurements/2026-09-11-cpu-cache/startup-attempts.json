@@ -1,0 +1,36 @@
+{
+  "attempts": [
+    {
+      "name": "unpatched-native-128gib",
+      "result": "startup_failed",
+      "error": "tokens_per_block=8 not divisible by tokens_per_hash=800. Hybrid models (e.g. Mamba+Attention) need --enable-prefix-caching to align block sizes.",
+      "prefix_caching_was_enabled": true,
+      "group_block_sizes": [
+        800,
+        800,
+        800,
+        800,
+        8,
+        800
+      ],
+      "gpu_kv_gib_per_rank": 10.55,
+      "gpu_kv_token_capacity": 769519,
+      "rollback": "previous launcher restored and restarted",
+      "cause": "Native offloader included a non-prefix-cacheable scratch ring."
+    },
+    {
+      "name": "patched-native-128gib",
+      "result": "startup_and_inference_passed",
+      "startup_seconds": 393.0981740951538,
+      "patch": "06-offload-scratch-groups.patch",
+      "functional_checks": 13,
+      "prefix_cache_checks": 32,
+      "projection_unit_checks": 4,
+      "book_restore_external_hit_tokens": 189600,
+      "book_restore_gpu_hit_tokens": 0,
+      "book_restore_bytes": 10907852800,
+      "answers_identical": true
+    }
+  ],
+  "baseline_note": "Additional production traffic was present in five of six baseline scenarios; this is not a quiet matched performance control."
+}

@@ -4,5 +4,6 @@
   "container_name": "qwen38-a100",
   "port": 19088,
   "tuned_all_reduce": true,
-  "vision": true
+  "vision": true,
+  "kv_offloading_gib": 128
 }

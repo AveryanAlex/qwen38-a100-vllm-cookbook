@@ -60,6 +60,21 @@ class LauncherTests(unittest.TestCase):
         loaded = cookbook.config(cfg)
         self.assertFalse(loaded['vision'])
         self.assertIn('--language-model-only', cookbook.create_command(loaded))
+        self.assertEqual(loaded['kv_offloading_gib'], 0)
+        self.assertNotIn('--kv-offloading-size', cookbook.create_command(loaded))
+
+    def test_cpu_cache_config_and_invalid_capacity(self):
+        cfg = self.root / 'config.json'
+        for capacity in [False, -1, 1.5, '128']:
+            cfg.write_text(json.dumps(dict(self.c, kv_offloading_gib=capacity)))
+            with self.assertRaisesRegex(ValueError, 'kv_offloading_gib'):
+                cookbook.config(cfg)
+        cfg.write_text(json.dumps(dict(self.c, kv_offloading_gib=128)))
+        args = cookbook.create_command(cookbook.config(cfg))
+        self.assertEqual(args[args.index('--kv-offloading-size') + 1], '128')
+        self.assertEqual(args[args.index('--kv-offloading-backend') + 1], 'native')
+        self.assertEqual(args[args.index('--ipc') + 1], 'host')
+        self.assertTrue(any('/overlays/offloading_connector.py:' in arg for arg in args))
 
     def test_refuses_foreign_container_before_stop(self):
         with patch.object(cookbook, 'unit_active', return_value=False), \

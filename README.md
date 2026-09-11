@@ -6,6 +6,8 @@ On the tested **4 × A100-SXM4-40GB / NVLink** machine, matched single-request t
 
 **Image and video are now enabled by default in the example configuration**, with **999 items per modality per request**. The verified multimodal deployment retained **108.42 single-request tokens/s** and **612.68 aggregate tokens/s** at eight requests. [Image/video setup, tests and limitations](docs/VISION.md).
 
+**The example configuration also enables a 128 GiB native CPU KV cache.** The verified 190K book revisit after GPU eviction reached its first token in **1.52 s**, versus **20.35 s cold**, while single decode remained **108.56 tokens/s**. The recipe includes the required scratch-cache compatibility patch. [Setup, results and limitations](docs/CPU_CACHE.md).
+
 This is an independently maintained cookbook for this specific checkpoint and runtime. The image's `v0.13.0-sm80` tag is a **backport version**, not upstream vLLM 0.13. Do not substitute a current upstream wheel or `latest` container tag and expect the same behavior.
 
 ## What you get
@@ -73,13 +75,16 @@ Edit `config.json` for your machine:
   "container_name": "qwen38-a100",
   "port": 19088,
   "tuned_all_reduce": true,
-  "vision": true
+  "vision": true,
+  "kv_offloading_gib": 128
 }
 ```
 
 The launcher expands `~/`. Use absolute paths otherwise. Keep this checkout and the state directory on persistent disk: the service mounts source overlays directly from the checkout. Generated model files, caches, local configuration, binaries, and new results are ignored by Git.
 
 `vision: true` enables **image and video input** with the processor settings described in the [multimodal guide](docs/VISION.md). Both item counts are set to **999 per request**; context and memory still bound real requests. Video uses explicit frame and pixel budgets, described in the guide. Set it to `false` for the original text-only recipe. Existing configuration files without `vision` preserve text-only behavior.
+
+`kv_offloading_gib: 128` reserves approximately **128 GiB total host RAM across TP4** for the native CPU KV cache. It retains reusable prefixes beyond GPU-cache eviction. Budget this in addition to the model's CPU PLE table and other host memory, and ensure `/dev/shm` has sufficient space. Set it to `0` to disable; existing configs without the field default to `0`. See the [CPU cache runbook](docs/CPU_CACHE.md) for setup, verification and performance limits.
 
 `tuned_all_reduce: true` selects the measured reduction-kernel tuning. Set it to `false` to use the existing custom all-reduce kernel and skip the extension build; this still includes the correctness fix and main speedups, reaching approximately 107.8 decode tokens/s in the matched 256-token tests. The extension adds about **0.62%**, not the main 22× gain.
 
@@ -283,11 +288,12 @@ MTP depths 2 and 3 were slower. Initial prefill graphs and custom all-reduce fai
 
 To stop a managed deployment, use `systemctl --user stop qwen38-a100.service`; for manual mode, use `python3 scripts/cookbook.py stop`. To remove automatic startup, use `systemctl --user disable --now qwen38-a100.service`. Model files and caches are not deleted.
 
-For changes, keep baseline results, change one setting at a time, restart, rerun correctness and matched performance tests, and retain improvements only. Do not upgrade the image independently of these overlays. The cookbook exposes path/name/port, vision, and optional-kernel settings intentionally; broader experiments require reviewing the launcher and repeating validation.
+For changes, keep baseline results, change one setting at a time, restart, rerun correctness and matched performance tests, and retain improvements only. Do not upgrade the image independently of these overlays. The cookbook exposes path/name/port, vision, CPU-cache capacity, and optional-kernel settings intentionally; broader experiments require reviewing the launcher and repeating validation.
 
 ## Repository and publication
 
 - [Enable and verify image/video input](docs/VISION.md)
+- [CPU KV-cache configuration, verification and results](docs/CPU_CACHE.md)
 - [Reproduce individual historical experiments](docs/EXPERIMENTS.md)
 - [Source/patch provenance and license notes](docs/PROVENANCE.md)
 - [Exact patch behavior and reconstruction](docs/PATCHES.md)

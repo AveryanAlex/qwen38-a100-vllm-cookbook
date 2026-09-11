@@ -1,0 +1,102 @@
+--- a/vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py
++++ b/vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py
+@@ -1,6 +1,7 @@
+ # SPDX-License-Identifier: Apache-2.0
+ # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
+ from collections.abc import Iterable
++from dataclasses import replace
+ from typing import Any
+ 
+ import torch
+@@ -40,10 +41,57 @@
+ from vllm.v1.attention.backend import AttentionMetadata
+ from vllm.v1.core.kv_cache_manager import KVCacheBlocks
+ from vllm.v1.core.sched.output import SchedulerOutput
+-from vllm.v1.kv_cache_interface import KVCacheConfig
++from vllm.v1.kv_cache_interface import KVCacheConfig, CircularBufferSpec, KpoolTailSpec, iter_layer_specs
++from vllm.v1.core.kv_cache_utils import resolve_kv_cache_block_sizes
+ from vllm.v1.kv_offload.factory import OffloadingSpecFactory
+ from vllm.v1.outputs import KVConnectorOutput
+ from vllm.v1.request import Request
++
++
++class _OffloadGroupProjection:
++    """Exclude reconstructible scratch rings from the connector's cache view.
++
++    The GPU scheduler retains the complete layout. All connector-facing group
++    arrays use the same compact index mapping, including resumed requests and
++    Mamba boundary handoffs. Physical block IDs remain unchanged.
++    """
++
++    def __init__(self, config):
++        self.indices = tuple(i for i, g in enumerate(config.kv_cache_groups)
++                             if g.kv_cache_spec.prefix_cacheable)
++        self.changed = len(self.indices) != len(config.kv_cache_groups)
++        self.reverse = {original: compact for compact, original in enumerate(self.indices)}
++        for g in config.kv_cache_groups:
++            if not g.kv_cache_spec.prefix_cacheable:
++                if not all(isinstance(spec, (CircularBufferSpec, KpoolTailSpec))
++                           for spec in iter_layer_specs(g.kv_cache_spec)):
++                    raise NotImplementedError("Offloading cannot omit an unknown non-cacheable group")
++        if not self.indices:
++            raise ValueError("No prefix-cacheable groups to offload")
++        self.config = replace(config, kv_cache_groups=[config.kv_cache_groups[i] for i in self.indices]) if self.changed else config
++
++    def select(self, groups):
++        if groups is None or not self.changed:
++            return groups
++        return tuple(groups[i] for i in self.indices)
++
++    def scheduler_output(self, output):
++        if not self.changed:
++            return output
++        state = output.kv_connector_block_state
++        if state is not None:
++            original_state = state
++            state = replace(state,
++                resolve_block_ids=lambda req_id: self.select(original_state.resolve_block_ids(req_id)),
++                boundary_state_offloads={req_id: [(self.reverse[g], block, boundary)
++                    for g, block, boundary in entries if g in self.reverse]
++                    for req_id, entries in state.boundary_state_offloads.items()})
++        return replace(output,
++            scheduled_new_reqs=[replace(req, block_ids=self.select(req.block_ids))
++                                for req in output.scheduled_new_reqs],
++            scheduled_cached_reqs=replace(output.scheduled_cached_reqs,
++                new_block_ids=[self.select(groups) for groups in output.scheduled_cached_reqs.new_block_ids]),
++            kv_connector_block_state=state)
+ 
+ 
+ class OffloadingConnector(KVConnectorBase_V1, SupportsHMA):
+@@ -59,6 +107,14 @@
+         role: KVConnectorRole,
+         kv_cache_config: KVCacheConfig,
+     ):
++        self._group_projection = _OffloadGroupProjection(kv_cache_config)
++        projected_config = self._group_projection.config
++        if self._group_projection.changed:
++            # Request.block_hashes belong to the original scheduler geometry.
++            # Fail closed if projection would reinterpret those hashes.
++            if resolve_kv_cache_block_sizes(kv_cache_config, vllm_config) != resolve_kv_cache_block_sizes(projected_config, vllm_config):
++                raise ValueError("Offload scratch projection changes prefix hash alignment")
++        kv_cache_config = projected_config
+         super().__init__(vllm_config, role, kv_cache_config)
+ 
+         offloading_config = build_offloading_config(vllm_config, kv_cache_config)
+@@ -146,14 +202,15 @@
+     ):
+         assert self.connector_scheduler is not None
+         return self.connector_scheduler.update_state_after_alloc(
+-            request, blocks, num_external_tokens
++            request, KVCacheBlocks(self._group_projection.select(blocks.blocks)), num_external_tokens
+         )
+ 
+     def build_connector_meta(
+         self, scheduler_output: SchedulerOutput
+     ) -> KVConnectorMetadata:
+         assert self.connector_scheduler is not None
+-        return self.connector_scheduler.build_connector_meta(scheduler_output)
++        return self.connector_scheduler.build_connector_meta(
++            self._group_projection.scheduler_output(scheduler_output))
+ 
+     def has_pending_push_work(self) -> bool:
+         assert self.connector_scheduler is not None

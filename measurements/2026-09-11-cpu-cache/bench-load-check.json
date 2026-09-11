@@ -1,0 +1,50 @@
+[
+  {
+    "scenario": "single_1",
+    "aggregate_tps": 79.29183205108055,
+    "median_decode_tps": 82.04519972935708,
+    "expected_generated_tokens": 256,
+    "observed_generated_tokens": 295.0,
+    "extra_traffic_detected": true
+  },
+  {
+    "scenario": "single_2",
+    "aggregate_tps": 103.31095872111675,
+    "median_decode_tps": 108.5585172099864,
+    "expected_generated_tokens": 256,
+    "observed_generated_tokens": 256.0,
+    "extra_traffic_detected": false
+  },
+  {
+    "scenario": "concurrent_2",
+    "aggregate_tps": 192.55379441027782,
+    "median_decode_tps": 103.39129251265862,
+    "expected_generated_tokens": 512,
+    "observed_generated_tokens": 512.0,
+    "extra_traffic_detected": false
+  },
+  {
+    "scenario": "medium",
+    "aggregate_tps": 99.96892551102694,
+    "median_decode_tps": 109.35254573113303,
+    "expected_generated_tokens": 256,
+    "observed_generated_tokens": 256.0,
+    "extra_traffic_detected": false
+  },
+  {
+    "scenario": "concurrent_4",
+    "aggregate_tps": 362.5476820219306,
+    "median_decode_tps": 99.53991928194432,
+    "expected_generated_tokens": 1024,
+    "observed_generated_tokens": 1024.0,
+    "extra_traffic_detected": false
+  },
+  {
+    "scenario": "concurrent_8",
+    "aggregate_tps": 610.0484949848671,
+    "median_decode_tps": 84.48229397682084,
+    "expected_generated_tokens": 2048,
+    "observed_generated_tokens": 2048.0,
+    "extra_traffic_detected": false
+  }
+]

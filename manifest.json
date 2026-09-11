@@ -52,6 +52,12 @@
       "upstream_sha256": "a048c1327c23580805600c0c951831bec333b1ffc4eb26a0e3d34119c4f0c445",
       "patched_sha256": "e91e1d379a9c792eabc0ec05bd0b59f059923ffed572cf604bf0117e463b6d30",
       "image_sha256": "a048c1327c23580805600c0c951831bec333b1ffc4eb26a0e3d34119c4f0c445"
+    },
+    "offloading_connector.py": {
+      "package_path": "vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py",
+      "upstream_sha256": "06bdf20e17d63a683c9a5e1e9c86cb4c530e1312c7e4731713e2bb7e025ef802",
+      "patched_sha256": "dcaecc47359fba4bdb4ffbbca54d470a454d4eb707f555a20fef728cda1932bf",
+      "image_sha256": "06bdf20e17d63a683c9a5e1e9c86cb4c530e1312c7e4731713e2bb7e025ef802"
     }
   }
 }

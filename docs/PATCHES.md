@@ -9,8 +9,11 @@ The launcher mounts the complete files in `overlays/` over the pinned image's Py
 | 03-mamba-prefix-cache.patch | mamba_hybrid.py | Use the finalized recurrent-cache block size when restoring a cached prefix. |
 | 04-custom-ar-dispatch.patch | custom_all_reduce.py | Opt into the compiled tuned reduction extension on compatible SM80 BF16 TP4 operations; preserve the normal dispatcher otherwise. |
 | 05-custom-ar-threshold.patch | custom_all_reduce.cuh | Extend one-stage reduction through 1 MiB inclusive in the optional extension's local header. |
+| 06-offload-scratch-groups.patch | offloading_connector.py | Exclude non-cacheable scratch rings from the offloader and consistently map attention/Mamba group indices. |
 
 Patches 01–03 are used in the main recipe. Patches 04–05 and `kernels/custom-ar/tuned.cu` implement the optional 0.62% extra tuning. Disabling it leaves the existing custom all-reduce enabled, with the shared cache fix still applied.
+
+Patch 06 is required for this model's native CPU cache. Without it, enabling offloading fails during startup even with prefix caching enabled. See the [CPU cache runbook](CPU_CACHE.md).
 
 ## Reconstruct the overlays
 
@@ -20,7 +23,7 @@ The source basis is `wtdcode/vllm-backport`, commit `24cb31bb4fd0becee65c810c913
 python3 scripts/verify_patches.py
 ```
 
-This downloads only the seven original files at the pinned commit into a temporary directory, checks their hashes, applies patches 01–04 in order, and compares the resulting bytes with every shipped overlay. It also verifies patch 05 against the shipped original/tuned CUDA headers. The temporary files are removed after verification. It does not change the checkout or installed vLLM.
+This downloads the eight original Python files at the pinned commit into a temporary directory, checks their hashes, applies patches 01–04 and 06, and compares the resulting bytes with every shipped overlay. It also verifies patch 05 against the shipped original/tuned CUDA headers. The temporary files are removed after verification. It does not change the checkout or installed vLLM.
 
 To inspect the diffs manually, read the numbered `.patch` files. A historical loader/PLE patch omitted later PLE changes; patch 01 in this cookbook was regenerated from the pinned source to the final deployed file, and exact reconstruction was verified. Use this complete patch rather than an earlier standalone copy.
 
