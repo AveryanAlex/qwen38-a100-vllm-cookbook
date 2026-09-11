@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-11",
+  "checks": {
+    "launcher_profile_unit_tests": 9,
+    "patch_reconstruction": "passed: seven Python overlays and tuned CUDA header",
+    "image_source_hashes": "7/7 passed in pinned image",
+    "extension_source_build": "passed in pinned image; Torch 2.13.0+cu130, CUDA 13.0",
+    "serving_arguments_vs_measured_production": "match except configured port",
+    "book_fixture_raw_and_clean_hashes": "passed for upstream download and bundled fixture",
+    "service_lifecycle": [
+      "unit validation",
+      "start",
+      "restart/recreation",
+      "recovery after kill",
+      "intentional stop",
+      "lock release"
+    ]
+  },
+  "service_test_scope": "Disposable CPU process substituted for model launch; generated launcher and unit lifecycle exercised. Full model not redeployed through the portable unit.",
+  "original_model_tests": "See measurements/2026-09-11 and docs/VALIDATION.md.",
+  "issues_fixed": [
+    "Incomplete historical PLE patch regenerated",
+    "Pin Podman executable for systemd start and stop",
+    "Handle SIGTERM in CPU test fixture"
+  ]
+}

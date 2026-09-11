@@ -1,0 +1,36 @@
+--- a/vllm/v1/worker/gpu/model_states/mamba_hybrid.py
++++ b/vllm/v1/worker/gpu/model_states/mamba_hybrid.py
+@@ -126,8 +126,17 @@
+             # cached prefix would otherwise seed an out-of-range block_table
+             # column that the fused align pre-copy reads as a garbage block id
+             # (vllm#53142).
++            # Model state is constructed before platform cache alignment.
++            # Use the resolved spec (or the live finalized config for the
++            # first request), never the construction-time block-size snapshot.
++            block_size = (
++                self._mamba_spec.block_size
++                if self._mamba_spec is not None
++                else self.cache_config.mamba_block_size or self.cache_config.block_size
++            )
++            assert block_size is not None and block_size > 0
+             self._mamba_state_idx_gpu[req_index].fill_(
+-                (new_req_data.num_computed_tokens - 1) // self._mamba_block_size
++                (new_req_data.num_computed_tokens - 1) // block_size
+             )
+ 
+     def _get_mamba_group_info(
+@@ -144,6 +153,14 @@
+             ), "all mamba groups must share cache scheduling parameters"
+             self._mamba_group_ids = get_mamba_group_ids(mamba_groups)
+             self._mamba_spec = mamba_spec
++            from vllm.logger import init_logger
++
++            init_logger(__name__).info(
++                "Resolved Mamba cache block size: construction=%s, config=%s, spec=%s",
++                self._mamba_block_size,
++                self.cache_config.mamba_block_size,
++                mamba_spec.block_size,
++            )
+         return self._mamba_group_ids, self._mamba_spec
+ 
+     def _ensure_align_ctx(

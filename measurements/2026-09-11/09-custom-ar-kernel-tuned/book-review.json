@@ -1,0 +1,15 @@
+{
+  "manual_review": true,
+  "targeted_plot_questions_correct": 7,
+  "targeted_plot_questions_total": 7,
+  "markers_present": true,
+  "markers_ordered": true,
+  "fresh_cached_answer_identical": true,
+  "stock08_answer_identical": true,
+  "summary_assessment": "Coherent main plot and ending, with factual inaccuracies. Not a general quality evaluation.",
+  "inaccuracies": [
+    "Unsupported claim that Manette believed Lucie dead.",
+    "Attributes production of the prison letter to Madame Defarge rather than Ernest Defarge."
+  ],
+  "answer_sha256": "20732628a38f28d16c0658b28faf15d0224342bb24c24562e448800fe02c66d0"
+}

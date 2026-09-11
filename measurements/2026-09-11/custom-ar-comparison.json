@@ -1,0 +1,29 @@
+{
+  "08-custom-ar-cache-fix": {
+    "suite_single_tps": [
+      107.83061762012619
+    ],
+    "median_single_tps": 107.83061762012619,
+    "median_eight_aggregate_tps": 608.0832093746076
+  },
+  "09-custom-ar-kernel-tuned": {
+    "suite_single_tps": [
+      108.44342713728919,
+      108.4732020235748,
+      108.42654956501009,
+      108.54946374734337
+    ],
+    "median_single_tps": 108.45831458043199,
+    "median_eight_aggregate_tps": 615.1881972438259
+  },
+  "10-stock-ar-confirm": {
+    "suite_single_tps": [
+      107.79878596122687,
+      107.79321278164977,
+      107.73216074405661,
+      107.77740517539719
+    ],
+    "median_single_tps": 107.78530897852349,
+    "median_eight_aggregate_tps": 611.4479358103758
+  }
+}

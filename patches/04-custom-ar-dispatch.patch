@@ -1,0 +1,52 @@
+--- a/vllm/distributed/device_communicators/custom_all_reduce.py
++++ b/vllm/distributed/device_communicators/custom_all_reduce.py
+@@ -1,5 +1,7 @@
+ # SPDX-License-Identifier: Apache-2.0
+ # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
++
++import os
+ 
+ from contextlib import contextmanager
+ from typing import cast
+@@ -31,6 +33,11 @@
+     torch_symm_mem = None
+ 
+ logger = init_logger(__name__)
++
++_q38_tuned_ar = None
++if os.environ.get("QWEN_SM80_AR_TUNING") == "1":
++    import q38_ar_tuned as _q38_tuned_ar
++
+ 
+ 
+ def _has_local_multicast_support(device: torch.device) -> bool:
+@@ -430,6 +437,29 @@
+         """
+         if out is None:
+             out = torch.empty_like(inp)
++        if (
++            _q38_tuned_ar is not None
++            and self.world_size == 4
++            and self.fully_connected
++            and current_platform.is_device_capability((8, 0))
++            and inp.dtype == torch.bfloat16
++            and inp.is_contiguous()
++            and out.is_contiguous()
++        ):
++            if not getattr(self, "_q38_abi_validated", False):
++                _q38_tuned_ar.validate_abi(
++                    self._ptr, self.rank, self.world_size, self.meta_ptrs,
++                    self.rank_data.data_ptr(), self.rank_data.numel(),
++                    self.buffer_ptrs[self.rank],
++                )
++                self._q38_abi_validated = True
++                logger.info_once("Using tuned SM80 BF16 all-reduce kernels.")
++            _q38_tuned_ar.all_reduce(
++                self._ptr, inp, out,
++                0 if registered else self.buffer_ptrs[self.rank],
++                0 if registered else self.max_size,
++            )
++            return out
+         if registered:
+             ops.all_reduce(self._ptr, inp, out, 0, 0)
+         else:

@@ -1,0 +1,9 @@
+{
+  "initial_block_size": 16,
+  "final_block_size": 784,
+  "cached_tokens": 2352,
+  "observed_old_source_column": 146,
+  "expected_source_column": 2,
+  "old_assertion": "failed",
+  "updated_regression_suite": "test_mamba_cache_block_size.py also covers the runtime MTP block size of 800"
+}

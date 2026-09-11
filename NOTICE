@@ -1,0 +1,21 @@
+Qwen3.8 A100 vLLM Cookbook
+
+Cookbook scripts and documentation: Copyright 2026 cookbook contributors.
+Distributed under Apache License 2.0.
+
+Files under overlays/ and kernels/custom-ar/ contain code derived from vLLM
+and the wtdcode/vllm-backport fork. Their original copyright and SPDX headers
+are retained. Source: https://github.com/wtdcode/vllm-backport
+Pinned commit: 24cb31bb4fd0becee65c810c913a8caa4f610c36
+See licenses/vllm-Apache-2.0.txt and docs/PATCHES.md.
+
+Modifications: safetensors index filtering; SM80 byte-preserving PLE lookup;
+SM80 skinny GEMM compatibility and dispatch; finalized Mamba cache block size;
+optional all-reduce dispatch and launch geometry. See patches/ for exact diffs.
+
+The model weights and container image are not distributed by this repository.
+The model has its own Qwen Community 1.0 license; the cookbook's Apache license
+does not relicense model weights or model-generated answers. The book fixture
+comes from Project Gutenberg; its original text and license header
+remain in the compressed fixture and extracted raw file. Recorded generated answers are evaluation
+artifacts, not authoritative editions of the book.

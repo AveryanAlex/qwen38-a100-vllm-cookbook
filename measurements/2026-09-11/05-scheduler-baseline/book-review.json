@@ -1,0 +1,12 @@
+{
+  "summary": "Coherent account of the main plot; major identities, sacrifice, and ending are correct.",
+  "plot_qa_correct": 7,
+  "plot_qa_total": 7,
+  "retrieval_markers_correct": 4,
+  "retrieval_markers_total": 4,
+  "minor_imprecisions": [
+    "The statement that Dr Manette believed Lucie dead is not supported by the supplied text."
+  ],
+  "scope": "Manual review of this one book response, not a general quality evaluation.",
+  "source_check": "The seamstress passage explicitly shows mutual comfort (Carton says Or you to me), so that wording was not counted as an error after checking the source."
+}

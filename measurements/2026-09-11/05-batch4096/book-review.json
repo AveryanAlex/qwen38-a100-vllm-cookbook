@@ -1,0 +1,12 @@
+{
+  "summary": "Coherent summary with correct central plot and ending; not flawless.",
+  "plot_qa_correct": 7,
+  "plot_qa_total": 7,
+  "retrieval_markers_correct": 4,
+  "retrieval_markers_total": 4,
+  "minor_imprecisions": [
+    "Unsupported claim that Manette believed Lucie dead, also present in baseline.",
+    "The summary attributes production of the prison letter to Madame Defarge; Ernest Defarge retrieves/presents it."
+  ],
+  "scope": "Manual review of one response; does not establish general model quality."
+}

@@ -1,0 +1,4549 @@
+[
+  {
+    "n": 4096,
+    "k": 2560,
+    "m": 1,
+    "baseline": {
+      "hot_us": 16.350720524787903,
+      "cold_us": 33.79200026392937
+    },
+    "best": {
+      "config": {
+        "num_rows": 1,
+        "block_size": 64,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.08143125474452972,
+      "max_error": 0.4939727783203125,
+      "base_rms_error": 0.0814313068985939,
+      "hot_us": 11.064319610595703,
+      "cold_us": 26.623999699950218
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143125474452972,
+        "max_error": 0.4939727783203125,
+        "base_rms_error": 0.0814313068985939,
+        "hot_us": 11.064319610595703,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143125474452972,
+        "max_error": 0.4939727783203125,
+        "base_rms_error": 0.0814313068985939,
+        "hot_us": 12.508159875869751,
+        "cold_us": 27.135999873280525
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143125474452972,
+        "max_error": 0.4939727783203125,
+        "base_rms_error": 0.0814313068985939,
+        "hot_us": 16.235519647598267,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143125474452972,
+        "max_error": 0.4939727783203125,
+        "base_rms_error": 0.0814313068985939,
+        "hot_us": 11.404799818992615,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143125474452972,
+        "max_error": 0.4939727783203125,
+        "base_rms_error": 0.0814313068985939,
+        "hot_us": 16.343040466308594,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143125474452972,
+        "max_error": 0.4939727783203125,
+        "base_rms_error": 0.0814313068985939,
+        "hot_us": 12.595200538635254,
+        "cold_us": 27.648000046610832
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143125474452972,
+        "max_error": 0.4939727783203125,
+        "base_rms_error": 0.0814313068985939,
+        "hot_us": 12.933119535446167,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143125474452972,
+        "max_error": 0.4939727783203125,
+        "base_rms_error": 0.0814313068985939,
+        "hot_us": 12.439039945602417,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143125474452972,
+        "max_error": 0.4939727783203125,
+        "base_rms_error": 0.0814313068985939,
+        "hot_us": 13.076479434967041,
+        "cold_us": 27.648000046610832
+      }
+    ]
+  },
+  {
+    "n": 4096,
+    "k": 2560,
+    "m": 2,
+    "baseline": {
+      "hot_us": 16.117759943008423,
+      "cold_us": 30.719999223947525
+    },
+    "best": {
+      "config": {
+        "num_rows": 2,
+        "block_size": 128,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.08408994972705841,
+      "max_error": 0.4990234375,
+      "base_rms_error": 0.08408999443054199,
+      "hot_us": 12.380160093307495,
+      "cold_us": 25.599999353289604
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08408994972705841,
+        "max_error": 0.4990234375,
+        "base_rms_error": 0.08408999443054199,
+        "hot_us": 13.780480027198792,
+        "cold_us": 25.599999353289604
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08408994972705841,
+        "max_error": 0.4990234375,
+        "base_rms_error": 0.08408999443054199,
+        "hot_us": 12.48255968093872,
+        "cold_us": 25.599999353289604
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08408994972705841,
+        "max_error": 0.4990234375,
+        "base_rms_error": 0.08408999443054199,
+        "hot_us": 17.397760152816772,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08408994972705841,
+        "max_error": 0.4990234375,
+        "base_rms_error": 0.08408999443054199,
+        "hot_us": 13.038080334663391,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08408994972705841,
+        "max_error": 0.4990234375,
+        "base_rms_error": 0.08408999443054199,
+        "hot_us": 15.797759890556335,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08408994972705841,
+        "max_error": 0.4990234375,
+        "base_rms_error": 0.08408999443054199,
+        "hot_us": 11.834879517555237,
+        "cold_us": 27.648000046610832
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08408994972705841,
+        "max_error": 0.4990234375,
+        "base_rms_error": 0.08408999443054199,
+        "hot_us": 12.380160093307495,
+        "cold_us": 25.599999353289604
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08408994972705841,
+        "max_error": 0.4990234375,
+        "base_rms_error": 0.08408999443054199,
+        "hot_us": 13.191680312156677,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08408994972705841,
+        "max_error": 0.4990234375,
+        "base_rms_error": 0.08408999443054199,
+        "hot_us": 13.025280237197876,
+        "cold_us": 27.648000046610832
+      }
+    ]
+  },
+  {
+    "n": 4096,
+    "k": 2560,
+    "m": 4,
+    "baseline": {
+      "hot_us": 15.119359493255615,
+      "cold_us": 31.74399957060814
+    },
+    "best": null,
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08528365939855576,
+        "max_error": 0.4987945556640625,
+        "base_rms_error": 0.08528368920087814,
+        "hot_us": 16.28159999847412,
+        "cold_us": 25.599999353289604
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08528365939855576,
+        "max_error": 0.4987945556640625,
+        "base_rms_error": 0.08528368920087814,
+        "hot_us": 16.72703981399536,
+        "cold_us": 27.648000046610832
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08528365939855576,
+        "max_error": 0.4987945556640625,
+        "base_rms_error": 0.08528368920087814,
+        "hot_us": 17.82271981239319,
+        "cold_us": 27.648000046610832
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08528365939855576,
+        "max_error": 0.4987945556640625,
+        "base_rms_error": 0.08528368920087814,
+        "hot_us": 13.895679712295532,
+        "cold_us": 27.648000046610832
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08528365939855576,
+        "max_error": 0.4987945556640625,
+        "base_rms_error": 0.08528368920087814,
+        "hot_us": 18.265599608421326,
+        "cold_us": 28.672000393271446
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08528365939855576,
+        "max_error": 0.4987945556640625,
+        "base_rms_error": 0.08528368920087814,
+        "hot_us": 15.400960445404053,
+        "cold_us": 27.648000046610832
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08528365939855576,
+        "max_error": 0.4987945556640625,
+        "base_rms_error": 0.08528368920087814,
+        "hot_us": 20.11904001235962,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08528365939855576,
+        "max_error": 0.4987945556640625,
+        "base_rms_error": 0.08528368920087814,
+        "hot_us": 16.642560362815857,
+        "cold_us": 27.648000046610832
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08528365939855576,
+        "max_error": 0.4987945556640625,
+        "base_rms_error": 0.08528368920087814,
+        "hot_us": 16.680959463119507,
+        "cold_us": 29.69600073993206
+      }
+    ]
+  },
+  {
+    "n": 2560,
+    "k": 1536,
+    "m": 1,
+    "baseline": {
+      "hot_us": 11.604480147361755,
+      "cold_us": 18.432000651955605
+    },
+    "best": {
+      "config": {
+        "num_rows": 1,
+        "block_size": 64,
+        "outputs_per_block": 2,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 1536
+      },
+      "rms_error": 0.059756115078926086,
+      "max_error": 0.24958038330078125,
+      "base_rms_error": 0.059756115078926086,
+      "hot_us": 4.546560049057007,
+      "cold_us": 13.311999849975109
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.059756115078926086,
+        "max_error": 0.24958038330078125,
+        "base_rms_error": 0.059756115078926086,
+        "hot_us": 4.761599898338318,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 1536
+        },
+        "rms_error": 0.059756115078926086,
+        "max_error": 0.24958038330078125,
+        "base_rms_error": 0.059756115078926086,
+        "hot_us": 4.605439901351929,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.059756115078926086,
+        "max_error": 0.24958038330078125,
+        "base_rms_error": 0.059756115078926086,
+        "hot_us": 4.546560049057007,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 1536
+        },
+        "rms_error": 0.059756115078926086,
+        "max_error": 0.24958038330078125,
+        "base_rms_error": 0.059756115078926086,
+        "hot_us": 4.54912006855011,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.059756115078926086,
+        "max_error": 0.24958038330078125,
+        "base_rms_error": 0.059756115078926086,
+        "hot_us": 5.888000130653381,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 1536
+        },
+        "rms_error": 0.059756115078926086,
+        "max_error": 0.24958038330078125,
+        "base_rms_error": 0.059756115078926086,
+        "hot_us": 5.734400153160095,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.059756115078926086,
+        "max_error": 0.24958038330078125,
+        "base_rms_error": 0.059756115078926086,
+        "hot_us": 6.021119952201843,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.059756115078926086,
+        "max_error": 0.24958038330078125,
+        "base_rms_error": 0.059756115078926086,
+        "hot_us": 5.790719985961914,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.059756115078926086,
+        "max_error": 0.24958038330078125,
+        "base_rms_error": 0.059756115078926086,
+        "hot_us": 5.544959902763367,
+        "cold_us": 15.359999611973763
+      }
+    ]
+  },
+  {
+    "n": 2560,
+    "k": 1536,
+    "m": 2,
+    "baseline": {
+      "hot_us": 11.770880222320557,
+      "cold_us": 18.432000651955605
+    },
+    "best": {
+      "config": {
+        "num_rows": 2,
+        "block_size": 64,
+        "outputs_per_block": 2,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 1536
+      },
+      "rms_error": 0.06337125599384308,
+      "max_error": 0.4864349365234375,
+      "base_rms_error": 0.06337128579616547,
+      "hot_us": 5.207039713859558,
+      "cold_us": 14.336000196635723
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06337125599384308,
+        "max_error": 0.4864349365234375,
+        "base_rms_error": 0.06337128579616547,
+        "hot_us": 5.759999752044678,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 1536
+        },
+        "rms_error": 0.06337125599384308,
+        "max_error": 0.4864349365234375,
+        "base_rms_error": 0.06337128579616547,
+        "hot_us": 5.729280114173889,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06337125599384308,
+        "max_error": 0.4864349365234375,
+        "base_rms_error": 0.06337128579616547,
+        "hot_us": 5.207039713859558,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 1536
+        },
+        "rms_error": 0.06337125599384308,
+        "max_error": 0.4864349365234375,
+        "base_rms_error": 0.06337128579616547,
+        "hot_us": 6.799359917640686,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06337125599384308,
+        "max_error": 0.4864349365234375,
+        "base_rms_error": 0.06337128579616547,
+        "hot_us": 6.932479739189148,
+        "cold_us": 16.383999958634377
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 1536
+        },
+        "rms_error": 0.06337125599384308,
+        "max_error": 0.4864349365234375,
+        "base_rms_error": 0.06337128579616547,
+        "hot_us": 6.748160123825073,
+        "cold_us": 15.87199978530407
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06337125599384308,
+        "max_error": 0.4864349365234375,
+        "base_rms_error": 0.06337128579616547,
+        "hot_us": 7.552000284194946,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06337125599384308,
+        "max_error": 0.4864349365234375,
+        "base_rms_error": 0.06337128579616547,
+        "hot_us": 6.79423987865448,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06337125599384308,
+        "max_error": 0.4864349365234375,
+        "base_rms_error": 0.06337128579616547,
+        "hot_us": 6.753280162811279,
+        "cold_us": 16.383999958634377
+      }
+    ]
+  },
+  {
+    "n": 2560,
+    "k": 1536,
+    "m": 4,
+    "baseline": {
+      "hot_us": 11.781120300292969,
+      "cold_us": 18.432000651955605
+    },
+    "best": {
+      "config": {
+        "num_rows": 4,
+        "block_size": 64,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 8,
+        "static_k": 1536
+      },
+      "rms_error": 0.06504931300878525,
+      "max_error": 0.48614501953125,
+      "base_rms_error": 0.06504935771226883,
+      "hot_us": 7.628800272941589,
+      "cold_us": 14.336000196635723
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06504931300878525,
+        "max_error": 0.48614501953125,
+        "base_rms_error": 0.06504935771226883,
+        "hot_us": 7.646719813346863,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 1536
+        },
+        "rms_error": 0.06504931300878525,
+        "max_error": 0.48614501953125,
+        "base_rms_error": 0.06504935771226883,
+        "hot_us": 7.628800272941589,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06504931300878525,
+        "max_error": 0.48614501953125,
+        "base_rms_error": 0.06504935771226883,
+        "hot_us": 8.985599875450134,
+        "cold_us": 17.40800030529499
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 1536
+        },
+        "rms_error": 0.06504931300878525,
+        "max_error": 0.48614501953125,
+        "base_rms_error": 0.06504935771226883,
+        "hot_us": 9.2467200756073,
+        "cold_us": 17.40800030529499
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06504931300878525,
+        "max_error": 0.48614501953125,
+        "base_rms_error": 0.06504935771226883,
+        "hot_us": 8.565760254859924,
+        "cold_us": 17.40800030529499
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 1536
+        },
+        "rms_error": 0.06504931300878525,
+        "max_error": 0.48614501953125,
+        "base_rms_error": 0.06504935771226883,
+        "hot_us": 8.765439987182617,
+        "cold_us": 17.40800030529499
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06504931300878525,
+        "max_error": 0.48614501953125,
+        "base_rms_error": 0.06504935771226883,
+        "hot_us": 10.342400074005127,
+        "cold_us": 16.383999958634377
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06504931300878525,
+        "max_error": 0.48614501953125,
+        "base_rms_error": 0.06504935771226883,
+        "hot_us": 9.085440039634705,
+        "cold_us": 16.383999958634377
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 1536
+        },
+        "rms_error": 0.06504931300878525,
+        "max_error": 0.48614501953125,
+        "base_rms_error": 0.06504935771226883,
+        "hot_us": 9.123839735984802,
+        "cold_us": 17.40800030529499
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "k": 2560,
+    "m": 1,
+    "baseline": {
+      "hot_us": 5.47327995300293,
+      "cold_us": 10.239999741315842
+    },
+    "best": {
+      "config": {
+        "num_rows": 1,
+        "block_size": 128,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.06501290202140808,
+      "max_error": 0.2073516845703125,
+      "base_rms_error": 0.06501290202140808,
+      "hot_us": 1.8483200669288635,
+      "cold_us": 6.144000217318535
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06501290202140808,
+        "max_error": 0.2073516845703125,
+        "base_rms_error": 0.06501290202140808,
+        "hot_us": 2.6982399821281433,
+        "cold_us": 7.168000098317862
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.06501290202140808,
+        "max_error": 0.2073516845703125,
+        "base_rms_error": 0.06501290202140808,
+        "hot_us": 2.457599937915802,
+        "cold_us": 7.168000098317862
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06501290202140808,
+        "max_error": 0.2073516845703125,
+        "base_rms_error": 0.06501290202140808,
+        "hot_us": 2.6009601354599,
+        "cold_us": 7.168000098317862
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.06501290202140808,
+        "max_error": 0.2073516845703125,
+        "base_rms_error": 0.06501290202140808,
+        "hot_us": 2.5702399015426636,
+        "cold_us": 7.168000098317862
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06501290202140808,
+        "max_error": 0.2073516845703125,
+        "base_rms_error": 0.06501290202140808,
+        "hot_us": 2.467840015888214,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.06501290202140808,
+        "max_error": 0.2073516845703125,
+        "base_rms_error": 0.06501290202140808,
+        "hot_us": 2.447360008955002,
+        "cold_us": 6.656000157818198
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06501290202140808,
+        "max_error": 0.2073516845703125,
+        "base_rms_error": 0.06501290202140808,
+        "hot_us": 1.8483200669288635,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06501290202140808,
+        "max_error": 0.2073516845703125,
+        "base_rms_error": 0.06501290202140808,
+        "hot_us": 1.8943999707698822,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06501290202140808,
+        "max_error": 0.2073516845703125,
+        "base_rms_error": 0.06501290202140808,
+        "hot_us": 2.1401600539684296,
+        "cold_us": 6.144000217318535
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "k": 2560,
+    "m": 2,
+    "baseline": {
+      "hot_us": 5.9033602476119995,
+      "cold_us": 10.239999741315842
+    },
+    "best": {
+      "config": {
+        "num_rows": 2,
+        "block_size": 128,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.09339442104101181,
+      "max_error": 0.479278564453125,
+      "base_rms_error": 0.09339442104101181,
+      "hot_us": 1.9711999595165253,
+      "cold_us": 6.144000217318535
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09339442104101181,
+        "max_error": 0.479278564453125,
+        "base_rms_error": 0.09339442104101181,
+        "hot_us": 2.109439969062805,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.09339442104101181,
+        "max_error": 0.479278564453125,
+        "base_rms_error": 0.09339442104101181,
+        "hot_us": 2.032639980316162,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09339442104101181,
+        "max_error": 0.479278564453125,
+        "base_rms_error": 0.09339442104101181,
+        "hot_us": 2.2220799326896667,
+        "cold_us": 6.656000157818198
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.09339442104101181,
+        "max_error": 0.479278564453125,
+        "base_rms_error": 0.09339442104101181,
+        "hot_us": 2.227199971675873,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09339442104101181,
+        "max_error": 0.479278564453125,
+        "base_rms_error": 0.09339442104101181,
+        "hot_us": 2.7033600211143494,
+        "cold_us": 7.168000098317862
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.09339442104101181,
+        "max_error": 0.479278564453125,
+        "base_rms_error": 0.09339442104101181,
+        "hot_us": 2.6214399933815002,
+        "cold_us": 7.168000098317862
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09339442104101181,
+        "max_error": 0.479278564453125,
+        "base_rms_error": 0.09339442104101181,
+        "hot_us": 1.9711999595165253,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09339442104101181,
+        "max_error": 0.479278564453125,
+        "base_rms_error": 0.09339442104101181,
+        "hot_us": 2.104319930076599,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09339442104101181,
+        "max_error": 0.479278564453125,
+        "base_rms_error": 0.09339442104101181,
+        "hot_us": 2.4908800423145294,
+        "cold_us": 6.144000217318535
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "k": 2560,
+    "m": 4,
+    "baseline": {
+      "hot_us": 5.9033602476119995,
+      "cold_us": 10.239999741315842
+    },
+    "best": {
+      "config": {
+        "num_rows": 4,
+        "block_size": 128,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.06656479835510254,
+      "max_error": 0.24396514892578125,
+      "base_rms_error": 0.06656479835510254,
+      "hot_us": 2.2630399465560913,
+      "cold_us": 6.144000217318535
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06656479835510254,
+        "max_error": 0.24396514892578125,
+        "base_rms_error": 0.06656479835510254,
+        "hot_us": 2.5036799907684326,
+        "cold_us": 7.168000098317862
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.06656479835510254,
+        "max_error": 0.24396514892578125,
+        "base_rms_error": 0.06656479835510254,
+        "hot_us": 2.396160066127777,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06656479835510254,
+        "max_error": 0.24396514892578125,
+        "base_rms_error": 0.06656479835510254,
+        "hot_us": 2.831360101699829,
+        "cold_us": 7.168000098317862
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.06656479835510254,
+        "max_error": 0.24396514892578125,
+        "base_rms_error": 0.06656479835510254,
+        "hot_us": 2.687999904155731,
+        "cold_us": 7.168000098317862
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06656479835510254,
+        "max_error": 0.24396514892578125,
+        "base_rms_error": 0.06656479835510254,
+        "hot_us": 3.543039858341217,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.06656479835510254,
+        "max_error": 0.24396514892578125,
+        "base_rms_error": 0.06656479835510254,
+        "hot_us": 3.3843201398849487,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06656479835510254,
+        "max_error": 0.24396514892578125,
+        "base_rms_error": 0.06656479835510254,
+        "hot_us": 2.2630399465560913,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06656479835510254,
+        "max_error": 0.24396514892578125,
+        "base_rms_error": 0.06656479835510254,
+        "hot_us": 2.467840015888214,
+        "cold_us": 6.144000217318535
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.06656479835510254,
+        "max_error": 0.24396514892578125,
+        "base_rms_error": 0.06656479835510254,
+        "hot_us": 2.8415998816490173,
+        "cold_us": 7.168000098317862
+      }
+    ]
+  },
+  {
+    "n": 3584,
+    "k": 2560,
+    "m": 1,
+    "baseline": {
+      "hot_us": 12.666879892349243,
+      "cold_us": 28.672000393271446
+    },
+    "best": {
+      "config": {
+        "num_rows": 1,
+        "block_size": 64,
+        "outputs_per_block": 2,
+        "k_unroll": 1,
+        "vector_width": 8,
+        "static_k": 2560
+      },
+      "rms_error": 0.08704251050949097,
+      "max_error": 0.4882354736328125,
+      "base_rms_error": 0.08704251050949097,
+      "hot_us": 7.27295994758606,
+      "cold_us": 23.552000522613525
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08704251050949097,
+        "max_error": 0.4882354736328125,
+        "base_rms_error": 0.08704251050949097,
+        "hot_us": 9.487360119819641,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08704251050949097,
+        "max_error": 0.4882354736328125,
+        "base_rms_error": 0.08704251050949097,
+        "hot_us": 8.78847986459732,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08704251050949097,
+        "max_error": 0.4882354736328125,
+        "base_rms_error": 0.08704251050949097,
+        "hot_us": 13.022720217704773,
+        "cold_us": 22.52800017595291
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08704251050949097,
+        "max_error": 0.4882354736328125,
+        "base_rms_error": 0.08704251050949097,
+        "hot_us": 7.27295994758606,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08704251050949097,
+        "max_error": 0.4882354736328125,
+        "base_rms_error": 0.08704251050949097,
+        "hot_us": 13.358080387115479,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08704251050949097,
+        "max_error": 0.4882354736328125,
+        "base_rms_error": 0.08704251050949097,
+        "hot_us": 8.604159951210022,
+        "cold_us": 24.57600086927414
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08704251050949097,
+        "max_error": 0.4882354736328125,
+        "base_rms_error": 0.08704251050949097,
+        "hot_us": 9.674240052700043,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08704251050949097,
+        "max_error": 0.4882354736328125,
+        "base_rms_error": 0.08704251050949097,
+        "hot_us": 8.791040182113647,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08704251050949097,
+        "max_error": 0.4882354736328125,
+        "base_rms_error": 0.08704251050949097,
+        "hot_us": 9.011200070381165,
+        "cold_us": 23.552000522613525
+      }
+    ]
+  },
+  {
+    "n": 3584,
+    "k": 2560,
+    "m": 2,
+    "baseline": {
+      "hot_us": 12.544000148773193,
+      "cold_us": 28.672000393271446
+    },
+    "best": {
+      "config": {
+        "num_rows": 2,
+        "block_size": 64,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.08143701404333115,
+      "max_error": 0.489959716796875,
+      "base_rms_error": 0.08143702149391174,
+      "hot_us": 10.956799983978271,
+      "cold_us": 22.52800017595291
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143701404333115,
+        "max_error": 0.489959716796875,
+        "base_rms_error": 0.08143702149391174,
+        "hot_us": 10.956799983978271,
+        "cold_us": 22.52800017595291
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143701404333115,
+        "max_error": 0.489959716796875,
+        "base_rms_error": 0.08143702149391174,
+        "hot_us": 10.61631977558136,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143701404333115,
+        "max_error": 0.489959716796875,
+        "base_rms_error": 0.08143702149391174,
+        "hot_us": 13.977600336074829,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143701404333115,
+        "max_error": 0.489959716796875,
+        "base_rms_error": 0.08143702149391174,
+        "hot_us": 11.23583972454071,
+        "cold_us": 24.57600086927414
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143701404333115,
+        "max_error": 0.489959716796875,
+        "base_rms_error": 0.08143702149391174,
+        "hot_us": 13.875199556350708,
+        "cold_us": 24.57600086927414
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143701404333115,
+        "max_error": 0.489959716796875,
+        "base_rms_error": 0.08143702149391174,
+        "hot_us": 9.474560022354126,
+        "cold_us": 25.599999353289604
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143701404333115,
+        "max_error": 0.489959716796875,
+        "base_rms_error": 0.08143702149391174,
+        "hot_us": 10.877440571784973,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143701404333115,
+        "max_error": 0.489959716796875,
+        "base_rms_error": 0.08143702149391174,
+        "hot_us": 10.380800366401672,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08143701404333115,
+        "max_error": 0.489959716796875,
+        "base_rms_error": 0.08143702149391174,
+        "hot_us": 9.963520169258118,
+        "cold_us": 24.57600086927414
+      }
+    ]
+  },
+  {
+    "n": 3584,
+    "k": 2560,
+    "m": 4,
+    "baseline": {
+      "hot_us": 12.538880109786987,
+      "cold_us": 30.719999223947525
+    },
+    "best": null,
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08379065245389938,
+        "max_error": 0.49664306640625,
+        "base_rms_error": 0.08379065990447998,
+        "hot_us": 14.530559778213501,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08379065245389938,
+        "max_error": 0.49664306640625,
+        "base_rms_error": 0.08379065990447998,
+        "hot_us": 14.725120067596436,
+        "cold_us": 24.57600086927414
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08379065245389938,
+        "max_error": 0.49664306640625,
+        "base_rms_error": 0.08379065990447998,
+        "hot_us": 15.244800448417664,
+        "cold_us": 24.57600086927414
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08379065245389938,
+        "max_error": 0.49664306640625,
+        "base_rms_error": 0.08379065990447998,
+        "hot_us": 12.495359778404236,
+        "cold_us": 24.57600086927414
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08379065245389938,
+        "max_error": 0.49664306640625,
+        "base_rms_error": 0.08379065990447998,
+        "hot_us": 16.491520404815674,
+        "cold_us": 26.623999699950218
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08379065245389938,
+        "max_error": 0.49664306640625,
+        "base_rms_error": 0.08379065990447998,
+        "hot_us": 13.870079517364502,
+        "cold_us": 25.599999353289604
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08379065245389938,
+        "max_error": 0.49664306640625,
+        "base_rms_error": 0.08379065990447998,
+        "hot_us": 14.197759628295898,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08379065245389938,
+        "max_error": 0.49664306640625,
+        "base_rms_error": 0.08379065990447998,
+        "hot_us": 12.116480469703674,
+        "cold_us": 24.57600086927414
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08379065245389938,
+        "max_error": 0.49664306640625,
+        "base_rms_error": 0.08379065990447998,
+        "hot_us": 13.114879727363586,
+        "cold_us": 25.599999353289604
+      }
+    ]
+  },
+  {
+    "n": 640,
+    "k": 2560,
+    "m": 1,
+    "baseline": {
+      "hot_us": 4.833280146121979,
+      "cold_us": 12.28800043463707
+    },
+    "best": {
+      "config": {
+        "num_rows": 1,
+        "block_size": 64,
+        "outputs_per_block": 4,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.08325199782848358,
+      "max_error": 0.422393798828125,
+      "base_rms_error": 0.08325199782848358,
+      "hot_us": 3.325439989566803,
+      "cold_us": 10.239999741315842
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08325199782848358,
+        "max_error": 0.422393798828125,
+        "base_rms_error": 0.08325199782848358,
+        "hot_us": 3.5174399614334106,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08325199782848358,
+        "max_error": 0.422393798828125,
+        "base_rms_error": 0.08325199782848358,
+        "hot_us": 3.5123199224472046,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08325199782848358,
+        "max_error": 0.422393798828125,
+        "base_rms_error": 0.08325199782848358,
+        "hot_us": 3.5635200142860413,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08325199782848358,
+        "max_error": 0.422393798828125,
+        "base_rms_error": 0.08325199782848358,
+        "hot_us": 3.630079925060272,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08325199782848358,
+        "max_error": 0.422393798828125,
+        "base_rms_error": 0.08325199782848358,
+        "hot_us": 3.325439989566803,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08325199782848358,
+        "max_error": 0.422393798828125,
+        "base_rms_error": 0.08325199782848358,
+        "hot_us": 3.39711993932724,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08325199782848358,
+        "max_error": 0.422393798828125,
+        "base_rms_error": 0.08325199782848358,
+        "hot_us": 3.466239869594574,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08325199782848358,
+        "max_error": 0.422393798828125,
+        "base_rms_error": 0.08325199782848358,
+        "hot_us": 3.399679958820343,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08325199782848358,
+        "max_error": 0.422393798828125,
+        "base_rms_error": 0.08325199782848358,
+        "hot_us": 3.4457600116729736,
+        "cold_us": 10.239999741315842
+      }
+    ]
+  },
+  {
+    "n": 640,
+    "k": 2560,
+    "m": 2,
+    "baseline": {
+      "hot_us": 7.552000284194946,
+      "cold_us": 13.311999849975109
+    },
+    "best": {
+      "config": {
+        "num_rows": 2,
+        "block_size": 128,
+        "outputs_per_block": 2,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.08328743278980255,
+      "max_error": 0.46875,
+      "base_rms_error": 0.08328743278980255,
+      "hot_us": 3.752959966659546,
+      "cold_us": 10.239999741315842
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08328743278980255,
+        "max_error": 0.46875,
+        "base_rms_error": 0.08328743278980255,
+        "hot_us": 4.0140798687934875,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08328743278980255,
+        "max_error": 0.46875,
+        "base_rms_error": 0.08328743278980255,
+        "hot_us": 3.9475199580192566,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08328743278980255,
+        "max_error": 0.46875,
+        "base_rms_error": 0.08328743278980255,
+        "hot_us": 3.758080005645752,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08328743278980255,
+        "max_error": 0.46875,
+        "base_rms_error": 0.08328743278980255,
+        "hot_us": 3.850240111351013,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08328743278980255,
+        "max_error": 0.46875,
+        "base_rms_error": 0.08328743278980255,
+        "hot_us": 4.060159921646118,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08328743278980255,
+        "max_error": 0.46875,
+        "base_rms_error": 0.08328743278980255,
+        "hot_us": 3.9628800749778748,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08328743278980255,
+        "max_error": 0.46875,
+        "base_rms_error": 0.08328743278980255,
+        "hot_us": 3.8758400082588196,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08328743278980255,
+        "max_error": 0.46875,
+        "base_rms_error": 0.08328743278980255,
+        "hot_us": 3.752959966659546,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08328743278980255,
+        "max_error": 0.46875,
+        "base_rms_error": 0.08328743278980255,
+        "hot_us": 3.9526399970054626,
+        "cold_us": 10.239999741315842
+      }
+    ]
+  },
+  {
+    "n": 640,
+    "k": 2560,
+    "m": 4,
+    "baseline": {
+      "hot_us": 7.577599883079529,
+      "cold_us": 13.311999849975109
+    },
+    "best": {
+      "config": {
+        "num_rows": 4,
+        "block_size": 128,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.08530137687921524,
+      "max_error": 0.4921722412109375,
+      "base_rms_error": 0.08530137687921524,
+      "hot_us": 4.82560008764267,
+      "cold_us": 10.239999741315842
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08530137687921524,
+        "max_error": 0.4921722412109375,
+        "base_rms_error": 0.08530137687921524,
+        "hot_us": 4.997119903564453,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08530137687921524,
+        "max_error": 0.4921722412109375,
+        "base_rms_error": 0.08530137687921524,
+        "hot_us": 4.981760084629059,
+        "cold_us": 11.264000087976456
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08530137687921524,
+        "max_error": 0.4921722412109375,
+        "base_rms_error": 0.08530137687921524,
+        "hot_us": 4.843519926071167,
+        "cold_us": 11.264000087976456
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08530137687921524,
+        "max_error": 0.4921722412109375,
+        "base_rms_error": 0.08530137687921524,
+        "hot_us": 4.679679870605469,
+        "cold_us": 11.264000087976456
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08530137687921524,
+        "max_error": 0.4921722412109375,
+        "base_rms_error": 0.08530137687921524,
+        "hot_us": 5.690879821777344,
+        "cold_us": 12.28800043463707
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08530137687921524,
+        "max_error": 0.4921722412109375,
+        "base_rms_error": 0.08530137687921524,
+        "hot_us": 4.858880043029785,
+        "cold_us": 11.264000087976456
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08530137687921524,
+        "max_error": 0.4921722412109375,
+        "base_rms_error": 0.08530137687921524,
+        "hot_us": 4.82560008764267,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08530137687921524,
+        "max_error": 0.4921722412109375,
+        "base_rms_error": 0.08530137687921524,
+        "hot_us": 4.695039987564087,
+        "cold_us": 10.751999914646149
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08530137687921524,
+        "max_error": 0.4921722412109375,
+        "base_rms_error": 0.08530137687921524,
+        "hot_us": 4.802559912204742,
+        "cold_us": 11.264000087976456
+      }
+    ]
+  },
+  {
+    "n": 320,
+    "k": 2560,
+    "m": 1,
+    "baseline": {
+      "hot_us": 4.259839951992035,
+      "cold_us": 10.239999741315842
+    },
+    "best": {
+      "config": {
+        "num_rows": 1,
+        "block_size": 128,
+        "outputs_per_block": 2,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.09381725639104843,
+      "max_error": 0.4859466552734375,
+      "base_rms_error": 0.09381725639104843,
+      "hot_us": 2.590720057487488,
+      "cold_us": 8.191999979317188
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09381725639104843,
+        "max_error": 0.4859466552734375,
+        "base_rms_error": 0.09381725639104843,
+        "hot_us": 2.734079957008362,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.09381725639104843,
+        "max_error": 0.4859466552734375,
+        "base_rms_error": 0.09381725639104843,
+        "hot_us": 2.7238398790359497,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09381725639104843,
+        "max_error": 0.4859466552734375,
+        "base_rms_error": 0.09381725639104843,
+        "hot_us": 2.685439884662628,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.09381725639104843,
+        "max_error": 0.4859466552734375,
+        "base_rms_error": 0.09381725639104843,
+        "hot_us": 2.6470398902893066,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09381725639104843,
+        "max_error": 0.4859466552734375,
+        "base_rms_error": 0.09381725639104843,
+        "hot_us": 2.810879945755005,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.09381725639104843,
+        "max_error": 0.4859466552734375,
+        "base_rms_error": 0.09381725639104843,
+        "hot_us": 2.810879945755005,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09381725639104843,
+        "max_error": 0.4859466552734375,
+        "base_rms_error": 0.09381725639104843,
+        "hot_us": 2.6214399933815002,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09381725639104843,
+        "max_error": 0.4859466552734375,
+        "base_rms_error": 0.09381725639104843,
+        "hot_us": 2.590720057487488,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.09381725639104843,
+        "max_error": 0.4859466552734375,
+        "base_rms_error": 0.09381725639104843,
+        "hot_us": 2.6521599292755127,
+        "cold_us": 8.191999979317188
+      }
+    ]
+  },
+  {
+    "n": 320,
+    "k": 2560,
+    "m": 2,
+    "baseline": {
+      "hot_us": 7.4086397886276245,
+      "cold_us": 12.28800043463707
+    },
+    "best": {
+      "config": {
+        "num_rows": 2,
+        "block_size": 128,
+        "outputs_per_block": 4,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.08391525596380234,
+      "max_error": 0.416229248046875,
+      "base_rms_error": 0.08391525596380234,
+      "hot_us": 3.107840120792389,
+      "cold_us": 8.191999979317188
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08391525596380234,
+        "max_error": 0.416229248046875,
+        "base_rms_error": 0.08391525596380234,
+        "hot_us": 3.343360126018524,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08391525596380234,
+        "max_error": 0.416229248046875,
+        "base_rms_error": 0.08391525596380234,
+        "hot_us": 3.2972800731658936,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08391525596380234,
+        "max_error": 0.416229248046875,
+        "base_rms_error": 0.08391525596380234,
+        "hot_us": 3.240959942340851,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08391525596380234,
+        "max_error": 0.416229248046875,
+        "base_rms_error": 0.08391525596380234,
+        "hot_us": 3.2204800844192505,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08391525596380234,
+        "max_error": 0.416229248046875,
+        "base_rms_error": 0.08391525596380234,
+        "hot_us": 3.4355199337005615,
+        "cold_us": 9.216000325977802
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08391525596380234,
+        "max_error": 0.416229248046875,
+        "base_rms_error": 0.08391525596380234,
+        "hot_us": 3.256320059299469,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08391525596380234,
+        "max_error": 0.416229248046875,
+        "base_rms_error": 0.08391525596380234,
+        "hot_us": 3.1590399146080017,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08391525596380234,
+        "max_error": 0.416229248046875,
+        "base_rms_error": 0.08391525596380234,
+        "hot_us": 3.1385600566864014,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08391525596380234,
+        "max_error": 0.416229248046875,
+        "base_rms_error": 0.08391525596380234,
+        "hot_us": 3.107840120792389,
+        "cold_us": 8.191999979317188
+      }
+    ]
+  },
+  {
+    "n": 320,
+    "k": 2560,
+    "m": 4,
+    "baseline": {
+      "hot_us": 7.434239983558655,
+      "cold_us": 12.28800043463707
+    },
+    "best": {
+      "config": {
+        "num_rows": 4,
+        "block_size": 128,
+        "outputs_per_block": 2,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 2560
+      },
+      "rms_error": 0.07972488552331924,
+      "max_error": 0.4380645751953125,
+      "base_rms_error": 0.07972489297389984,
+      "hot_us": 4.2342400550842285,
+      "cold_us": 8.191999979317188
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.07972489297389984,
+        "max_error": 0.4380645751953125,
+        "base_rms_error": 0.07972489297389984,
+        "hot_us": 4.392960071563721,
+        "cold_us": 9.216000325977802
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.07972488552331924,
+        "max_error": 0.4380645751953125,
+        "base_rms_error": 0.07972489297389984,
+        "hot_us": 4.3775999546051025,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.07972489297389984,
+        "max_error": 0.4380645751953125,
+        "base_rms_error": 0.07972489297389984,
+        "hot_us": 4.239360094070435,
+        "cold_us": 9.216000325977802
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.07972488552331924,
+        "max_error": 0.4380645751953125,
+        "base_rms_error": 0.07972489297389984,
+        "hot_us": 4.147199988365173,
+        "cold_us": 9.216000325977802
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.07972489297389984,
+        "max_error": 0.4380645751953125,
+        "base_rms_error": 0.07972489297389984,
+        "hot_us": 4.587520062923431,
+        "cold_us": 10.239999741315842
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.07972488552331924,
+        "max_error": 0.4380645751953125,
+        "base_rms_error": 0.07972489297389984,
+        "hot_us": 4.3724799156188965,
+        "cold_us": 9.216000325977802
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.07972488552331924,
+        "max_error": 0.4380645751953125,
+        "base_rms_error": 0.07972489297389984,
+        "hot_us": 4.1574400663375854,
+        "cold_us": 9.216000325977802
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.07972488552331924,
+        "max_error": 0.4380645751953125,
+        "base_rms_error": 0.07972489297389984,
+        "hot_us": 4.2342400550842285,
+        "cold_us": 8.191999979317188
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.07972488552331924,
+        "max_error": 0.4380645751953125,
+        "base_rms_error": 0.07972489297389984,
+        "hot_us": 4.008960127830505,
+        "cold_us": 9.216000325977802
+      }
+    ]
+  },
+  {
+    "n": 336,
+    "k": 10240,
+    "m": 1,
+    "baseline": {
+      "hot_us": 8.447999954223633,
+      "cold_us": 17.40800030529499
+    },
+    "best": {
+      "config": {
+        "num_rows": 1,
+        "block_size": 64,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 8,
+        "static_k": 10240
+      },
+      "rms_error": 0.17423366010189056,
+      "max_error": 0.799072265625,
+      "base_rms_error": 0.235880047082901,
+      "hot_us": 5.224959850311279,
+      "cold_us": 13.311999849975109
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 5.442559719085693,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 5.224959850311279,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 7.49567985534668,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 7.006720006465912,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 9.415680170059204,
+        "cold_us": 16.383999958634377
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 8.606719970703125,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 6.446080207824707,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 6.420480012893677,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 6.599680185317993,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 6.366720199584961,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 6.640639901161194,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.17423366010189056,
+        "max_error": 0.799072265625,
+        "base_rms_error": 0.235880047082901,
+        "hot_us": 8.376320004463196,
+        "cold_us": 14.336000196635723
+      }
+    ]
+  },
+  {
+    "n": 336,
+    "k": 10240,
+    "m": 2,
+    "baseline": {
+      "hot_us": 12.620799541473389,
+      "cold_us": 19.45599913597107
+    },
+    "best": {
+      "config": {
+        "num_rows": 2,
+        "block_size": 64,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 10240
+      },
+      "rms_error": 0.1586335152387619,
+      "max_error": 0.551239013671875,
+      "base_rms_error": 0.1586335152387619,
+      "hot_us": 7.718400061130524,
+      "cold_us": 13.311999849975109
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 7.718400061130524,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 8.07424008846283,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 11.015680432319641,
+        "cold_us": 16.383999958634377
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 8.99071991443634,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 15.15775978565216,
+        "cold_us": 17.40800030529499
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 11.509759426116943,
+        "cold_us": 18.432000651955605
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 8.064000010490417,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 7.838720083236694,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 8.09216022491455,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 8.168960213661194,
+        "cold_us": 14.847999904304743
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 8.514559864997864,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1586335152387619,
+        "max_error": 0.551239013671875,
+        "base_rms_error": 0.1586335152387619,
+        "hot_us": 7.861760258674622,
+        "cold_us": 15.359999611973763
+      }
+    ]
+  },
+  {
+    "n": 336,
+    "k": 10240,
+    "m": 4,
+    "baseline": {
+      "hot_us": 10.488319993019104,
+      "cold_us": 19.45599913597107
+    },
+    "best": {
+      "config": {
+        "num_rows": 4,
+        "block_size": 128,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 4,
+        "static_k": 10240
+      },
+      "rms_error": 0.165206640958786,
+      "max_error": 0.95648193359375,
+      "base_rms_error": 0.1652066558599472,
+      "hot_us": 8.757759928703308,
+      "cold_us": 14.336000196635723
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1652066558599472,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 11.92192018032074,
+        "cold_us": 17.40800030529499
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1652066558599472,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 13.800960183143616,
+        "cold_us": 17.40800030529499
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1652066558599472,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 16.030720472335815,
+        "cold_us": 19.45599913597107
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1652066558599472,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 12.712960243225098,
+        "cold_us": 18.432000651955605
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1652066558599472,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 17.423360347747803,
+        "cold_us": 23.552000522613525
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1652066558599472,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 16.051200032234192,
+        "cold_us": 19.45599913597107
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.165206640958786,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 8.757759928703308,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1652066558599472,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 12.922879457473755,
+        "cold_us": 16.383999958634377
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.165206640958786,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 10.475519895553589,
+        "cold_us": 16.383999958634377
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1652066558599472,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 11.046399474143982,
+        "cold_us": 17.40800030529499
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.165206640958786,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 11.793920397758484,
+        "cold_us": 18.432000651955605
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1652066558599472,
+        "max_error": 0.95648193359375,
+        "base_rms_error": 0.1652066558599472,
+        "hot_us": 10.52672028541565,
+        "cold_us": 17.40800030529499
+      }
+    ]
+  },
+  {
+    "n": 320,
+    "k": 10240,
+    "m": 1,
+    "baseline": {
+      "hot_us": 10.7315194606781,
+      "cold_us": 17.40800030529499
+    },
+    "best": {
+      "config": {
+        "num_rows": 1,
+        "block_size": 128,
+        "outputs_per_block": 2,
+        "k_unroll": 1,
+        "vector_width": 8,
+        "static_k": 10240
+      },
+      "rms_error": 0.1540321260690689,
+      "max_error": 0.4983062744140625,
+      "base_rms_error": 0.23425228893756866,
+      "hot_us": 4.858880043029785,
+      "cold_us": 13.311999849975109
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 5.624319911003113,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 5.504000186920166,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 6.123520135879517,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 5.347840189933777,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 7.7695998549461365,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 7.316479980945587,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 5.445119738578796,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 5.378559827804565,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 5.06879985332489,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 4.858880043029785,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 5.511680245399475,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1540321260690689,
+        "max_error": 0.4983062744140625,
+        "base_rms_error": 0.23425228893756866,
+        "hot_us": 4.894720017910004,
+        "cold_us": 13.311999849975109
+      }
+    ]
+  },
+  {
+    "n": 320,
+    "k": 10240,
+    "m": 2,
+    "baseline": {
+      "hot_us": 8.023040294647217,
+      "cold_us": 17.40800030529499
+    },
+    "best": {
+      "config": {
+        "num_rows": 2,
+        "block_size": 64,
+        "outputs_per_block": 1,
+        "k_unroll": 1,
+        "vector_width": 8,
+        "static_k": 10240
+      },
+      "rms_error": 0.16574998199939728,
+      "max_error": 0.919677734375,
+      "base_rms_error": 0.16574998199939728,
+      "hot_us": 6.517760157585144,
+      "cold_us": 13.311999849975109
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 6.824960112571716,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 6.517760157585144,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 7.098879814147949,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 8.501759767532349,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 12.351999878883362,
+        "cold_us": 16.383999958634377
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 10.831360220909119,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 8.04095983505249,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 7.608320116996765,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 8.158720135688782,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 8.02047997713089,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 8.261120021343231,
+        "cold_us": 13.311999849975109
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.16574998199939728,
+        "max_error": 0.919677734375,
+        "base_rms_error": 0.16574998199939728,
+        "hot_us": 7.605759799480438,
+        "cold_us": 13.311999849975109
+      }
+    ]
+  },
+  {
+    "n": 320,
+    "k": 10240,
+    "m": 4,
+    "baseline": {
+      "hot_us": 9.679359793663025,
+      "cold_us": 17.40800030529499
+    },
+    "best": {
+      "config": {
+        "num_rows": 4,
+        "block_size": 128,
+        "outputs_per_block": 4,
+        "k_unroll": 1,
+        "vector_width": 8,
+        "static_k": 10240
+      },
+      "rms_error": 0.1638062596321106,
+      "max_error": 0.966033935546875,
+      "base_rms_error": 0.1638062745332718,
+      "hot_us": 8.350719809532166,
+      "cold_us": 14.336000196635723
+    },
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 11.371519565582275,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 11.381759643554688,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 12.69760012626648,
+        "cold_us": 16.383999958634377
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 11.850239634513855,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 15.872000455856323,
+        "cold_us": 19.45599913597107
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 14.704639911651611,
+        "cold_us": 19.45599913597107
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 11.071999669075012,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 10.595839619636536,
+        "cold_us": 13.824000023305416
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 10.892799496650696,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 10.357760190963745,
+        "cold_us": 14.336000196635723
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 9.341440200805664,
+        "cold_us": 15.359999611973763
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 10240
+        },
+        "rms_error": 0.1638062596321106,
+        "max_error": 0.966033935546875,
+        "base_rms_error": 0.1638062745332718,
+        "hot_us": 8.350719809532166,
+        "cold_us": 14.336000196635723
+      }
+    ]
+  },
+  {
+    "n": 62080,
+    "k": 2560,
+    "m": 1,
+    "baseline": {
+      "hot_us": 256.98047637939453,
+      "cold_us": 258.04799795150757
+    },
+    "best": null,
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08562526106834412,
+        "max_error": 0.49908447265625,
+        "base_rms_error": 0.10414882749319077,
+        "hot_us": 268.56191635131836,
+        "cold_us": 243.71199309825897
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08562526106834412,
+        "max_error": 0.49908447265625,
+        "base_rms_error": 0.10414882749319077,
+        "hot_us": 274.1964817047119,
+        "cold_us": 239.6160066127777
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08562526106834412,
+        "max_error": 0.49908447265625,
+        "base_rms_error": 0.10414882749319077,
+        "hot_us": 235.79391479492188,
+        "cold_us": 243.71199309825897
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08562526106834412,
+        "max_error": 0.49908447265625,
+        "base_rms_error": 0.10414882749319077,
+        "hot_us": 266.9977569580078,
+        "cold_us": 239.6160066127777
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08562526106834412,
+        "max_error": 0.49908447265625,
+        "base_rms_error": 0.10414882749319077,
+        "hot_us": 255.3830337524414,
+        "cold_us": 241.66400730609894
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08562526106834412,
+        "max_error": 0.49908447265625,
+        "base_rms_error": 0.10414882749319077,
+        "hot_us": 234.30143356323242,
+        "cold_us": 238.5919988155365
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08562526106834412,
+        "max_error": 0.49908447265625,
+        "base_rms_error": 0.10414882749319077,
+        "hot_us": 294.47423934936523,
+        "cold_us": 238.5919988155365
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08562526106834412,
+        "max_error": 0.49908447265625,
+        "base_rms_error": 0.10414882749319077,
+        "hot_us": 279.65184211730957,
+        "cold_us": 239.6160066127777
+      },
+      {
+        "config": {
+          "num_rows": 1,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08562526106834412,
+        "max_error": 0.49908447265625,
+        "base_rms_error": 0.10414882749319077,
+        "hot_us": 216.3276767730713,
+        "cold_us": 239.1040027141571
+      }
+    ]
+  },
+  {
+    "n": 62080,
+    "k": 2560,
+    "m": 2,
+    "baseline": {
+      "hot_us": 289.28256034851074,
+      "cold_us": 259.0720057487488
+    },
+    "best": null,
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08308757841587067,
+        "max_error": 0.4997406005859375,
+        "base_rms_error": 0.11897731572389603,
+        "hot_us": 238.43584060668945,
+        "cold_us": 243.71199309825897
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08308757841587067,
+        "max_error": 0.4997406005859375,
+        "base_rms_error": 0.11897731572389603,
+        "hot_us": 267.23072052001953,
+        "cold_us": 239.6160066127777
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08308757841587067,
+        "max_error": 0.4997406005859375,
+        "base_rms_error": 0.11897731572389603,
+        "hot_us": 239.64927673339844,
+        "cold_us": 244.73600089550018
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08308757841587067,
+        "max_error": 0.4997406005859375,
+        "base_rms_error": 0.11897731572389603,
+        "hot_us": 238.0031967163086,
+        "cold_us": 240.63999950885773
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08308757841587067,
+        "max_error": 0.4997406005859375,
+        "base_rms_error": 0.11897731572389603,
+        "hot_us": 266.56511306762695,
+        "cold_us": 243.71199309825897
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08308757841587067,
+        "max_error": 0.4997406005859375,
+        "base_rms_error": 0.11897731572389603,
+        "hot_us": 237.90080070495605,
+        "cold_us": 240.63999950885773
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08308757841587067,
+        "max_error": 0.4997406005859375,
+        "base_rms_error": 0.11897731572389603,
+        "hot_us": 280.4096031188965,
+        "cold_us": 240.63999950885773
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08308757841587067,
+        "max_error": 0.4997406005859375,
+        "base_rms_error": 0.11897731572389603,
+        "hot_us": 241.18271827697754,
+        "cold_us": 240.63999950885773
+      },
+      {
+        "config": {
+          "num_rows": 2,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08308757841587067,
+        "max_error": 0.4997406005859375,
+        "base_rms_error": 0.11897731572389603,
+        "hot_us": 237.91872024536133,
+        "cold_us": 240.63999950885773
+      }
+    ]
+  },
+  {
+    "n": 62080,
+    "k": 2560,
+    "m": 4,
+    "baseline": {
+      "hot_us": 292.544002532959,
+      "cold_us": 260.6080025434494
+    },
+    "best": null,
+    "candidates": [
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08286601305007935,
+        "max_error": 0.4998321533203125,
+        "base_rms_error": 0.1191251128911972,
+        "hot_us": 251.97312355041504,
+        "cold_us": 256.00001215934753
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08286601305007935,
+        "max_error": 0.4998321533203125,
+        "base_rms_error": 0.1191251128911972,
+        "hot_us": 287.73375511169434,
+        "cold_us": 254.97600436210632
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08286601305007935,
+        "max_error": 0.4998321533203125,
+        "base_rms_error": 0.1191251128911972,
+        "hot_us": 247.2499179840088,
+        "cold_us": 250.88000297546387
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08286601305007935,
+        "max_error": 0.4998321533203125,
+        "base_rms_error": 0.1191251128911972,
+        "hot_us": 245.6499195098877,
+        "cold_us": 247.80799448490143
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08286601305007935,
+        "max_error": 0.4998321533203125,
+        "base_rms_error": 0.1191251128911972,
+        "hot_us": 275.81183433532715,
+        "cold_us": 252.9279887676239
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 64,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 8,
+          "static_k": 2560
+        },
+        "rms_error": 0.08286601305007935,
+        "max_error": 0.4998321533203125,
+        "base_rms_error": 0.1191251128911972,
+        "hot_us": 245.25568008422852,
+        "cold_us": 248.83200228214264
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 1,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08286601305007935,
+        "max_error": 0.4998321533203125,
+        "base_rms_error": 0.1191251128911972,
+        "hot_us": 263.1756782531738,
+        "cold_us": 248.83200228214264
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 2,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08286601305007935,
+        "max_error": 0.4998321533203125,
+        "base_rms_error": 0.1191251128911972,
+        "hot_us": 269.4425582885742,
+        "cold_us": 241.66400730609894
+      },
+      {
+        "config": {
+          "num_rows": 4,
+          "block_size": 128,
+          "outputs_per_block": 4,
+          "k_unroll": 1,
+          "vector_width": 4,
+          "static_k": 2560
+        },
+        "rms_error": 0.08286601305007935,
+        "max_error": 0.4998321533203125,
+        "base_rms_error": 0.1191251128911972,
+        "hot_us": 245.67808151245117,
+        "cold_us": 248.83200228214264
+      }
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "bytes": 10240,
+    "seed": 0,
+    "passed": true
+  },
+  {
+    "bytes": 10240,
+    "seed": 1,
+    "passed": true
+  },
+  {
+    "bytes": 10240,
+    "seed": 2,
+    "passed": true
+  },
+  {
+    "bytes": 10240,
+    "seed": 3,
+    "passed": true
+  },
+  {
+    "bytes": 524288,
+    "seed": 0,
+    "passed": true
+  },
+  {
+    "bytes": 524288,
+    "seed": 1,
+    "passed": true
+  },
+  {
+    "bytes": 524288,
+    "seed": 2,
+    "passed": true
+  },
+  {
+    "bytes": 524288,
+    "seed": 3,
+    "passed": true
+  },
+  {
+    "bytes": 1048576,
+    "seed": 0,
+    "passed": true
+  },
+  {
+    "bytes": 1048576,
+    "seed": 1,
+    "passed": true
+  },
+  {
+    "bytes": 1048576,
+    "seed": 2,
+    "passed": true
+  },
+  {
+    "bytes": 1048576,
+    "seed": 3,
+    "passed": true
+  }
+]

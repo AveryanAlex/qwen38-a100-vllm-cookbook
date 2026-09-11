@@ -1,0 +1,13 @@
+{
+  "summary": "Coherent central plot and ending, but not flawless.",
+  "plot_qa_correct": 7,
+  "plot_qa_total": 7,
+  "retrieval_markers_correct": 4,
+  "retrieval_markers_total": 4,
+  "fresh_cached_answers_identical": true,
+  "minor_imprecisions": [
+    "Unsupported statement that Manette believed Lucie dead.",
+    "Attribution of the prison letter to Madame rather than Ernest Defarge."
+  ],
+  "scope": "Manual review of one book, not a general model-quality evaluation."
+}

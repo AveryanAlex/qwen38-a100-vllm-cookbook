@@ -1,0 +1,16 @@
+{
+  "name": "03-custom-ring",
+  "compilation": {
+    "mode": 0,
+    "cudagraph_mode": "FULL_DECODE_ONLY",
+    "cudagraph_capture_sizes": [
+      2,
+      4
+    ],
+    "max_cudagraph_capture_size": 4
+  },
+  "mtp": 1,
+  "disable_custom": false,
+  "env": {},
+  "mounts": {}
+}

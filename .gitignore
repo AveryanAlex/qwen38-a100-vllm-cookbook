@@ -1,0 +1,9 @@
+/config.json
+/data/
+/results/
+/state/
+*.so
+__pycache__/
+*.py[cod]
+.venv/
+.env

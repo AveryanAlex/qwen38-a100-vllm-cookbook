@@ -1,0 +1,41 @@
+{
+  "name": "09-custom-ar-kernel-tuned",
+  "compilation": {
+    "mode": 0,
+    "cudagraph_mode": "FULL_AND_PIECEWISE",
+    "cudagraph_capture_sizes": [
+      2,
+      4,
+      6,
+      8,
+      12,
+      16,
+      64,
+      256,
+      784,
+      4096
+    ],
+    "max_cudagraph_capture_size": 4096
+  },
+  "mtp": 1,
+  "disable_custom": false,
+  "env": {
+    "NCCL_ALGO": null,
+    "NCCL_PROTO": null,
+    "QWEN_SM80_AR_TUNING": "1",
+    "PYTHONPATH": "/opt/q38-ar"
+  },
+  "mounts": {
+    "overlays/low_latency_gemm_sm80.py": "/usr/local/lib/python3.12/dist-packages/vllm/models/qwen4_exp/nvidia/low_latency_gemm.py:ro",
+    "overlays/_skinny_gemm_sm80.py": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/kernels/linear/cute_dsl/_skinny_gemm.py:ro",
+    "overlays/mamba_hybrid_cache_fix.py": "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu/model_states/mamba_hybrid.py:ro",
+    "overlays/custom_all_reduce_tuned.py": "/usr/local/lib/python3.12/dist-packages/vllm/distributed/device_communicators/custom_all_reduce.py:ro",
+    "overlays/bin": "/opt/q38-ar:ro"
+  },
+  "wide": true,
+  "prefill": true,
+  "tokens": 256,
+  "seqs": 8,
+  "batch": 4096,
+  "memory": 0.85
+}

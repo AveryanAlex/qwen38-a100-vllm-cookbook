@@ -1,0 +1,110 @@
+--- a/vllm/models/qwen4_exp/nvidia/low_latency_gemm.py
++++ b/vllm/models/qwen4_exp/nvidia/low_latency_gemm.py
+@@ -152,7 +152,95 @@
+     return current_platform.is_device_capability((9, 0))
+ 
+ 
++# SM80 plans measured on serv1; only kernels faster in hot and cold cache tests.
++QWEN4_EXP_SM80_GEMM_PLANS: dict[tuple[int, int], dict[int, SkinnyGemmConfig]] = {
++    (4096, 2560): {
++        1: SkinnyGemmConfig(
++            1, 64, 1, vector_width=4, static_k=2560,
++        ),
++        2: SkinnyGemmConfig(
++            2, 128, 1, vector_width=4, static_k=2560,
++        ),
++    },
++    (2560, 1536): {
++        1: SkinnyGemmConfig(
++            1, 64, 2, vector_width=4, static_k=1536,
++        ),
++        2: SkinnyGemmConfig(
++            2, 64, 2, vector_width=4, static_k=1536,
++        ),
++        4: SkinnyGemmConfig(
++            4, 64, 1, vector_width=8, static_k=1536,
++        ),
++    },
++    (24, 2560): {
++        1: SkinnyGemmConfig(
++            1, 128, 1, vector_width=4, static_k=2560,
++        ),
++        2: SkinnyGemmConfig(
++            2, 128, 1, vector_width=4, static_k=2560,
++        ),
++        4: SkinnyGemmConfig(
++            4, 128, 1, vector_width=4, static_k=2560,
++        ),
++    },
++    (3584, 2560): {
++        1: SkinnyGemmConfig(
++            1, 64, 2, vector_width=8, static_k=2560,
++        ),
++        2: SkinnyGemmConfig(
++            2, 64, 1, vector_width=4, static_k=2560,
++        ),
++    },
++    (640, 2560): {
++        1: SkinnyGemmConfig(
++            1, 64, 4, vector_width=4, static_k=2560,
++        ),
++        2: SkinnyGemmConfig(
++            2, 128, 2, vector_width=4, static_k=2560,
++        ),
++        4: SkinnyGemmConfig(
++            4, 128, 1, vector_width=4, static_k=2560,
++        ),
++    },
++    (320, 2560): {
++        1: SkinnyGemmConfig(
++            1, 128, 2, vector_width=4, static_k=2560,
++        ),
++        2: SkinnyGemmConfig(
++            2, 128, 4, vector_width=4, static_k=2560,
++        ),
++        4: SkinnyGemmConfig(
++            4, 128, 2, vector_width=4, static_k=2560,
++        ),
++    },
++    (336, 10240): {
++        1: SkinnyGemmConfig(
++            1, 64, 1, vector_width=8, static_k=10240,
++        ),
++        2: SkinnyGemmConfig(
++            2, 64, 1, vector_width=4, static_k=10240,
++        ),
++        4: SkinnyGemmConfig(
++            4, 128, 1, vector_width=4, static_k=10240,
++        ),
++    },
++    (320, 10240): {
++        1: SkinnyGemmConfig(
++            1, 128, 2, vector_width=8, static_k=10240,
++        ),
++        2: SkinnyGemmConfig(
++            2, 64, 1, vector_width=8, static_k=10240,
++        ),
++        4: SkinnyGemmConfig(
++            4, 128, 4, vector_width=8, static_k=10240,
++        ),
++    },
++}
++
+ def _gemm_plans() -> dict[tuple[int, int], dict[int, SkinnyGemmConfig]]:
++    if current_platform.is_device_capability((8, 0)):
++        return QWEN4_EXP_SM80_GEMM_PLANS
+     if _is_sm103():
+         return QWEN4_EXP_GEMM_PLANS
+     if _is_sm90():
+--- a/vllm/model_executor/kernels/linear/cute_dsl/_skinny_gemm.py
++++ b/vllm/model_executor/kernels/linear/cute_dsl/_skinny_gemm.py
+@@ -226,7 +226,8 @@
+         )
+         smem = cutlass.utils.SmemAllocator()
+         partials = smem.allocate_tensor(cutlass.Float32, smem_layout, byte_alignment=16)
+-        with cute.arch.elect_one():
++        # Every lane reaches this point; lane zero writes each warp sum on SM80 too.
++        if tidx % cute.arch.WARP_SIZE == 0:
+             for mi in cutlass.range_constexpr(num_rows):
+                 for ni in cutlass.range_constexpr(outputs_per_block):
+                     partials[mi, ni, warp_idx] = acc[mi, ni]

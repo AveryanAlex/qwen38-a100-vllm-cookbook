@@ -1,0 +1,79 @@
+[
+  {
+    "bytes": 5120,
+    "stock_us": 5.529600009322166,
+    "tuned_us": 3.9423998445272446,
+    "ratio": 1.4025974602749234,
+    "integer_checks": true
+  },
+  {
+    "bytes": 10240,
+    "stock_us": 5.6832000613212585,
+    "tuned_us": 3.9935998618602753,
+    "ratio": 1.4230769876564309,
+    "integer_checks": true
+  },
+  {
+    "bytes": 20480,
+    "stock_us": 5.734400078654289,
+    "tuned_us": 4.147199913859367,
+    "ratio": 1.3827160970684627,
+    "integer_checks": true
+  },
+  {
+    "bytes": 40960,
+    "stock_us": 5.939200147986412,
+    "tuned_us": 4.505600035190582,
+    "ratio": 1.3181818407312733,
+    "integer_checks": true
+  },
+  {
+    "bytes": 81920,
+    "stock_us": 6.553599983453751,
+    "tuned_us": 5.734400078654289,
+    "ratio": 1.1428571242960268,
+    "integer_checks": true
+  },
+  {
+    "bytes": 163840,
+    "stock_us": 7.782399654388428,
+    "tuned_us": 7.065600156784058,
+    "ratio": 1.1014492020067301,
+    "integer_checks": true
+  },
+  {
+    "bytes": 327680,
+    "stock_us": 10.291200131177902,
+    "tuned_us": 9.42080020904541,
+    "ratio": 1.0923912940321965,
+    "integer_checks": true
+  },
+  {
+    "bytes": 524288,
+    "stock_us": 15.308800339698792,
+    "tuned_us": 11.724799871444702,
+    "ratio": 1.305676899183822,
+    "integer_checks": true
+  },
+  {
+    "bytes": 1048576,
+    "stock_us": 20.582400262355804,
+    "tuned_us": 18.432000279426575,
+    "ratio": 1.1166666639718676,
+    "integer_checks": true
+  },
+  {
+    "bytes": 2097152,
+    "stock_us": 26.982399821281433,
+    "tuned_us": 26.956799626350403,
+    "ratio": 1.0009496748607356,
+    "integer_checks": true
+  },
+  {
+    "bytes": 4194304,
+    "stock_us": 227.25119590759277,
+    "tuned_us": 228.07040214538574,
+    "ratio": 0.9964080992970287,
+    "integer_checks": true
+  }
+]

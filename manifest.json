@@ -1,0 +1,57 @@
+{
+  "image": "docker.io/lazymio/vllm-backport@sha256:349690323ab9aba712111529ed1ca60730199205d8202f67895ffde85b451be3",
+  "source_repository": "https://github.com/wtdcode/vllm-backport",
+  "source_commit": "24cb31bb4fd0becee65c810c913a8caa4f610c36",
+  "model_repository": "leoncca/Qwen3.8-Flash-Next-Uncensored-AWQ-g32",
+  "model_revision": "fa56146238f9fcd5ab591b7052b31e28efdca5c3",
+  "model_identity_sha256": {
+    "SHA256SUMS": "9fbef10c53bb5b4c2112e9969510f7dd9ecf1bbc6b556f58b586d0e62ca9da3c",
+    "config.json": "3460195f3e539f8d3a2d3f69fa56b00661d303e5f579b51927ceff14d0d8f104",
+    "tokenizer_config.json": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27",
+    "LICENSE": "a0dc422560841fd68e06d974907f8b4c709bca44a67daad2b528437bdf676c08"
+  },
+  "overlays": {
+    "default_loader.py": {
+      "package_path": "vllm/model_executor/model_loader/default_loader.py",
+      "upstream_sha256": "9c9d54b1b650bf5affc924ebb8b8c73711e187ae7486cadd9f737bb1279cc7b8",
+      "patched_sha256": "875e0601bed93c558ab07d49390801b9044fdf551767a765a13792a3a491bcf4",
+      "image_sha256": "9c9d54b1b650bf5affc924ebb8b8c73711e187ae7486cadd9f737bb1279cc7b8"
+    },
+    "weight_utils.py": {
+      "package_path": "vllm/model_executor/model_loader/weight_utils.py",
+      "upstream_sha256": "8ef6e3e92b0d6ee3386088427fb97f96c544649c7baf0379a82a73dd541d2e8d",
+      "patched_sha256": "cc368fc537605d1bf93840210445795a42d44e8dd4935959facfa4dbfb68fc63",
+      "image_sha256": "8ef6e3e92b0d6ee3386088427fb97f96c544649c7baf0379a82a73dd541d2e8d"
+    },
+    "ngram_embedding.py": {
+      "package_path": "vllm/models/qwen4_exp/nvidia/ngram_embedding.py",
+      "upstream_sha256": "dc8be23282bffa64bc31f96aa8b0e4aea7fc4eff7eb164629ee09de2657a3a61",
+      "patched_sha256": "ae674d74fb13e876a5b015a77891ff6e85353931c0f2c9503ab34cb286ab2692",
+      "image_sha256": "dc8be23282bffa64bc31f96aa8b0e4aea7fc4eff7eb164629ee09de2657a3a61"
+    },
+    "low_latency_gemm.py": {
+      "package_path": "vllm/models/qwen4_exp/nvidia/low_latency_gemm.py",
+      "upstream_sha256": "d5c077edb026c7ea341f321de444a7e65817839b4b45bbbb786770e7c8e12ace",
+      "patched_sha256": "3f80ef04382ec593a4446a8e52c1b067e296ece32fddb2252cb2f209b5b551a2",
+      "image_sha256": "d5c077edb026c7ea341f321de444a7e65817839b4b45bbbb786770e7c8e12ace"
+    },
+    "_skinny_gemm.py": {
+      "package_path": "vllm/model_executor/kernels/linear/cute_dsl/_skinny_gemm.py",
+      "upstream_sha256": "eb48e2f61dd9644a73de8258c21d9459c54742fd2ff430165429533aae5a73ca",
+      "patched_sha256": "f53ec6413bc96c78e839eb088caade86969e4b2004c11845938a77db3fe74a0f",
+      "image_sha256": "eb48e2f61dd9644a73de8258c21d9459c54742fd2ff430165429533aae5a73ca"
+    },
+    "mamba_hybrid.py": {
+      "package_path": "vllm/v1/worker/gpu/model_states/mamba_hybrid.py",
+      "upstream_sha256": "af2e75ce56a3ca989dad4cf56179fcad235a1592cc9aab7d16fb38ecba72f72a",
+      "patched_sha256": "071a41cfd419a0fe56ae52238fdee78ef4b2c490b7cbcfad7a9e5ed2a97177d5",
+      "image_sha256": "af2e75ce56a3ca989dad4cf56179fcad235a1592cc9aab7d16fb38ecba72f72a"
+    },
+    "custom_all_reduce.py": {
+      "package_path": "vllm/distributed/device_communicators/custom_all_reduce.py",
+      "upstream_sha256": "a048c1327c23580805600c0c951831bec333b1ffc4eb26a0e3d34119c4f0c445",
+      "patched_sha256": "e91e1d379a9c792eabc0ec05bd0b59f059923ffed572cf604bf0117e463b6d30",
+      "image_sha256": "a048c1327c23580805600c0c951831bec333b1ffc4eb26a0e3d34119c4f0c445"
+    }
+  }
+}

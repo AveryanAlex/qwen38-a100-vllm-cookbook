@@ -1,0 +1,12 @@
+--- a/csrc/custom_all_reduce.cuh
++++ b/csrc/custom_all_reduce.cuh
+@@ -307,7 +307,8 @@
+     // 6 WITHOUT a measurement -- it sits between a shipped 512 (ws 4) and a
+     // measured 512 (ws 8), and one-shot's cost grows with N (N-1 peer reads),
+     // so a monotone crossover puts ws 6 at or above ws 8's 512.
+-    constexpr size_t kOneShotMaxBytes = 512 * 1024;
++    // Serv1 TP4 SM80 screening: keep one-stage through 1 MiB.
++    constexpr size_t kOneShotMaxBytes = 1024 * 1024 + 1;
+ 
+ #define REDUCE_CASE(ngpus)                       \
+   case ngpus: {                                  \

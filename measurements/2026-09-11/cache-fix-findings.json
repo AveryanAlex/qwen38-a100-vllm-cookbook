@@ -1,0 +1,12 @@
+{
+  "root_cause": "MambaHybridModelState cached block size 16 during construction; backend alignment later finalized both cache config and MambaSpec to 800. add_request divided cached-token positions by the stale value, restoring the wrong recurrent-state block.",
+  "unit_example": {
+    "cached_tokens": 2400,
+    "old_column": 149,
+    "correct_column": 2
+  },
+  "runtime_confirmed_on_all_ranks": true,
+  "regression_checks_passed": 32,
+  "book_fresh_cached_answers_identical": true,
+  "book_prompt_tokens": 190422
+}

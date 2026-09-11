@@ -1,0 +1,28 @@
+{
+  "name": "05-seqs4",
+  "compilation": {
+    "mode": 0,
+    "cudagraph_mode": "FULL_DECODE_ONLY",
+    "cudagraph_capture_sizes": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "max_cudagraph_capture_size": 8
+  },
+  "mtp": 1,
+  "disable_custom": true,
+  "env": {
+    "NCCL_ALGO": null,
+    "NCCL_PROTO": null
+  },
+  "mounts": {
+    "overlays/low_latency_gemm_sm80.py": "/usr/local/lib/python3.12/dist-packages/vllm/models/qwen4_exp/nvidia/low_latency_gemm.py:ro",
+    "overlays/_skinny_gemm_sm80.py": "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/kernels/linear/cute_dsl/_skinny_gemm.py:ro"
+  },
+  "wide": true,
+  "prefill": true,
+  "tokens": 256,
+  "seqs": 4
+}
