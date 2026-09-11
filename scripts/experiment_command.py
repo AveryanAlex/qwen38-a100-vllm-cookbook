@@ -16,6 +16,7 @@ if a.profile not in {d.name for d in profiles.iterdir() if d.is_dir()}:
     p.error('Unknown recorded profile')
 historical = json.loads((profiles / a.profile / 'config.json').read_text())
 c = config(a.config)
+c['vision'] = historical.get('vision', False)
 c['tuned_all_reduce'] = historical.get('env', {}).get('QWEN_SM80_AR_TUNING') == '1'
 args = create_command(c)
 # Retain just the three model-loading/PLE overlays plus historical performance overlays.
@@ -50,5 +51,12 @@ env.update(historical.get('env', {}))
 for key in ['NCCL_ALGO', 'NCCL_PROTO']:
     if env[key] is not None:
         args[2:2] = ['--env', f'{key}={env[key]}']
-args += historical.get('extra', [])
+extras = historical.get('extra', [])
+if historical.get('vision'):
+    # Replace cookbook defaults with the exact historical modality settings.
+    for flag in ['--limit-mm-per-prompt', '--mm-processor-kwargs', '--media-io-kwargs']:
+        if flag in args:
+            i = args.index(flag)
+            del args[i:i + 2]
+args += extras
 print(shlex.join(args))

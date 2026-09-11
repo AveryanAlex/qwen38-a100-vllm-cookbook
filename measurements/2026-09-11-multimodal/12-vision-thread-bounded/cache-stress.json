@@ -1,0 +1,482 @@
+[
+  {
+    "expected": "REF-105834-0-QUARTZ",
+    "answer": "REF-105834-0-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 0
+  },
+  {
+    "expected": "REF-105834-1-QUARTZ",
+    "answer": "REF-105834-1-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 0
+  },
+  {
+    "expected": "REF-105834-2-QUARTZ",
+    "answer": "REF-105834-2-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 0
+  },
+  {
+    "expected": "REF-105834-3-QUARTZ",
+    "answer": "REF-105834-3-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 0
+  },
+  {
+    "expected": "REF-105834-4-QUARTZ",
+    "answer": "REF-105834-4-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 0
+  },
+  {
+    "expected": "REF-105834-5-QUARTZ",
+    "answer": "REF-105834-5-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 0
+  },
+  {
+    "expected": "REF-105834-6-QUARTZ",
+    "answer": "REF-105834-6-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 0
+  },
+  {
+    "expected": "REF-105834-7-QUARTZ",
+    "answer": "REF-105834-7-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 0
+  },
+  {
+    "expected": "REF-105834-1-QUARTZ",
+    "answer": "REF-105834-1-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 1
+  },
+  {
+    "expected": "REF-105834-2-QUARTZ",
+    "answer": "REF-105834-2-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 1
+  },
+  {
+    "expected": "REF-105834-3-QUARTZ",
+    "answer": "REF-105834-3-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 1
+  },
+  {
+    "expected": "REF-105834-4-QUARTZ",
+    "answer": "REF-105834-4-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 1
+  },
+  {
+    "expected": "REF-105834-5-QUARTZ",
+    "answer": "REF-105834-5-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 1
+  },
+  {
+    "expected": "REF-105834-6-QUARTZ",
+    "answer": "REF-105834-6-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 1
+  },
+  {
+    "expected": "REF-105834-7-QUARTZ",
+    "answer": "REF-105834-7-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 1
+  },
+  {
+    "expected": "REF-105834-0-QUARTZ",
+    "answer": "REF-105834-0-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 1
+  },
+  {
+    "expected": "REF-105834-2-QUARTZ",
+    "answer": "REF-105834-2-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 2
+  },
+  {
+    "expected": "REF-105834-3-QUARTZ",
+    "answer": "REF-105834-3-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 2
+  },
+  {
+    "expected": "REF-105834-4-QUARTZ",
+    "answer": "REF-105834-4-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 2
+  },
+  {
+    "expected": "REF-105834-5-QUARTZ",
+    "answer": "REF-105834-5-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 2
+  },
+  {
+    "expected": "REF-105834-6-QUARTZ",
+    "answer": "REF-105834-6-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 2
+  },
+  {
+    "expected": "REF-105834-7-QUARTZ",
+    "answer": "REF-105834-7-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 2
+  },
+  {
+    "expected": "REF-105834-0-QUARTZ",
+    "answer": "REF-105834-0-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 2
+  },
+  {
+    "expected": "REF-105834-1-QUARTZ",
+    "answer": "REF-105834-1-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 2
+  },
+  {
+    "expected": "REF-105834-3-QUARTZ",
+    "answer": "REF-105834-3-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 3
+  },
+  {
+    "expected": "REF-105834-4-QUARTZ",
+    "answer": "REF-105834-4-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 3
+  },
+  {
+    "expected": "REF-105834-5-QUARTZ",
+    "answer": "REF-105834-5-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 3
+  },
+  {
+    "expected": "REF-105834-6-QUARTZ",
+    "answer": "REF-105834-6-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 3
+  },
+  {
+    "expected": "REF-105834-7-QUARTZ",
+    "answer": "REF-105834-7-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 3
+  },
+  {
+    "expected": "REF-105834-0-QUARTZ",
+    "answer": "REF-105834-0-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 3
+  },
+  {
+    "expected": "REF-105834-1-QUARTZ",
+    "answer": "REF-105834-1-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 3
+  },
+  {
+    "expected": "REF-105834-2-QUARTZ",
+    "answer": "REF-105834-2-QUARTZ",
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 2469,
+      "total_tokens": 2484,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "round": 3
+  }
+]

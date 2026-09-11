@@ -1,0 +1,52 @@
+[
+  {
+    "url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B/resolve/main/preprocessor_config.json",
+    "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "config": {
+      "size": {
+        "longest_edge": 16777216,
+        "shortest_edge": 65536
+      },
+      "patch_size": 16,
+      "temporal_patch_size": 2,
+      "merge_size": 2,
+      "image_mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "image_std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "processor_class": "Qwen3VLProcessor",
+      "image_processor_type": "Qwen2VLImageProcessorFast"
+    }
+  },
+  {
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Instruct/resolve/main/preprocessor_config.json",
+    "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "config": {
+      "size": {
+        "longest_edge": 16777216,
+        "shortest_edge": 65536
+      },
+      "patch_size": 16,
+      "temporal_patch_size": 2,
+      "merge_size": 2,
+      "image_mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "image_std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "processor_class": "Qwen3VLProcessor",
+      "image_processor_type": "Qwen2VLImageProcessorFast"
+    }
+  }
+]

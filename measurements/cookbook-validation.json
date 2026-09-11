@@ -22,5 +22,19 @@
     "Incomplete historical PLE patch regenerated",
     "Pin Podman executable for systemd start and stop",
     "Handle SIGTERM in CPU test fixture"
-  ]
+  ],
+  "multimodal_followup": {
+    "launcher_tests": 11,
+    "processor_preflight": "Actual HF image/video paths passed in pinned image without model loading",
+    "live_argument_parity": true,
+    "image_count_limit": 999,
+    "video_count_limit": 999,
+    "targeted_image_checks": 8,
+    "targeted_video_multiinput_checks": 6,
+    "functional_checks": 13,
+    "cache_checks": 32,
+    "quiet_single_tps": 108.42196122900674,
+    "quiet_eight_aggregate_tps": 612.6809478760703,
+    "limitations": "See docs/VISION.md and review JSON; target tests are not perfect general vision/timestamp accuracy."
+  }
 }

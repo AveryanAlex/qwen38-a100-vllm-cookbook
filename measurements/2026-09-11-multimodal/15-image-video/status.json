@@ -1,0 +1,4 @@
+{
+  "state": "startup_failed",
+  "reason": "Transformers rejected duplicate size in flat and nested videos_kwargs supplied through vLLM video warmup."
+}

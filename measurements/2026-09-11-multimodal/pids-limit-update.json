@@ -1,0 +1,5 @@
+{
+  "pids_limit": 8192,
+  "method": "podman update during startup; persisted in runtime launcher generation and cookbook",
+  "thread_bounds": "Retained for current measurement; no restart solely for task-limit change"
+}

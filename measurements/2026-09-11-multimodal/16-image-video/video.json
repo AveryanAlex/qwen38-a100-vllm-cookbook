@@ -1,0 +1,123 @@
+{
+  "cases": [
+    {
+      "case": "forward",
+      "files": [
+        "sequence.mp4"
+      ],
+      "prompt": "Describe the changes over time, not just the first frame. List the large printed words in their exact chronological order. State the square colors and positions in chronological order. Describe the unchanged background briefly.",
+      "answer": "Based on the video frames provided, here is a description of the changes over time:\n\nThe video displays a sequence of three distinct scenes, each lasting for a few seconds. The background remains constant throughout the entire video, featuring the famous \"Earthrise\" photograph. This image shows the blue and white planet Earth suspended in the blackness of space, with the gray, cratered surface of the Moon visible in the foreground at the bottom of the frame.\n\nThe changes occur in the upper portion of the screen, where a large printed word and a colored square appear and change.\n\nHere are the elements in their exact chronological order:\n\n- **First Scene (00:00 - 00:02):**\n    - **Printed Word:** `ALPHA`\n    - **Square Color:** Red\n    - **Square Position:** Top-left corner\n\n- **Second Scene (00:02 - 00:04):**\n    - **Printed Word:** `BRAVO`\n    - **Square Color:** Green\n    - **Square Position:** Top-center\n\n- **Third Scene (00:04 - 00:05):**\n    - **Printed Word:** `CHARLIE`\n    - **Square Color:** Blue\n    - **Square Position:** Top-right corner",
+      "usage": {
+        "prompt_tokens": 2501,
+        "total_tokens": 2776,
+        "completion_tokens": 275,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 3.7661398672498763
+    },
+    {
+      "case": "reverse",
+      "files": [
+        "sequence-reversed.mp4"
+      ],
+      "prompt": "Describe the changes over time, not just the first frame. List the large printed words in their exact chronological order. State the square colors and positions in chronological order. Describe the unchanged background briefly.",
+      "answer": "Based on the video frames provided, here is a description of the changes over time:\n\n**Large Printed Words (Chronological Order):**\nThe large printed word in the top-left corner changes three times throughout the video. In their exact chronological order, they are:\n1.  **CHARLIE** (appears from 0.0s to 2.0s)\n2.  **BRAVO** (appears from 3.0s to 5.0s)\n3.  **ALPHA** (appears from 6.0s to 7.0s)\n\n**Square Colors and Positions (Chronological Order):**\nA colored square appears in the black area of the image, changing its color and position along with the text.\n1.  **Blue Square:** From 0.0s to 2.0s, a solid blue square is positioned in the upper-right quadrant of the black area.\n2.  **Green Square:** From 3.0s to 5.0s, a solid green square is positioned in the upper-middle section of the black area.\n3.  **Red Square:** From 6.0s to 7.0s, a solid red square is positioned in the upper-left quadrant of the black area.\n\n**Unchanged Background:**\nThe background remains constant throughout the entire video. It features a view from the surface of the Moon, looking out into the blackness of space. The gray, cratered lunar surface occupies the bottom portion of the frame. In the center of the black sky, the Earth is visible as a partially illuminated sphere (a crescent or half-Earth). Above the black sky is a solid white horizontal band where the text is displayed.",
+      "usage": {
+        "prompt_tokens": 2501,
+        "total_tokens": 2866,
+        "completion_tokens": 365,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 4.394518228247762
+    },
+    {
+      "case": "real-people",
+      "files": [
+        "people-6s.mp4"
+      ],
+      "prompt": "Describe the visible setting and actions across this video. Are people moving or stationary? Mention the road, grass, buildings and any visible parked vehicles if present. Do not identify individuals or invent events.",
+      "answer": "The video captures a scene on a road with grassy areas on either side. There are buildings in the background, and a white van is parked on the right side of the road. Several people are walking along the road, moving from left to right. The road has a green signpost with an arrow pointing upwards. A tripod is set up on the grass near the road. The overall setting appears to be an outdoor area, possibly near a campus or institutional building.",
+      "usage": {
+        "prompt_tokens": 1901,
+        "total_tokens": 1996,
+        "completion_tokens": 95,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 1.8147718198597431
+    },
+    {
+      "case": "three-videos",
+      "files": [
+        "sequence.mp4",
+        "sequence-reversed.mp4",
+        "sequence.mp4"
+      ],
+      "prompt": "There are three videos in order. For EACH video list the large printed words in their chronological order. Be explicit about video 1, 2 and 3.",
+      "answer": "Based on the images provided, here are the large printed words in chronological order for each video:\n\n- **Video 1:** ALPHA, BRAVO, CHARLIE\n- **Video 2:** CHARLIE, BRAVO, ALPHA\n- **Video 3:** ALPHA, BRAVO, CHARLIE",
+      "usage": {
+        "prompt_tokens": 7395,
+        "total_tokens": 7460,
+        "completion_tokens": 65,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 2.2647390877828
+    },
+    {
+      "case": "three-images",
+      "files": [
+        "earthrise-1024.png",
+        "lunar-crop.png",
+        "earthrise-marked.png"
+      ],
+      "prompt": "For image 1, 2 and 3 in order: say whether Earth is visible, and transcribe any printed label. Which image has the red square?",
+      "answer": "Of course. Here is the analysis of the three images based on your questions.\n\n- **Image 1:**\n    - **Earth Visible:** Yes, the planet Earth is clearly visible as a blue and white sphere, partially illuminated, rising above the lunar horizon.\n    - **Printed Label:** There are no printed labels in this image.\n\n- **Image 2:**\n    - **Earth Visible:** No, this image is a close-up of the gray, cratered surface of the Moon. The Earth is not in the frame.\n    - **Printed Label:** There are no printed labels in this image.\n\n- **Image 3:**\n    - **Earth Visible:** Yes, the Earth is visible in the same position as in the first image.\n    - **Printed Label:** There are two labels present. In the top-left corner, there is a white box with the text \"RAVEN 6247\". In the top-right corner, there is a solid red square.\n\n---\n\nThe image that contains the red square is **Image 3**.",
+      "usage": {
+        "prompt_tokens": 2355,
+        "total_tokens": 2581,
+        "completion_tokens": 226,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 3.031766875181347
+    },
+    {
+      "case": "mixed",
+      "files": [
+        "sequence.mp4",
+        "earthrise-marked.png"
+      ],
+      "prompt": "First describe the sequence of large printed words in the video. Then transcribe the label in the still image and identify its added shape and color.",
+      "answer": "Based on the provided video frames and still image, here is a description of the sequence and the final image.\n\n### Sequence of Large Printed Words in the Video\n\nThe video displays a sequence of large, black, capitalized words in the upper-left corner against a white background. The sequence is as follows:\n- **ALPHA**: This word appears first, from the beginning of the video until approximately 2 seconds. During this time, a red square is visible in the upper-left portion of the main image area.\n- **BRAVO**: This word replaces \"ALPHA\" at around the 2-second mark and remains until about 4 seconds. During this segment, a green square appears in the upper-middle portion of the main image area.\n- **CHARLIE**: This word replaces \"BRAVO\" at around the 4-second mark and is shown until the end of the video clip at 6 seconds. During this time, a blue square appears in the upper-right portion of the main image area.\n\nThe background image throughout the video is the famous \"Earthrise\" photograph, showing the Earth rising above the lunar horizon.\n\n---\n\n### Description of the Still Image\n\nThe still image is a modified version of the same \"Earthrise\" photograph.\n\n- **Label Transcription**: In the upper-left corner, there is a white rectangular box containing the text **\"RAVEN 6247\"** in a black, sans-serif font.\n- **Added Shape and Color**: In the upper-right corner of the image, a solid **red square** has been added.",
+      "usage": {
+        "prompt_tokens": 3517,
+        "total_tokens": 3841,
+        "completion_tokens": 324,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 4.693689769133925
+    }
+  ]
+}

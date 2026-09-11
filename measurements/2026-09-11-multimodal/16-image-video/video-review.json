@@ -1,0 +1,18 @@
+{
+  "manual_review": true,
+  "targeted_checks_passed": 6,
+  "targeted_checks_total": 6,
+  "criteria": [
+    "Forward ALPHA/BRAVO/CHARLIE and red-left/green-center/blue-right",
+    "Reversed chronology",
+    "Real video: people walking on outdoor road with grass/buildings/parked van",
+    "Three videos correctly ordered separately",
+    "Three images and correct image3 label/red square",
+    "Mixed video chronology and still-image OCR"
+  ],
+  "limitations": [
+    "Reverse description invented timestamps up to7s for a6s clip. Temporal ORDER is correct; precise timestamp accuracy is not established.",
+    "Real-video summary simplifies pedestrian motion and adds an unverified arrow description.",
+    "Only small controlled clips and three-item requests tested;999items configured,not load-tested at999."
+  ]
+}

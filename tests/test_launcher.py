@@ -29,12 +29,37 @@ class LauncherTests(unittest.TestCase):
         args = cookbook.create_command(self.c)
         self.assertIn(self.c['model_dir'] + ':/model:ro', args)
         self.assertIn(cookbook.IMAGE, args)
+        self.assertEqual(args[args.index('--pids-limit') + 1], '8192')
         self.assertEqual(args[args.index('--max-model-len') + 1], '262144')
         self.assertNotIn('--kv-cache-dtype', args)
         self.assertFalse(any('NCCL_ALGO=' in x for x in args))
         self.assertFalse(any('/opt/q38-ar' in x for x in args))
         self.c['tuned_all_reduce'] = True
         self.assertIn('QWEN_SM80_AR_TUNING=1', cookbook.create_command(self.c))
+
+    def test_multimodal_uses_correct_processor_and_high_item_counts(self):
+        self.c['vision'] = True
+        args = cookbook.create_command(self.c)
+        self.assertNotIn('--language-model-only', args)
+        self.assertIn('TOKENIZERS_PARALLELISM=false', args)
+        self.assertIn('RAYON_NUM_THREADS=1', args)
+        self.assertEqual(json.loads(args[args.index('--limit-mm-per-prompt') + 1]), {'image': 999, 'video': 999})
+        processor = json.loads(args[args.index('--mm-processor-kwargs') + 1])
+        self.assertEqual(processor['patch_size'], 16)
+        self.assertEqual(processor['images_kwargs']['max_pixels'], 1048576)
+        self.assertEqual(processor['images_kwargs']['min_pixels'], 4096)
+        self.assertEqual(processor['image_mean'], [0.5, 0.5, 0.5])
+        self.assertEqual(processor['image_std'], [0.5, 0.5, 0.5])
+        self.assertEqual(processor['max_frames'], 128)
+        self.assertEqual(processor['size']['longest_edge'], 8388608)
+        self.assertEqual(json.loads(args[args.index('--media-io-kwargs') + 1]), {'video': {'num_frames': 128}})
+
+    def test_existing_config_defaults_to_text_only(self):
+        cfg = self.root / 'config.json'
+        cfg.write_text(json.dumps(self.c))
+        loaded = cookbook.config(cfg)
+        self.assertFalse(loaded['vision'])
+        self.assertIn('--language-model-only', cookbook.create_command(loaded))
 
     def test_refuses_foreign_container_before_stop(self):
         with patch.object(cookbook, 'unit_active', return_value=False), \

@@ -1,0 +1,15 @@
+{
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/NASA-Apollo8-Dec24-Earthrise.jpg",
+  "source_page": "https://commons.wikimedia.org/wiki/File:NASA-Apollo8-Dec24-Earthrise.jpg",
+  "title": "Earthrise, Apollo 8, 1968",
+  "credit": "NASA / Bill Anders",
+  "license": "Public domain, NASA US federal government work",
+  "preparation": "Original resized to fit 1024x1024. Controls: vertical flip; bottom 24% lunar crop; marked copy with text RAVEN 6247 and red square.",
+  "files": {
+    "earthrise.jpg": "24fd2a4f833534ca6741ed96d03b028ac1d8fda2cd129ded4d208535f541d4da",
+    "earthrise-1024.png": "b5f291c3b7d83683de4aa7dccc55ea47bb7671fc882c6919b3e6a149d45bc0b6",
+    "earthrise-flipped.png": "e2c31b6904ffcf8b66e75f98a5c74f99018e99604951788b678ae94fa4e5445b",
+    "lunar-crop.png": "dee1cb9cb67b87238cac8b6e3e038212626d805f60ed2c0a73260599c4ae9761",
+    "earthrise-marked.png": "8e3434d0a4cf47b0ccd994f704472fdcbaf7d6529d354c7693efb07cfb2673c6"
+  }
+}

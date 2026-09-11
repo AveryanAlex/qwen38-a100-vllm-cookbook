@@ -1,0 +1,150 @@
+{
+  "configuration": "16-image-video",
+  "production_healthy": true,
+  "image_limit": 999,
+  "video_limit": 999,
+  "pids_limit": 8192,
+  "processor_kwargs": {
+    "patch_size": 16,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "max_frames": 128,
+    "fps": 2,
+    "cap_pixels_per_frame": true,
+    "images_kwargs": {
+      "min_pixels": 4096,
+      "max_pixels": 1048576
+    },
+    "size": {
+      "shortest_edge": 4096,
+      "longest_edge": 8388608
+    }
+  },
+  "quiet_text_measurement": {
+    "single_decode_tps": 108.42196122900674,
+    "two_request_aggregate_tps": 194.53880610076416,
+    "four_request_aggregate_tps": 363.63642303272127,
+    "eight_request_aggregate_tps": 612.6809478760703,
+    "no_extra_generation_in_counters": true,
+    "output_tokens_per_request": 256
+  },
+  "image_review": {
+    "manual_review": true,
+    "targeted_checks_passed": 8,
+    "targeted_checks_total": 8,
+    "criteria": [
+      "Original Earth/terrain/sky and absent people/objects",
+      "Repeated original grounded",
+      "Flipped terrain at top",
+      "Crop lacks Earth",
+      "RAVEN 6247 plus red square",
+      "Two-image ordering and content",
+      "Concurrent original grounded",
+      "Concurrent crop grounded"
+    ],
+    "limitations": [
+      "The crop response speculated incorrectly that the body was Charon. It correctly stated Earth was absent.",
+      "Some incidental descriptors such as border/font/land colors are not independently verified.",
+      "Fresh/repeated wording differed under shared production load; semantic targets passed."
+    ]
+  },
+  "video_review": {
+    "manual_review": true,
+    "targeted_checks_passed": 6,
+    "targeted_checks_total": 6,
+    "criteria": [
+      "Forward ALPHA/BRAVO/CHARLIE and red-left/green-center/blue-right",
+      "Reversed chronology",
+      "Real video: people walking on outdoor road with grass/buildings/parked van",
+      "Three videos correctly ordered separately",
+      "Three images and correct image3 label/red square",
+      "Mixed video chronology and still-image OCR"
+    ],
+    "limitations": [
+      "Reverse description invented timestamps up to7s for a6s clip. Temporal ORDER is correct; precise timestamp accuracy is not established.",
+      "Real-video summary simplifies pedestrian motion and adds an unverified arrow description.",
+      "Only small controlled clips and three-item requests tested;999items configured,not load-tested at999."
+    ]
+  },
+  "book_review": {
+    "manual_review": true,
+    "prompt_tokens": 190422,
+    "targeted_plot_questions_correct": 7,
+    "targeted_plot_questions_total": 7,
+    "markers_present": true,
+    "markers_ordered": true,
+    "fresh_cached_answer_identical": false,
+    "load_context": "Shared production traffic; changing batching also affected throughput. Do not claim byte-identical generation for this run.",
+    "summary_assessment": "Coherent core plot and correct targeted questions, with factual inaccuracies.",
+    "inaccuracies": [
+      "Unsupported claim that Manette believed Lucie dead.",
+      "Says Carton bribed Barsad; the plot uses blackmail/coercion.",
+      "Description reverses the main direction of comfort between Carton and the seamstress."
+    ]
+  },
+  "live_checks": {
+    "health": true,
+    "running": true,
+    "all_overlay_hashes": true,
+    "max_context_262144": true,
+    "model_alias": true,
+    "functional_checks_13": true,
+    "lock_available": true,
+    "nccl_auto": true,
+    "args_match": true,
+    "image_pinned": true,
+    "tuned_env": true,
+    "hashed_files_mounted": true,
+    "model_readonly": true,
+    "vision_enabled": true,
+    "vision_processor_correct": true,
+    "vision_image_limit": true,
+    "pids_limit_8192": true
+  },
+  "book.json": {
+    "usage": {
+      "prompt_tokens": 190422,
+      "total_tokens": 191527,
+      "completion_tokens": 1105,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "ttft_seconds": 17.2175738979131,
+    "decode_tps": 99.48685634561275,
+    "finish_reason": "stop",
+    "all_markers_present": true,
+    "markers_in_order": true
+  },
+  "book-cached.json": {
+    "usage": {
+      "prompt_tokens": 190422,
+      "total_tokens": 191472,
+      "completion_tokens": 1050,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "ttft_seconds": 1.5796836577355862,
+    "decode_tps": 94.76984930442153,
+    "finish_reason": "stop",
+    "all_markers_present": true,
+    "markers_in_order": true
+  },
+  "validation.json": {
+    "passed": 13,
+    "total": 13
+  },
+  "cache-stress.json": {
+    "passed": 32,
+    "total": 32
+  }
+}

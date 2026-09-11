@@ -67,3 +67,15 @@ Actual GPU correctness and performance commands are in README.md and the kernel/
 - The historical standalone PLE patch was incomplete relative to the final overlay. The cookbook regenerates the patch from the pinned source, then checks byte-for-byte reconstruction.
 - The first service smoke test exposed a mixed-Podman-path failure: an interactive shell used a newer Podman while the user manager could resolve the system copy. The unit now pins the exact Podman executable for both start and stop using QWEN_COOKBOOK_PODMAN. The first test failed restart readiness; it is not counted as a pass.
 - The disposable CPU test process initially ignored SIGTERM as container PID 1, making stop tests wait for the timeout. The fixture now explicitly handles SIGTERM. This was a test-fixture change, not a model-runtime optimization.
+
+## Image/video follow-up
+
+The portable launcher now defaults new configurations to image and video inputs, with 999-item counts. An existing config without `vision` keeps its original text-only behavior; set it explicitly to true to migrate.
+
+Eleven CPU-side launcher/profile tests check the corrected processor settings, 8192-task container limit, high image/video counts, explicit video sampling budgets, and backward compatibility. `python3 scripts/cookbook.py check-processor` runs both actual HF processor paths inside the pinned image without loading model weights. Its video fixture reproduces the dimensions that exposed duplicate size arguments during startup.
+
+The multimodal experiment records distinguish the CPU thread-limit failure, OCR normalization A/B, verified photo controls, interrupted high-count startup, duplicate video size failure, and the final serving results. See VISION.md and the multimodal measurement cohort for the current results. Original text-only benchmarks are retained as historical data.
+
+The shipped `check-processor` command was run in the pinned image and passed both image and video paths with the final flat-video-size / image-override layout. This performs no model-weight loading and is separate from the live image/video answer checks.
+
+The final full-model production rollout with images and videos enabled passed 8 targeted image cases, 6 video/multi-input cases, 13 functional checks, 32 cache checks, the 190K book task and a quiet throughput repeat. The live argument/image/overlay/task-limit audit passed. Refer to VISION.md for known model inaccuracies and exact measurement scope.

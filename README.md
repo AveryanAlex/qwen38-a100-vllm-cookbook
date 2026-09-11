@@ -4,6 +4,8 @@ Run **`leoncca/Qwen3.8-Flash-Next-Uncensored-AWQ-g32` on four A100 GPUs** with a
 
 On the tested **4 × A100-SXM4-40GB / NVLink** machine, matched single-request throughput increased from **4.78 to 107.88 output tokens/s** (22.6×). Eight simultaneous requests delivered approximately **615 tokens/s in total**. A complete novel with a **190,422-token prompt** took **16.78 seconds to first token**, then decoded at **108.87 tokens/s**.
 
+**Image and video are now enabled by default in the example configuration**, with **999 items per modality per request**. The verified multimodal deployment retained **108.42 single-request tokens/s** and **612.68 aggregate tokens/s** at eight requests. [Image/video setup, tests and limitations](docs/VISION.md).
+
 This is an independently maintained cookbook for this specific checkpoint and runtime. The image's `v0.13.0-sm80` tag is a **backport version**, not upstream vLLM 0.13. Do not substitute a current upstream wheel or `latest` container tag and expect the same behavior.
 
 ## What you get
@@ -12,6 +14,7 @@ This is an independently maintained cookbook for this specific checkpoint and ru
 - Seven reviewed source overlays and the exact patches that produce them.
 - A portable launcher and a systemd user service for boot startup and recovery.
 - A source build for the optional tuned all-reduce extension.
+- Image and video input, 999-item caps, corrected preprocessing, and visual/temporal grounding checks.
 - Benchmarks for single/parallel requests, cache reuse, tool calling, thinking, cancellation, and a near-200K book summary.
 - [Experiment results](docs/RESULTS.md), [patch explanations](docs/PATCHES.md), [kernel study](docs/CUSTOM_ALL_REDUCE.md), and [recorded measurement data](measurements/2026-09-11).
 
@@ -69,13 +72,16 @@ Edit `config.json` for your machine:
   "state_dir": "~/.local/share/qwen38-a100",
   "container_name": "qwen38-a100",
   "port": 19088,
-  "tuned_all_reduce": true
+  "tuned_all_reduce": true,
+  "vision": true
 }
 ```
 
 The launcher expands `~/`. Use absolute paths otherwise. Keep this checkout and the state directory on persistent disk: the service mounts source overlays directly from the checkout. Generated model files, caches, local configuration, binaries, and new results are ignored by Git.
 
-`tuned_all_reduce: true` selects the final measured configuration. Set it to `false` to use the existing custom all-reduce kernel and skip the extension build; this still includes the correctness fix and main speedups, reaching approximately 107.8 decode tokens/s in the matched 256-token tests. The extension adds about **0.62%**, not the main 22× gain.
+`vision: true` enables **image and video input** with the processor settings described in the [multimodal guide](docs/VISION.md). Both item counts are set to **999 per request**; context and memory still bound real requests. Video uses explicit frame and pixel budgets, described in the guide. Set it to `false` for the original text-only recipe. Existing configuration files without `vision` preserve text-only behavior.
+
+`tuned_all_reduce: true` selects the measured reduction-kernel tuning. Set it to `false` to use the existing custom all-reduce kernel and skip the extension build; this still includes the correctness fix and main speedups, reaching approximately 107.8 decode tokens/s in the matched 256-token tests. The extension adds about **0.62%**, not the main 22× gain.
 
 Pull the exact image:
 
@@ -99,7 +105,10 @@ Read the model's [Qwen Community license](https://huggingface.co/leoncca/Qwen3.8
 ```bash
 python3 scripts/cookbook.py download
 python3 scripts/cookbook.py verify-model
+python3 scripts/cookbook.py check-processor
 ```
+
+`check-processor` tests both image and video preprocessing in the pinned container without loading model weights. It catches patch-size and argument-layout problems before a long model startup.
 
 The download is pinned to revision `fa56146238f9fcd5ab591b7052b31e28efdca5c3`. It includes **all** model and tokenizer assets, not just safetensors. Verification reads the full checkpoint, so allow time for approximately 129 GiB of disk I/O. Do not continue after a checksum mismatch. An existing download can be reused by setting `model_dir`; rerun `download` to align its metadata with the pinned revision before verifying.
 
@@ -147,7 +156,9 @@ curl -fsS http://127.0.0.1:19088/v1/chat/completions \
   -d '{"model":"qwen38-flash-next-uncensored","messages":[{"role":"user","content":"Return only the integer: 17 multiplied by 19."}],"temperature":0,"max_tokens":64,"chat_template_kwargs":{"enable_thinking":false}}'
 ```
 
-Expected answer: `323`. The model ID is `qwen38-flash-next-uncensored`; client base URL is `http://127.0.0.1:19088/v1`. The API binds to loopback without authentication. To use it remotely, forward that port over SSH, or place an authenticated proxy in front of it. Keep the example's loopback binding for direct deployments.
+Expected answer: `323`. The model ID is `qwen38-flash-next-uncensored`; client base URL is `http://127.0.0.1:19088/v1`. With `vision: true`, the same endpoint also accepts image and video attachments; see the [request format and visual checks](docs/VISION.md).
+
+The API binds to loopback without authentication. To use it remotely, forward that port over SSH, or place an authenticated proxy in front of it. Keep the example's loopback binding for direct deployments.
 
 Run regression checks:
 
@@ -200,7 +211,7 @@ python3 benchmarks/bench.py --port 19088 --tokens 256 --wide --prefill --output 
 
 The benchmark warms relevant shapes, runs two single-request trials, two concurrent requests, and a longer prompt. `--wide` adds four and eight requests; `--prefill` adds a fresh approximately 8K prompt. Fixed-length performance requests use greedy decoding, thinking disabled, and `ignore_eos`; correctness requests terminate normally.
 
-Final tuned configuration, four repeated 256-token suites:
+Original text-only tuned configuration, four repeated 256-token suites (the image/video-enabled quiet repeat is recorded in the multimodal guide):
 
 | Simultaneous requests | Median decode tokens/s per request | Aggregate output tokens/s including startup |
 |---:|---:|---:|
@@ -270,10 +281,11 @@ MTP depths 2 and 3 were slower. Initial prefill graphs and custom all-reduce fai
 
 To stop a managed deployment, use `systemctl --user stop qwen38-a100.service`; for manual mode, use `python3 scripts/cookbook.py stop`. To remove automatic startup, use `systemctl --user disable --now qwen38-a100.service`. Model files and caches are not deleted.
 
-For changes, keep baseline results, change one setting at a time, restart, rerun correctness and matched performance tests, and retain improvements only. Do not upgrade the image independently of these overlays. The cookbook exposes only path/name/port and optional-kernel settings intentionally; broader experiments require reviewing the launcher and repeating validation.
+For changes, keep baseline results, change one setting at a time, restart, rerun correctness and matched performance tests, and retain improvements only. Do not upgrade the image independently of these overlays. The cookbook exposes path/name/port, vision, and optional-kernel settings intentionally; broader experiments require reviewing the launcher and repeating validation.
 
 ## Repository and publication
 
+- [Enable and verify image/video input](docs/VISION.md)
 - [Reproduce individual historical experiments](docs/EXPERIMENTS.md)
 - [Source/patch provenance and license notes](docs/PROVENANCE.md)
 - [Exact patch behavior and reconstruction](docs/PATCHES.md)

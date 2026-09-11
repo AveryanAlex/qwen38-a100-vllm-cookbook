@@ -1,0 +1,36 @@
+{
+  "control_clips": {
+    "basis": "NASA Earthrise fixture plus generated labels and squares",
+    "duration_seconds": 6,
+    "fps": 12,
+    "frame_count": 72,
+    "forward_words": [
+      "ALPHA",
+      "BRAVO",
+      "CHARLIE"
+    ],
+    "forward_colors": [
+      "red",
+      "green",
+      "blue"
+    ],
+    "forward_positions": [
+      "left",
+      "center",
+      "right"
+    ],
+    "reverse": "All video frames reversed; words/colors/positions reverse too"
+  },
+  "real_clip": {
+    "source_url": "https://raw.githubusercontent.com/opencv/opencv/master/samples/data/vtest.avi",
+    "source_kind": "OpenCV public video sample",
+    "source_sha256": "45cddc9490be69345cbdab64ca583be65987e864ca408038e648db99e10516cf",
+    "excerpt": "First6seconds; silent,scaled640pxwide,H264,yuv420p",
+    "redistribution": "Real clip not bundled; download for local validation"
+  },
+  "files": {
+    "sequence.mp4": "3d39106cea55d314d1dcdb5818bd993a8b08c689cbf3e8d3f601fe7adf5eb349",
+    "sequence-reversed.mp4": "f3794e077edacce4129f8cd61cb18a0169c0af302de17cc2b295cb3a5561aea3",
+    "people-6s.mp4": "2fee000accc20eccbc40d3f6cafaa91e41a3d5da5a8435a3da172ca70f83a35f"
+  }
+}

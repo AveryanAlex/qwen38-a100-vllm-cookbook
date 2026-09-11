@@ -3,5 +3,6 @@
   "state_dir": "~/.local/share/qwen38-a100",
   "container_name": "qwen38-a100",
   "port": 19088,
-  "tuned_all_reduce": true
+  "tuned_all_reduce": true,
+  "vision": true
 }

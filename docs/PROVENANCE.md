@@ -40,3 +40,7 @@ The Project Gutenberg source URL and raw/clean hashes are recorded in `book-sour
 ## Exclusions and interrupted work
 
 Failed correctness outputs are retained in benchmark JSON. Machine-dependent server logs and abandoned controller scripts are not a supported deployment interface and are excluded. The results report documents the initial overlapping-controller interruption, the SM80 compile failures, and the inherited-lock incident. Publication does not turn those failed attempts into supported recipes.
+
+## Vision follow-up
+
+The initial deployment used language-model-only mode. The later image-input experiment removes that setting, aligns the processor patch size with the vision tower, and corrects normalization and sets image/video item counts to 999, with per-item resolution/frame budgets. Its results are a separate cohort; the original text-only records remain unchanged. The Earthrise fixture is a NASA public-domain photograph downloaded from Wikimedia Commons; source details, hashes and test alterations accompany the images.

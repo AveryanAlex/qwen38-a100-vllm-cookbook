@@ -1,0 +1,144 @@
+[
+  {
+    "name": "clip",
+    "kwargs": {},
+    "prompt": "Transcribe the exact label printed in the upper-left white box. Return only the text.",
+    "answer": " raven627",
+    "usage": {
+      "prompt_tokens": 1056,
+      "total_tokens": 1062,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "elapsed_seconds": 0.37599051371216774
+  },
+  {
+    "name": "clip",
+    "kwargs": {},
+    "prompt": "Describe this image. Transcribe its label exactly and identify the color and shape at the upper right.",
+    "answer": "The label is: \"RAVEN 027\".\n\nThe shape at the upper right is a **red square**.",
+    "usage": {
+      "prompt_tokens": 1058,
+      "total_tokens": 1084,
+      "completion_tokens": 26,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "elapsed_seconds": 0.49402193119749427
+  },
+  {
+    "name": "half",
+    "kwargs": {
+      "image_mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "image_std": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "prompt": "Transcribe the exact label printed in the upper-left white box. Return only the text.",
+    "answer": "RAVEN 6247",
+    "usage": {
+      "prompt_tokens": 1056,
+      "total_tokens": 1064,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "elapsed_seconds": 0.4361236817203462
+  },
+  {
+    "name": "half",
+    "kwargs": {
+      "image_mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "image_std": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "prompt": "Describe this image. Transcribe its label exactly and identify the color and shape at the upper right.",
+    "answer": "This image is a composite or edited version of the famous \u201cEarthrise\u201d photograph taken by Apollo 8 astronauts in 1968. It shows Earth as a small, blue-and-white sphere rising above the gray, cratered horizon of the Moon, set against the blackness of space.\n\nIn the upper left corner, there is a white rectangular label with black text that reads exactly:\n\n**RAVEN 6247**\n\nIn the upper right corner, there is a solid **red square**.\n\n---\n\n**Summary:**\n\n- **Label transcription**: `RAVEN 6247`\n- **Upper right element**: A **red square**\n\nThe image combines iconic space photography with graphic overlays \u2014 likely for artistic, conceptual, or identification purposes (e.g., an album cover, poster, or digital art piece). The red square and label are not part of the original NASA photo but have been added digitally.",
+    "usage": {
+      "prompt_tokens": 1058,
+      "total_tokens": 1251,
+      "completion_tokens": 193,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "elapsed_seconds": 1.9283821037970483
+  },
+  {
+    "name": "half-larger",
+    "kwargs": {
+      "image_mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "image_std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "min_pixels": 1048576
+    },
+    "prompt": "Transcribe the exact label printed in the upper-left white box. Return only the text.",
+    "answer": "RAVEN 6247",
+    "usage": {
+      "prompt_tokens": 1056,
+      "total_tokens": 1064,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "elapsed_seconds": 31.676378319971263
+  },
+  {
+    "name": "half-larger",
+    "kwargs": {
+      "image_mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "image_std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "min_pixels": 1048576
+    },
+    "prompt": "Describe this image. Transcribe its label exactly and identify the color and shape at the upper right.",
+    "answer": "This image is a composite or edited version of the famous \u201cEarthrise\u201d photograph taken by Apollo 8 astronauts in 1968. It shows Earth as a small, blue-and-white sphere rising above the gray, cratered horizon of the Moon, set against the blackness of space.\n\nIn the upper left corner, there is a white rectangular label with black text that reads exactly:\n\n**RAVEN 6247**\n\nIn the upper right corner, there is a solid **red square**.\n\n---\n\n**Summary:**\n\n- **Label transcription**: `RAVEN 6247`\n- **Upper right element**: A **red square**\n\nThe image combines iconic space photography with graphic overlays \u2014 likely for artistic, conceptual, or identification purposes (e.g., an album cover, poster, or digital art piece). The red square and label are not part of the original NASA photo but have been added digitally.",
+    "usage": {
+      "prompt_tokens": 1058,
+      "total_tokens": 1251,
+      "completion_tokens": 193,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "elapsed_seconds": 1.947890894021839
+  }
+]

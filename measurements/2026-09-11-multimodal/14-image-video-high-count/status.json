@@ -1,0 +1,4 @@
+{
+  "state": "interrupted_before_validation",
+  "reason": "Separate image/video processor kwargs to avoid flat image max_pixels overriding video budget estimates."
+}

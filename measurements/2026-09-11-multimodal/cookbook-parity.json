@@ -1,0 +1,10 @@
+{
+  "cookbook_serving_arguments_match_production": true,
+  "production_pids_limit": 8192,
+  "vision": true,
+  "video": true,
+  "counts": {
+    "image": 999,
+    "video": 999
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "normalization_override": false,
+  "source": {
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/NASA-Apollo8-Dec24-Earthrise.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:NASA-Apollo8-Dec24-Earthrise.jpg",
+    "title": "Earthrise, Apollo 8, 1968",
+    "credit": "NASA / Bill Anders",
+    "license": "Public domain, NASA US federal government work",
+    "preparation": "Original resized to fit 1024x1024. Controls: vertical flip; bottom 24% lunar crop; marked copy with text RAVEN 6247 and red square.",
+    "files": {
+      "earthrise.jpg": "24fd2a4f833534ca6741ed96d03b028ac1d8fda2cd129ded4d208535f541d4da",
+      "earthrise-1024.png": "b5f291c3b7d83683de4aa7dccc55ea47bb7671fc882c6919b3e6a149d45bc0b6",
+      "earthrise-flipped.png": "e2c31b6904ffcf8b66e75f98a5c74f99018e99604951788b678ae94fa4e5445b",
+      "lunar-crop.png": "dee1cb9cb67b87238cac8b6e3e038212626d805f60ed2c0a73260599c4ae9761",
+      "earthrise-marked.png": "8e3434d0a4cf47b0ccd994f704472fdcbaf7d6529d354c7693efb07cfb2673c6"
+    }
+  },
+  "cases": [
+    {
+      "case": "original",
+      "files": [
+        "earthrise-1024.png"
+      ],
+      "prompt": "Describe only what is visible in this image. Where is the gray rocky terrain: top or bottom? Is a blue-and-white planet visible? What colors are the background and the planet? Are any people, spacecraft, trees, or printed labels visible? Be specific and do not invent details.",
+      "answer": "Based on the image provided:\n\n- The gray rocky terrain is visible at the **bottom** of the image. It appears as a curved, textured horizon line.\n- Yes, a blue-and-white planet is visible. It is positioned in the upper-middle portion of the frame, floating against the black background.\n- The background is entirely **black**.\n- The planet displays shades of **blue** (oceans), **white** (clouds), and some brownish or tan landmasses.\n- No people, spacecraft, trees, or printed labels are visible in the image.",
+      "usage": {
+        "prompt_tokens": 1096,
+        "total_tokens": 1218,
+        "completion_tokens": 122,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 1.5698627009987831
+    },
+    {
+      "case": "original-repeat",
+      "files": [
+        "earthrise-1024.png"
+      ],
+      "prompt": "Describe only what is visible in this image. Where is the gray rocky terrain: top or bottom? Is a blue-and-white planet visible? What colors are the background and the planet? Are any people, spacecraft, trees, or printed labels visible? Be specific and do not invent details.",
+      "answer": "Based on the image provided:\n\n- The gray rocky terrain is located at the **bottom** of the image. It forms a curved horizon line across the lower portion.\n- Yes, a blue-and-white planet is visible. It appears as a partially illuminated sphere floating in space, positioned slightly right of center and above the lunar horizon.\n- The background is entirely **black**, representing the vacuum of space.\n- The planet displays shades of **blue** (oceans), **white** (clouds), and hints of **brown/tan** (landmasses).\n- No people, spacecraft, trees, or printed labels are visible in the image. Only the lunar surface, the planet Earth, and the blackness of space are present.",
+      "usage": {
+        "prompt_tokens": 1096,
+        "total_tokens": 1250,
+        "completion_tokens": 154,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 2.2666463903151453
+    },
+    {
+      "case": "vertical-flip",
+      "files": [
+        "earthrise-flipped.png"
+      ],
+      "prompt": "Describe only what is visible in this image. Where is the gray rocky terrain: top or bottom? Is a blue-and-white planet visible? What colors are the background and the planet? Are any people, spacecraft, trees, or printed labels visible? Be specific and do not invent details.",
+      "answer": "Based on the image provided:\n\n- The gray rocky terrain is visible at the **top** of the image. It appears as a curved, textured surface with subtle variations in shading and small craters or depressions.\n\n- Yes, a blue-and-white planet is visible. It is positioned near the center of the image, floating against the black background.\n\n- The background is entirely **black**, representing the vacuum of space.\n\n- The planet displays shades of **blue** (oceans), **white** (clouds), and hints of **brownish/tan** landmasses.\n\n- No people, spacecraft, trees, or printed labels are visible in the image. Only the rocky terrain at the top, the planet in the center, and the black space surrounding them are present.",
+      "usage": {
+        "prompt_tokens": 1096,
+        "total_tokens": 1259,
+        "completion_tokens": 163,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 2.075904625002295
+    },
+    {
+      "case": "lunar-crop",
+      "files": [
+        "lunar-crop.png"
+      ],
+      "prompt": "Describe only what is visible in this image. Where is the gray rocky terrain: top or bottom? Is a blue-and-white planet visible? What colors are the background and the planet? Are any people, spacecraft, trees, or printed labels visible? Be specific and do not invent details.",
+      "answer": "The gray rocky terrain is visible in the **bottom** portion of the image, occupying most of the frame from the lower edge up to a curved horizon line. The surface appears textured with subtle ridges, grooves, and small bright spots \u2014 possibly ice or reflective material \u2014 but no distinct craters, boulders, or geological formations are clearly resolvable at this resolution.\n\nThe **background** above the horizon is solid **black**, indicating space. There is **no blue-and-white planet** visible in the image \u2014 only the grayish-brown surface of what appears to be a moon or icy body (likely Pluto\u2019s moon Charon, based on context, though not labeled).\n\nNo **people**, **spacecraft**, **trees**, or **printed labels** are visible anywhere in the image. The scene is entirely natural terrain against the void of space, with no artificial objects or text present.\n\nColors:  \n- Terrain: shades of **gray**, with some lighter beige or off-white patches.  \n- Background: pure **black**.  \n- No other colors are present.",
+      "usage": {
+        "prompt_tokens": 328,
+        "total_tokens": 549,
+        "completion_tokens": 221,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 2.9783337339758873
+    },
+    {
+      "case": "marked",
+      "files": [
+        "earthrise-marked.png"
+      ],
+      "prompt": "Describe the scene and the added graphic elements. Transcribe the exact printed label. What color and shape is the added object at the upper right? Distinguish artificial overlays from the photograph.",
+      "answer": "Based on the image provided, here is a description of the scene and the added graphic elements:\n\n**Scene Description:**\nThe underlying photograph is the famous \"Earthrise\" image, taken by astronaut William Anders during the Apollo 8 mission in 1968. It shows the planet Earth, partially illuminated, appearing to rise above the barren, cratered horizon of the Moon. The vastness of space is depicted as pure black.\n\n**Added Graphic Elements:**\nTwo distinct graphic elements have been overlaid onto the original photograph:\n\n1.  **Text Label (Upper Left):**\n    *   A white rectangular box with a thin black border.\n    *   Inside the box, the text **\"RAVEN 6247\"** is printed in a black, sans-serif font.\n\n2.  **Colored Shape (Upper Right):**\n    *   A solid, bright **red square**.\n    *   It has no border or text within it.\n\n**Distinction Between Artificial Overlays and Photograph:**\n\n*   **Photograph:** The realistic depiction of the Earth, the lunar surface, and the blackness of space constitutes the original photograph. These elements have natural lighting, textures, and colors.\n*   **Artificial Overlays:** The white text box with \"RAVEN 6247\" and the solid red square are clearly artificial additions. They are flat, geometric shapes with uniform color and sharp edges that do not interact with the lighting or perspective of the underlying photograph. They appear to be digitally placed on top of the image.",
+      "usage": {
+        "prompt_tokens": 1075,
+        "total_tokens": 1398,
+        "completion_tokens": 323,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 3.595490561798215
+    },
+    {
+      "case": "two-images",
+      "files": [
+        "earthrise-1024.png",
+        "lunar-crop.png"
+      ],
+      "prompt": "Compare image 1 and image 2 in that order. Which image shows a blue-and-white planet? Which image is a close crop of gray rocky ground? Are people visible in either? Explain the visible difference.",
+      "answer": "Let's analyze the two images based on your questions.\n\n- **Image 1:** This image displays a view from a celestial body, likely the Moon. In the foreground, there is a gray, rocky surface. In the background, suspended in the blackness of space, is the planet Earth, appearing as a blue and white sphere.\n\n- **Image 2:** This image is a detailed, close-up view of a gray, rocky, and cratered surface. It appears to be a cropped section of the lunar surface seen in the foreground of the first image. The blackness of space is visible at the very top.\n\n---\n\nBased on this analysis, here are the answers to your specific questions:\n\n- **Which image shows a blue-and-white planet?**\n  - Image 1 shows the blue-and-white planet (Earth).\n\n- **Which image is a close crop of gray rocky ground?**\n  - Image 2 is the close crop of the gray rocky ground.\n\n- **Are people visible in either?**\n  - No, there are no people visible in either image.\n\n- **Explain the visible difference.**\n  - The primary difference is the subject and scope of each photograph. Image 1 is a wide-angle shot that captures a vast scene: the lunar horizon in the foreground and the planet Earth in the distant background. It tells a story of perspective and location. Image 2, in contrast, is a tight, detailed crop that focuses exclusively on the texture and topography of the lunar surface itself, removing the context of the planet and space to emphasize the ground's features.",
+      "usage": {
+        "prompt_tokens": 1339,
+        "total_tokens": 1670,
+        "completion_tokens": 331,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 3.870729099959135
+    },
+    {
+      "case": "concurrent-original",
+      "files": [
+        "earthrise-1024.png"
+      ],
+      "prompt": "Describe only what is visible in this image. Where is the gray rocky terrain: top or bottom? Is a blue-and-white planet visible? What colors are the background and the planet? Are any people, spacecraft, trees, or printed labels visible? Be specific and do not invent details.",
+      "answer": "Based on the image provided:\n\n- The gray rocky terrain is located at the **bottom** of the image. It forms a curved horizon line across the lower portion.\n- Yes, a blue-and-white planet is visible. It appears as a partially illuminated sphere floating in space.\n- The background is **black**, representing the vacuum of space.\n- The planet is primarily **blue** (oceans) with swirling **white** patterns (clouds), and some brownish or tan landmasses are faintly visible beneath the clouds.\n- No people, spacecraft, trees, or printed labels are visible in the image.\n\nThe scene depicts Earth rising above the lunar horizon, viewed from the Moon\u2019s surface.",
+      "usage": {
+        "prompt_tokens": 1096,
+        "total_tokens": 1244,
+        "completion_tokens": 148,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 1.8176800152286887
+    },
+    {
+      "case": "concurrent-crop",
+      "files": [
+        "lunar-crop.png"
+      ],
+      "prompt": "Describe only what is visible in this image. Where is the gray rocky terrain: top or bottom? Is a blue-and-white planet visible? What colors are the background and the planet? Are any people, spacecraft, trees, or printed labels visible? Be specific and do not invent details.",
+      "answer": "The gray rocky terrain is visible in the **bottom** portion of the image, occupying most of the frame from the lower edge up to a curved horizon line.\n\nAbove this terrain, the background is **black**, representing space.\n\nThere is **no blue-and-white planet** visible in this image \u2014 only the gray, textured surface of what appears to be a celestial body (likely a moon or asteroid) against the blackness of space.\n\nNo people, spacecraft, trees, or printed labels are visible in the image. The scene contains only the rocky surface and the black void above it.",
+      "usage": {
+        "prompt_tokens": 328,
+        "total_tokens": 449,
+        "completion_tokens": 121,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 1.6607778980396688
+    }
+  ]
+}

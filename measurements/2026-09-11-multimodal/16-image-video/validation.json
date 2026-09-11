@@ -1,0 +1,288 @@
+[
+  {
+    "name": "thinking",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "\n\n17 \u00d7 19 = 17 \u00d7 (20 \u2212 1) = 340 \u2212 17 = 323\n\n323",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": "We need answer simple arithmetic. Need compute 17*19. Show reasoning finish integer. Could do 17*(20-1)=340-17=323. Final integer answer. Ensure finish with integer answer maybe just 323. Need maybe concise.\n"
+    },
+    "usage": {
+      "prompt_tokens": 71,
+      "total_tokens": 173,
+      "completion_tokens": 102,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 63
+      }
+    }
+  },
+  {
+    "name": "long-prefix-COPPER-7319",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "COPPER-7319",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 11371,
+      "total_tokens": 11380,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "long-prefix-VIOLET-4261",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "VIOLET-4261",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 11372,
+      "total_tokens": 11381,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "tool-roundtrip",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "The current temperature in Paris is **15\u00b0C**.",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 339,
+      "total_tokens": 351,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "after-cancellation",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "43",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 25,
+      "total_tokens": 28,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "concurrent-isolation-17x19",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "323",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 27,
+      "total_tokens": 31,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "concurrent-isolation-23x7",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "161",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 26,
+      "total_tokens": 30,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "concurrent-isolation-31x29",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "899",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 27,
+      "total_tokens": 31,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "concurrent-isolation-13x11",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "143",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 27,
+      "total_tokens": 31,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "concurrent-isolation-41x3",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "123",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 26,
+      "total_tokens": 30,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "concurrent-isolation-19x23",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "437",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 27,
+      "total_tokens": 31,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "concurrent-isolation-37x5",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "185",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 26,
+      "total_tokens": 30,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  {
+    "name": "concurrent-isolation-29x17",
+    "passed": true,
+    "answer": {
+      "role": "assistant",
+      "content": "493",
+      "refusal": null,
+      "annotations": null,
+      "audio": null,
+      "function_call": null,
+      "reasoning": null
+    },
+    "usage": {
+      "prompt_tokens": 27,
+      "total_tokens": 31,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  }
+]

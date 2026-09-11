@@ -1,0 +1,16 @@
+{
+  "manual_review": true,
+  "prompt_tokens": 190422,
+  "targeted_plot_questions_correct": 7,
+  "targeted_plot_questions_total": 7,
+  "markers_present": true,
+  "markers_ordered": true,
+  "fresh_cached_answer_identical": false,
+  "load_context": "Shared production traffic; changing batching also affected throughput. Do not claim byte-identical generation for this run.",
+  "summary_assessment": "Coherent core plot and correct targeted questions, with factual inaccuracies.",
+  "inaccuracies": [
+    "Unsupported claim that Manette believed Lucie dead.",
+    "Says Carton bribed Barsad; the plot uses blackmail/coercion.",
+    "Description reverses the main direction of comfort between Carton and the seamstress."
+  ]
+}

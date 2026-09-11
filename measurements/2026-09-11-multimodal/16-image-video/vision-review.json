@@ -1,0 +1,20 @@
+{
+  "manual_review": true,
+  "targeted_checks_passed": 8,
+  "targeted_checks_total": 8,
+  "criteria": [
+    "Original Earth/terrain/sky and absent people/objects",
+    "Repeated original grounded",
+    "Flipped terrain at top",
+    "Crop lacks Earth",
+    "RAVEN 6247 plus red square",
+    "Two-image ordering and content",
+    "Concurrent original grounded",
+    "Concurrent crop grounded"
+  ],
+  "limitations": [
+    "The crop response speculated incorrectly that the body was Charon. It correctly stated Earth was absent.",
+    "Some incidental descriptors such as border/font/land colors are not independently verified.",
+    "Fresh/repeated wording differed under shared production load; semantic targets passed."
+  ]
+}

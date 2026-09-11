@@ -19,3 +19,8 @@ does not relicense model weights or model-generated answers. The book fixture
 comes from Project Gutenberg; its original text and license header
 remain in the compressed fixture and extracted raw file. Recorded generated answers are evaluation
 artifacts, not authoritative editions of the book.
+
+The Earthrise image and its derivatives in benchmarks/fixtures/vision/ are
+based on the NASA / Bill Anders public-domain Apollo 8 photograph. Original
+source, hashes, and explicitly identified test alterations are documented
+with the fixtures.

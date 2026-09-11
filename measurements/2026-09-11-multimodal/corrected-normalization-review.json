@@ -1,0 +1,21 @@
+{
+  "manual_review": true,
+  "targeted_cases_passed": 8,
+  "targeted_cases_total": 8,
+  "checks": [
+    "Original scene contains Earth, black sky, terrain below; no people/spacecraft/trees/labels",
+    "Identical repeated original response",
+    "Flipped terrain correctly placed at top",
+    "Crop correctly lacks Earth",
+    "Exact RAVEN 6247 and red square identified",
+    "Two-image order and difference correct",
+    "Concurrent original grounded",
+    "Concurrent crop grounded"
+  ],
+  "limitations": [
+    "Small controlled visual-grounding test, not a general vision/OCR benchmark",
+    "Descriptions may infer incidental details; e.g. marked label was described as having a thin border",
+    "Video untested and disabled"
+  ],
+  "processor_fix_evidence": "Legacy CLIP normalization misread the label in both direct prompts; mean/std 0.5 read it exactly in both."
+}
