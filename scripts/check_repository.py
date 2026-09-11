@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Offline release checks: hashes, syntax, local links and private-path leaks."""
+import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -12,6 +13,11 @@ for name, row in manifest['overlays'].items():
 for line in (root / 'measurements/SHA256SUMS').read_text().splitlines():
     expected, relative = line.split('  ', 1)
     assert hashlib.sha256((root / 'measurements' / relative).read_bytes()).hexdigest() == expected, relative
+fixtures = root / 'benchmarks/fixtures'
+for name, source in json.loads((fixtures / 'extended-context-sources.json').read_text()).items():
+    raw = gzip.decompress((fixtures / (name + '.txt.gz')).read_bytes())
+    assert hashlib.sha256(raw).hexdigest() == source['raw_sha256'], name
+    assert len(raw) == source['raw_bytes'], name
 ignored = {'.git', '__pycache__', 'data', 'results', 'state', '.venv'}
 for p in root.rglob('*'):
     if not p.is_file() or any(x in ignored for x in p.relative_to(root).parts) or p.name == 'config.json':
@@ -29,4 +35,4 @@ for p in root.rglob('*'):
                 continue
             target = target.split('#')[0]
             assert (p.parent / target).exists(), (p, target)
-print('Repository syntax, overlay identities, local links and private-path checks passed.')
+print('Repository syntax, overlay/measurement/book identities, local links and private-path checks passed.')

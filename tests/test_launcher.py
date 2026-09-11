@@ -189,6 +189,20 @@ class LauncherTests(unittest.TestCase):
         self.assertIn('NCCL_ALGO=Ring', args)
         self.assertFalse(any('mamba_hybrid.py:' in a for a in args))
 
+    def test_historical_replay_does_not_inherit_context_or_cpu_cache(self):
+        import shlex
+        cfg = self.root / 'config.json'
+        cfg.write_text(json.dumps(dict(self.c, max_model_len=524288, kv_offloading_gib=128)))
+        for profile in ['00-baseline', '09-custom-ar-kernel-tuned']:
+            output = subprocess.check_output(['python3', str(ROOT / 'scripts/experiment_command.py'),
+                        profile, '--config', str(cfg)], text=True)
+            args = shlex.split(output)
+            self.assertEqual(args[args.index('--max-model-len') + 1], '262144')
+            self.assertNotIn('--hf-overrides', args)
+            self.assertNotIn('--kv-offloading-size', args)
+            self.assertNotIn('--kv-offloading-backend', args)
+        self.assertEqual(cookbook.config(cfg)['max_model_len'], 524288)
+
     def test_missing_kernel_fails_before_container_mutation(self):
         self.c['tuned_all_reduce'] = True
         with self.assertRaises(FileNotFoundError):

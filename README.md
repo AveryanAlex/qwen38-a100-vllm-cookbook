@@ -15,11 +15,11 @@ This is an independently maintained cookbook for this specific checkpoint and ru
 ## What you get
 
 - A step-by-step setup using Podman and NVIDIA CDI.
-- Seven reviewed source overlays and the exact patches that produce them.
+- Eight source overlays and the exact patches that produce them.
 - A portable launcher and a systemd user service for boot startup and recovery.
 - A source build for the optional tuned all-reduce extension.
 - Image and video input, 999-item caps, corrected preprocessing, and visual/temporal grounding checks.
-- Benchmarks for single/parallel requests, cache reuse, tool calling, thinking, cancellation, and a near-200K book summary.
+- Benchmarks for single/parallel requests, cache reuse, tool calling, thinking, cancellation, a near-200K book summary, and a full 512K-context retrieval/summary check.
 - [Experiment results](docs/RESULTS.md), [patch explanations](docs/PATCHES.md), [kernel study](docs/CUSTOM_ALL_REDUCE.md), and [recorded measurement data](measurements/2026-09-11).
 
 ## 1. Check the hardware and software
@@ -38,7 +38,7 @@ The measured configuration was:
 | Model | AWQ W4A16 g32 routed experts; official FP8 PLE table offloaded to pinned CPU memory |
 | KV cache | BF16; 524,288 total context with 2× YaRN (native: 262,144) |
 
-Have at least **200 GiB of free fast disk** for the approximately 129 GiB checkpoint, image, and compiler caches. Initialization and the large CPU-resident PLE table require substantial host memory; the historical setup guidance was roughly 100 GiB free at minimum, but that minimum was not validated as a capacity target. Use ample headroom; the measurements came from a 503 GiB host. Four PCIe A100s without the same links may perform very differently. Smaller GPU configurations and eight concurrent 200K prompts were not tested.
+Have at least **200 GiB of free fast disk** for the approximately 129 GiB checkpoint, image, and compiler caches. The default configuration reserves approximately **128 GiB of additional host RAM for the CPU KV cache**, on top of the CPU-resident PLE table, workers and temporary allocations. Before startup, check both `free -h` and `df -h /dev/shm`; the shared-memory filesystem must have more than 128 GiB available for that cache and other users. The tested host had 503 GiB RAM and roughly 356 GiB available before enabling CPU caching. A smaller minimum was not validated. Set `kv_offloading_gib` to `0` or a smaller value when provisioning a smaller host, then validate its capacity. Four PCIe A100s without the same links may perform very differently. Smaller GPU configurations and eight concurrent 200K prompts were not tested.
 
 Install Python **3.10+**, Git, curl, Podman, and a working NVIDIA driver/container toolkit. Python benchmark clients use only the standard library; Torch, Transformers, CUDA and the compiler run inside the pinned image. On Ubuntu, base tools can be installed with:
 

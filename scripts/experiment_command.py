@@ -16,6 +16,9 @@ if a.profile not in {d.name for d in profiles.iterdir() if d.is_dir()}:
     p.error('Unknown recorded profile')
 historical = json.loads((profiles / a.profile / 'config.json').read_text())
 c = config(a.config)
+# Replaying an older experiment must not inherit newer serving defaults.
+c['max_model_len'] = historical.get('max_model_len', 262144)
+c['kv_offloading_gib'] = historical.get('kv_offloading_gib', 0)
 c['vision'] = historical.get('vision', False)
 c['tuned_all_reduce'] = historical.get('env', {}).get('QWEN_SM80_AR_TUNING') == '1'
 args = create_command(c)

@@ -11,13 +11,14 @@ See licenses/vllm-Apache-2.0.txt and docs/PATCHES.md.
 
 Modifications: safetensors index filtering; SM80 byte-preserving PLE lookup;
 SM80 skinny GEMM compatibility and dispatch; finalized Mamba cache block size;
-optional all-reduce dispatch and launch geometry. See patches/ for exact diffs.
+optional all-reduce dispatch and launch geometry; CPU-cache scratch-group
+projection. See patches/ for exact diffs.
 
 The model weights and container image are not distributed by this repository.
 The model has its own Qwen Community 1.0 license; the cookbook's Apache license
-does not relicense model weights or model-generated answers. The book fixture
-comes from Project Gutenberg; its original text and license header
-remain in the compressed fixture and extracted raw file. Recorded generated answers are evaluation
+does not relicense model weights or model-generated answers. The book fixtures
+come from Project Gutenberg; their original text and license headers
+remain in the compressed fixtures and extracted raw files. Recorded generated answers are evaluation
 artifacts, not authoritative editions of the book.
 
 The Earthrise image and its derivatives in benchmarks/fixtures/vision/ are

@@ -33,9 +33,11 @@ Historical profile config.json files are audit metadata. Original source mount p
 
 Kernel screening happened under possible production load; later interleaved microbenchmarks still had load sensitivity. The private full-model tuned/stock repeat comparison is the basis for retaining the additional kernel patch.
 
-## Book
+## Books
 
 The Project Gutenberg source URL and raw/clean hashes are recorded in `book-source.json`. The original complete text, including its Project Gutenberg header/license, is bundled as a gzip fixture. The preparation script can also fetch the upstream URL explicitly. The complete clean book has 190,170 model tokens; four margin notes and instructions bring the API prompt to 190,422. Model-generated answers and review notes are included as evaluation evidence, including known factual inaccuracies.
+
+The 512K corpus additionally uses *Moby Dick* and *Pride and Prejudice* excerpts. The complete downloaded source texts, including original Gutenberg notices, are bundled as compressed fixtures; URLs and raw SHA256 identities for all three novels are recorded in [the fixture manifest](../benchmarks/fixtures/extended-context-sources.json). The exact prompt construction and the observed ordering limitation are documented in [the context runbook](CONTEXT.md).
 
 ## Exclusions and interrupted work
 
