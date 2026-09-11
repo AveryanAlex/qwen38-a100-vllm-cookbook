@@ -1,0 +1,17 @@
+{
+  "moby-dick": {
+    "url": "https://www.gutenberg.org/ebooks/2701.txt.utf-8",
+    "raw_sha256": "907420db6c4b68c70e2988cd2ad9c8cf79138667a01b63376d18dd17fef1a18b",
+    "raw_bytes": 1276267
+  },
+  "pride-and-prejudice": {
+    "url": "https://www.gutenberg.org/ebooks/1342.txt.utf-8",
+    "raw_sha256": "3f6bb9d6f78e0293b56acd4714dd68cb7d6d1d293402031ce9d5a216bcaf9d75",
+    "raw_bytes": 772386
+  },
+  "tale-of-two-cities": {
+    "url": "https://www.gutenberg.org/ebooks/98.txt.utf-8",
+    "raw_sha256": "d54c2b80d40a40b982cd88852c6180bb944d95acdb028af3d0e01a1750681784",
+    "raw_bytes": 807197
+  }
+}

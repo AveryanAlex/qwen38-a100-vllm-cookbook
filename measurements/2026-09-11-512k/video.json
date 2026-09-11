@@ -1,0 +1,123 @@
+{
+  "cases": [
+    {
+      "case": "forward",
+      "files": [
+        "sequence.mp4"
+      ],
+      "prompt": "Describe the changes over time, not just the first frame. List the large printed words in their exact chronological order. State the square colors and positions in chronological order. Describe the unchanged background briefly.",
+      "answer": "Based on the video frames provided, here is a description of the changes over time:\n\n**Large Printed Words (Chronological Order):**\nThe large printed words in the top-left corner change sequentially as follows:\n1.  **ALPHA**\n2.  **BRAVO**\n3.  **CHARLIE**\n\n**Square Colors and Positions (Chronological Order):**\nA colored square appears in different locations corresponding to the text changes:\n1.  A **red** square appears in the **top-left** area (below the word \"ALPHA\").\n2.  A **green** square appears in the **top-center** area (below the word \"BRAVO\").\n3.  A **blue** square appears in the **top-right** area (below the word \"CHARLIE\").\n\n**Unchanged Background:**\nThe background remains constant throughout the entire sequence. It features a view of the Earth rising above the gray, cratered horizon of the Moon, set against the blackness of space.",
+      "usage": {
+        "prompt_tokens": 2501,
+        "total_tokens": 2713,
+        "completion_tokens": 212,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 3.165700905956328
+    },
+    {
+      "case": "reverse",
+      "files": [
+        "sequence-reversed.mp4"
+      ],
+      "prompt": "Describe the changes over time, not just the first frame. List the large printed words in their exact chronological order. State the square colors and positions in chronological order. Describe the unchanged background briefly.",
+      "answer": "Based on the video frames provided, here is a description of the changes over time:\n\n**Large Printed Words (Chronological Order):**\nThe large printed word in the top-left corner changes three times throughout the video. In their exact chronological order, the words are:\n1.  **CHARLIE** (appears from 0.0s to 1.0s)\n2.  **BRAVO** (appears from 2.0s to 3.0s)\n3.  **ALPHA** (appears from 4.0s to 5.0s)\n\n**Square Colors and Positions (Chronological Order):**\nA colored square appears in the black area of the image, changing its color and position along with the text.\n1.  **Blue Square:** Initially, a blue square is positioned in the upper-right area of the black section (0.0s - 1.0s).\n2.  **Green Square:** The square then changes to green and moves to the upper-middle area of the black section (2.0s - 3.0s).\n3.  **Red Square:** Finally, the square changes to red and moves to the upper-left area of the black section, directly below the text (4.0s - 5.0s).\n\n**Unchanged Background:**\nThe background remains constant throughout the entire video. It features a view of space, with the planet Earth visible in the center against a black sky. The bottom portion of the image shows the gray, cratered surface of the Moon. The top section containing the text has a white background.",
+      "usage": {
+        "prompt_tokens": 2501,
+        "total_tokens": 2843,
+        "completion_tokens": 342,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 4.218222371768206
+    },
+    {
+      "case": "real-people",
+      "files": [
+        "people-6s.mp4"
+      ],
+      "prompt": "Describe the visible setting and actions across this video. Are people moving or stationary? Mention the road, grass, buildings and any visible parked vehicles if present. Do not identify individuals or invent events.",
+      "answer": "The video depicts an outdoor scene with a road, grassy areas, and buildings in the background. There are several people walking on the road, moving from one side to the other. The road is bordered by grass on both sides, and there are some objects like traffic cones and a tripod camera set up on the grass. In the background, there are brick buildings with windows, and a white van is parked near one of the buildings. The overall setting appears to be a quiet area, possibly a campus or institutional grounds, with no significant activity apart from the people walking.",
+      "usage": {
+        "prompt_tokens": 1901,
+        "total_tokens": 2017,
+        "completion_tokens": 116,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 1.946840105112642
+    },
+    {
+      "case": "three-videos",
+      "files": [
+        "sequence.mp4",
+        "sequence-reversed.mp4",
+        "sequence.mp4"
+      ],
+      "prompt": "There are three videos in order. For EACH video list the large printed words in their chronological order. Be explicit about video 1, 2 and 3.",
+      "answer": "Based on the frames provided for each video, here are the large printed words in their chronological order:\n\n- **Video 1:** The words appear in the following sequence:\n    - ALPHA\n    - BRAVO\n    - CHARLIE\n\n- **Video 2:** The words appear in the following sequence:\n    - CHARLIE\n    - BRAVO\n    - ALPHA\n\n- **Video 3:** The words appear in the following sequence:\n    - ALPHA\n    - BRAVO\n    - CHARLIE",
+      "usage": {
+        "prompt_tokens": 7395,
+        "total_tokens": 7506,
+        "completion_tokens": 111,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 3.6079533426091075
+    },
+    {
+      "case": "three-images",
+      "files": [
+        "earthrise-1024.png",
+        "lunar-crop.png",
+        "earthrise-marked.png"
+      ],
+      "prompt": "For image 1, 2 and 3 in order: say whether Earth is visible, and transcribe any printed label. Which image has the red square?",
+      "answer": "Of course. Here is the analysis of the three images based on your questions.\n\n- **Image 1:**\n    - **Earth Visible:** Yes. The planet Earth is clearly visible as a blue and white sphere, partially illuminated, rising above the grey, cratered horizon of the Moon. This is the famous \"Earthrise\" photograph taken during the Apollo 8 mission.\n    - **Printed Label:** There are no printed labels in this image.\n\n- **Image 2:**\n    - **Earth Visible:** No. This image is a close-up view of the lunar surface, showing its grey, textured terrain against the blackness of space. The Earth is not in the frame.\n\n- **Image 3:**\n    - **Earth Visible:** Yes. This image is identical to the first one, showing the Earth rising over the Moon's horizon.\n    - **Printed Label:** There are two labels present. In the top-left corner, there is a white box with the text \"RAVEN 6247\". In the top-right corner, there is a solid red square.\n\n---\n\nThe image that has the red square is **Image 3**.",
+      "usage": {
+        "prompt_tokens": 2355,
+        "total_tokens": 2600,
+        "completion_tokens": 245,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 3.4107589721679688
+    },
+    {
+      "case": "mixed",
+      "files": [
+        "sequence.mp4",
+        "earthrise-marked.png"
+      ],
+      "prompt": "First describe the sequence of large printed words in the video. Then transcribe the label in the still image and identify its added shape and color.",
+      "answer": "Based on the provided video frames and still image, here is a description of the sequence and the final image.\n\n### Sequence of Large Printed Words in the Video\n\nThe video displays a sequence of words in a large, black, sans-serif font against a white banner at the top of the screen. The words appear in the following order:\n- **ALPHA**: This word is shown first, from approximately 00:00 to 00:01.\n- **BRAVO**: This word replaces \"ALPHA\" and is displayed from approximately 00:02 to 00:03.\n- **CHARLIE**: This word replaces \"BRAVO\" and is shown from approximately 00:04 to 00:05.\n\nThese words are part of the NATO phonetic alphabet.\n\n---\n\n### Description of the Still Image\n\nThe still image appears to be a modified version of the frames from the video.\n\n- **Label Transcription**: The text in the white box in the upper-left corner reads **\"RAVEN 6247\"**.\n- **Added Shape and Color**: A solid **red square** has been added to the upper-right portion of the image, set against the black background of space.",
+      "usage": {
+        "prompt_tokens": 3517,
+        "total_tokens": 3780,
+        "completion_tokens": 263,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_seconds": 3.204505650792271
+    }
+  ]
+}

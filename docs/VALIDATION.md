@@ -85,3 +85,9 @@ The final full-model production rollout with images and videos enabled passed 8 
 The native 128 GiB CPU cache required a new scratch-group projection patch. Its four CPU-only mapping tests passed in the pinned image; the updated portable launcher has 12 passing tests. Patch reconstruction and repository integrity checks cover the new overlay. The first unpatched startup failed and was rolled back; it is preserved as a failed attempt.
 
 The successful production rollout passed 13 functional and 32 prefix-cache checks, image/video grounding checks, and a 190,410-token book test after natural GPU eviction. CPU counters showed 189,600 restored prefix tokens, zero GPU prefix hits and 10.16 GiB transferred; cold/restored answers were byte-identical with seven factual answers and four codes correct. Exact measurements and remaining answer-quality/memory limitations are in the [CPU cache runbook](CPU_CACHE.md).
+
+## 512K extension rollout
+
+The cookbook supports native 262K and 512K with 2× YaRN, with 14 passing launcher tests including context/override consistency and readiness validation. The example selects 512K; old configs remain native. No new vLLM source patch was needed for the extension itself.
+
+Production completed an exact 522,240-token prompt with a 2,048-token output allowance. The server rejected one token over the total budget, returned 912 output tokens normally, retrieved all eight codes and answered seven factual book questions correctly. **Strict ordering failed because two codes were swapped.** A follow-up was cancelled after the user requested skipping quiet-window work; it is not counted as a completed cold/cached validation. The 13 functional and 32 prefix-cache checks passed, as did the targeted image/video checks. The [context runbook](CONTEXT.md) records exact outcomes, shared-load performance and memory limits.

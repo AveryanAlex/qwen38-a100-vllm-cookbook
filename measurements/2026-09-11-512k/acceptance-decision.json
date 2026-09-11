@@ -1,0 +1,9 @@
+{
+  "decision": "retain 512K deployment with documented answer-quality limitation",
+  "full_prompt_tokens": 522240,
+  "all_eight_codes_retrieved": true,
+  "strict_code_order_passed": false,
+  "manual_review_seven_factual_answers_correct": true,
+  "followup_benchmark": "cancelled after user requested skipping quiet-window work",
+  "no_claim_of_quiet_full_context_performance": true
+}

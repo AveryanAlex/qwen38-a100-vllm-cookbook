@@ -1,0 +1,54 @@
+{
+  "time": 1789152715.9236295,
+  "checks": {
+    "health": true,
+    "running": true,
+    "all_overlay_hashes": true,
+    "configured_max_context": true,
+    "model_alias": true,
+    "functional_checks_13": true,
+    "lock_available": true,
+    "nccl_auto": true,
+    "args_match": true,
+    "image_pinned": true,
+    "tuned_env": true,
+    "hashed_files_mounted": true,
+    "model_readonly": true,
+    "vision_enabled": true,
+    "vision_processor_correct": true,
+    "vision_image_limit": true,
+    "pids_limit_8192": true
+  },
+  "max_model_len": 524288,
+  "hf_overrides": {
+    "text_config": {
+      "rope_parameters": {
+        "rope_type": "yarn",
+        "rope_theta": 10000000,
+        "factor": 2.0,
+        "original_max_position_embeddings": 262144,
+        "partial_rotary_factor": 0.25,
+        "mrope_section": [
+          11,
+          11,
+          10
+        ],
+        "mrope_interleaved": true
+      }
+    }
+  },
+  "running": true,
+  "oom_killed": false,
+  "restart_count": 0,
+  "health": 200,
+  "startup_memory_lines": [
+    "(Worker_TP0_EP0 pid=313) INFO 09-11 18:38:52 [gpu_worker.py:660] Available KV cache memory: 10.3 GiB",
+    "(EngineCore pid=298) INFO 09-11 18:38:52 [kv_cache_utils.py:2324] GPU KV cache size: 765,664 tokens, Maximum concurrency for 524,288 tokens per request: 1.46x"
+  ],
+  "warning_counts": {
+    "memory allocation failed with OOM": 12,
+    "OutOfMemoryError": 0,
+    "Traceback": 0,
+    " ERROR ": 0
+  }
+}

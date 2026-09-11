@@ -1,0 +1,36 @@
+{
+  "prompt_tokens": 522240,
+  "all_eight_codes_present": true,
+  "strict_order_passed": false,
+  "expected_codes": [
+    "LEDGER-875759AAB1CC",
+    "LEDGER-64F3152D0D9D",
+    "LEDGER-F9E5EED5D422",
+    "LEDGER-E17690B0B6A0",
+    "LEDGER-4A9740A78CFE",
+    "LEDGER-847BF7E4EB31",
+    "LEDGER-4CC9AE351227",
+    "LEDGER-57CB506B3D0F"
+  ],
+  "observed_codes": [
+    "LEDGER-875759AAB1CC",
+    "LEDGER-64F3152D0D9D",
+    "LEDGER-F9E5EED5D422",
+    "LEDGER-E17690B0B6A0",
+    "LEDGER-4A9740A78CFE",
+    "LEDGER-4CC9AE351227",
+    "LEDGER-847BF7E4EB31",
+    "LEDGER-57CB506B3D0F"
+  ],
+  "targeted_factual_answers_correct": 7,
+  "summary_review": "Coherent main plot, sacrifice and ending, with no mixing of the surrounding novels. This is not an exhaustive factual audit.",
+  "vision_targeted_cases_passed": 8,
+  "video_multi_input_targeted_cases_passed": 6,
+  "vision_video_limitations": [
+    "Incidental interpretations of terrain and objects in the real video are not all grounded; targeted OCR, orientation, presence/absence, and forward/reversed sequences passed."
+  ],
+  "long_request_preemptions_engine_delta": 6.0,
+  "long_request_server_generation_delta": 1844.0,
+  "long_request_expected_generation": 912,
+  "followup": "Cancelled at user request to skip quiet-window work; partial artifact is not a completed validation."
+}

@@ -1,4 +1,5 @@
 import importlib.util
+import io
 import json
 import os
 from pathlib import Path
@@ -6,6 +7,7 @@ import subprocess
 import tempfile
 import unittest
 from unittest.mock import patch
+from unittest.mock import MagicMock
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('cookbook', ROOT / 'scripts/cookbook.py')
@@ -62,6 +64,27 @@ class LauncherTests(unittest.TestCase):
         self.assertIn('--language-model-only', cookbook.create_command(loaded))
         self.assertEqual(loaded['kv_offloading_gib'], 0)
         self.assertNotIn('--kv-offloading-size', cookbook.create_command(loaded))
+        self.assertEqual(loaded['max_model_len'], 262144)
+        self.assertNotIn('--hf-overrides', cookbook.create_command(loaded))
+
+    def test_context_extension_keeps_performance_settings_and_mrope(self):
+        native = cookbook.create_command(self.c)
+        self.c['max_model_len'] = 524288
+        cfg = self.root / 'config.json'
+        cfg.write_text(json.dumps(self.c))
+        extended = cookbook.create_command(cookbook.config(cfg))
+        self.assertEqual(extended[extended.index('--max-model-len') + 1], '524288')
+        rope = json.loads(extended[extended.index('--hf-overrides') + 1])['text_config']['rope_parameters']
+        self.assertEqual(rope['factor'], 2.0)
+        self.assertEqual(rope['original_max_position_embeddings'], 262144)
+        self.assertEqual(rope['mrope_section'], [11, 11, 10])
+        self.assertTrue(rope['mrope_interleaved'])
+        for flag in ['--compilation-config', '--speculative-config', '--max-num-seqs', '--max-num-batched-tokens', '--gpu-memory-utilization']:
+            self.assertEqual(native[native.index(flag) + 1], extended[extended.index(flag) + 1])
+        for value in [True, 1048576, '524288']:
+            cfg.write_text(json.dumps(dict(self.c, max_model_len=value)))
+            with self.assertRaisesRegex(ValueError, 'max_model_len'):
+                cookbook.config(cfg)
 
     def test_cpu_cache_config_and_invalid_capacity(self):
         cfg = self.root / 'config.json'
@@ -75,6 +98,21 @@ class LauncherTests(unittest.TestCase):
         self.assertEqual(args[args.index('--kv-offloading-backend') + 1], 'native')
         self.assertEqual(args[args.index('--ipc') + 1], 'host')
         self.assertTrue(any('/overlays/offloading_connector.py:' in arg for arg in args))
+
+    def test_readiness_checks_configured_context(self):
+        self.c['max_model_len'] = 524288
+        for advertised in [524288, 262144]:
+            health = MagicMock()
+            health.__enter__.return_value.status = 200
+            models = io.BytesIO(json.dumps({'data': [{'id': cookbook.MODEL_ALIAS, 'max_model_len': advertised}]}).encode())
+            with patch.object(cookbook, 'inspect', return_value={'State': {'Running': True}}), \
+                 patch.object(cookbook.urllib.request, 'urlopen', side_effect=[health, models]), \
+                 patch('builtins.print'):
+                if advertised == 524288:
+                    cookbook.wait(self.c, 1)
+                else:
+                    with self.assertRaisesRegex(RuntimeError, 'Unexpected model'):
+                        cookbook.wait(self.c, 1)
 
     def test_refuses_foreign_container_before_stop(self):
         with patch.object(cookbook, 'unit_active', return_value=False), \

@@ -1,0 +1,119 @@
+{
+  "sources": {
+    "moby-dick": {
+      "sha256": "907420db6c4b68c70e2988cd2ad9c8cf79138667a01b63376d18dd17fef1a18b",
+      "bytes": 1276267
+    },
+    "tale-of-two-cities": {
+      "sha256": "d54c2b80d40a40b982cd88852c6180bb944d95acdb028af3d0e01a1750681784",
+      "bytes": 807197
+    },
+    "pride-and-prejudice": {
+      "sha256": "3f6bb9d6f78e0293b56acd4714dd68cb7d6d1d293402031ce9d5a216bcaf9d75",
+      "bytes": 772386
+    }
+  },
+  "prompt_tokens_local": 522240,
+  "max_output_tokens": 2048,
+  "total_token_budget": 524288,
+  "prompt_sha256": "adaddd07fc0fa18bedeef00fa688e924c8f09aa0103a5fb1f6369d63e799b097",
+  "markers": [
+    "LEDGER-875759AAB1CC",
+    "LEDGER-64F3152D0D9D",
+    "LEDGER-F9E5EED5D422",
+    "LEDGER-E17690B0B6A0",
+    "LEDGER-4A9740A78CFE",
+    "LEDGER-847BF7E4EB31",
+    "LEDGER-4CC9AE351227",
+    "LEDGER-57CB506B3D0F"
+  ],
+  "marker_content_token_offsets": [
+    11529,
+    81812,
+    155761,
+    229222,
+    302890,
+    375893,
+    446533,
+    511808
+  ],
+  "complete_book": "A Tale of Two Cities",
+  "book_start_content_token_offset": 170049,
+  "book_end_content_token_offset": 360279,
+  "started": 1789152232.076766,
+  "advertised_model": {
+    "id": "qwen38-flash-next-uncensored",
+    "object": "model",
+    "created": 1789152232,
+    "owned_by": "vllm",
+    "root": "/model",
+    "parent": null,
+    "max_model_len": 524288,
+    "permission": [
+      {
+        "id": "modelperm-881d6635164a222c",
+        "object": "model_permission",
+        "created": 1789152232,
+        "allow_create_engine": false,
+        "allow_sampling": true,
+        "allow_logprobs": true,
+        "allow_search_indices": false,
+        "allow_view": true,
+        "allow_fine_tuning": false,
+        "organization": "*",
+        "group": null,
+        "is_blocking": false
+      }
+    ]
+  },
+  "one_over_limit": {
+    "http_status": 400,
+    "error_body": "{\"error\":{\"message\":\"This model's maximum context length is 524288 tokens. However, you requested 2049 output tokens and your prompt contains at least 522240 input tokens, for a total of at least 524289 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=522240)\",\"type\":\"BadRequestError\",\"param\":\"input_tokens\",\"code\":400}}"
+  },
+  "cold_metrics_before": {
+    "vllm:kv_offload_load_bytes_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 769433600.0,
+    "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1986728.0,
+    "vllm:prefix_cache_queries_created{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1789152068.410857,
+    "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1666400.0,
+    "vllm:prefix_cache_hits_created{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1789152068.4108734,
+    "vllm:external_prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 320328.0,
+    "vllm:external_prefix_cache_queries_created{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1789152068.4108891,
+    "vllm:external_prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 10400.0,
+    "vllm:external_prefix_cache_hits_created{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1789152068.410905,
+    "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 0.0,
+    "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 16793.0,
+    "vllm:cache_config_info{_block_size_resolved=\"True\",block_size=\"800\",cache_dtype=\"auto\",enable_mamba_fine_grained_prefix_cache=\"False\",enable_prefix_caching=\"True\",engine=\"0\",gpu_memory_utilization=\"0.85\",is_attention_free=\"False\",kv_cache_dtype_skip_layers=\"[]\",kv_cache_layout=\"None\",kv_cache_max_concurrency=\"1.460388639760837\",kv_cache_memory_bytes=\"None\",kv_cache_size_tokens=\"765664\",kv_offloading_backend=\"native\",kv_offloading_size=\"128.0\",kv_sharing_fast_prefill=\"False\",mamba_block_size=\"16\",mamba_cache_dtype=\"auto\",mamba_cache_mode=\"align\",mamba_page_size_padded=\"None\",mamba_ssm_cache_dtype=\"float32\",num_cpu_blocks=\"None\",num_gpu_blocks=\"977\",num_gpu_blocks_override=\"None\",prefix_cache_retention_interval=\"0\",prefix_caching_hash_algo=\"sha256\",prefix_match_unit=\"None\",replayssm_buffer_len=\"16\",skip_page_size_padded=\"None\",sliding_window=\"None\",use_kda_recoverssm=\"False\",use_replayssm=\"False\",user_specified_block_size=\"False\",user_specified_mamba_block_size=\"False\"}": 1.0
+  },
+  "cold": {
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 522240,
+      "total_tokens": 523152,
+      "completion_tokens": 912,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "answer": "**1. LEDGER Reference Codes**\n\n1. LEDGER-875759AAB1CC\n2. LEDGER-64F3152D0D9D\n3. LEDGER-F9E5EED5D422\n4. LEDGER-E17690B0B6A0\n5. LEDGER-4A9740A78CFE\n6. LEDGER-4CC9AE351227\n7. LEDGER-847BF7E4EB31\n8. LEDGER-57CB506B3D0F\n\n**2. Summary of *A Tale of Two Cities***\n\nSet against the backdrop of the French Revolution, *A Tale of Two Cities* follows the intertwined lives of Charles Darnay, a French aristocrat who renounces his title to live in England, and Sydney Carton, a brilliant but dissolute English lawyer. The story begins with Dr. Alexandre Manette, who is released from the Bastille after eighteen years of imprisonment and reunited with his daughter, Lucie, in London. Lucie becomes the \"golden thread\" that binds her father and the men who love her together.\n\nDarnay, who loves Lucie, is tried for treason in London, where Carton helps secure his acquittal by revealing his own physical resemblance to Darnay. Darnay and Lucie marry and live happily, but the political turmoil in France draws Darnay back to Paris to save his former servant, Gabelle. Upon arrival, Darnay is arrested as an emigrant aristocrat. Dr. Manette, revered for his suffering under the old regime, uses his influence to secure Darnay\u2019s release, but Darnay is immediately rearrested on the denunciation of the Defarges, wine-shop owners who lead the revolutionary mob.\n\nThe Defarges\u2019 hatred is rooted in the crimes of Darnay\u2019s uncle, the Marquis St. Evr\u00e9monde, who destroyed the Defarge family. Madame Defarge, driven by vengeance, keeps a knitted register of those condemned to die. During Darnay\u2019s second trial, Dr. Manette\u2019s own letter, found in the Bastille, reveals that he was imprisoned by the Evr\u00e9monde brothers to keep silent about their atrocities. This letter seals Darnay\u2019s fate, and he is sentenced to the guillotine.\n\nSydney Carton, who loves Lucie unrequitedly, sees an opportunity for redemption. He visits Darnay in prison, drugs him, and exchanges clothes with him. Carton takes Darnay\u2019s place on the tumbril, allowing Darnay to escape with his family. As Carton faces death, he finds peace, envisioning a future where Lucie names her son after him and his sacrifice brings happiness to those he loved. He is executed alongside a young seamstress who comforts him in his final moments.\n\nMeanwhile, Madame Defarge goes to the Manette house to arrest Lucie but encounters Miss Pross, Lucie\u2019s devoted English servant. A violent struggle ensues, during which Madame Defarge\u2019s own pistol discharges, killing her instantly. The novel concludes with Carton\u2019s famous prophecy of a better future, declaring his act \"a far, far better thing\" than he has ever done, and \"a far, far better rest\" than he has ever known.\n\n**3. Brief Answers**\n\n*   **Who marries Lucie?** Charles Darnay.\n*   **Who dies at the guillotine in whose place?** Sydney Carton dies in the place of Charles Darnay.\n*   **Why does he sacrifice himself?** He loves Lucie Manette unconditionally and wishes to secure her happiness and the safety of her family, finding redemption for his wasted life through this act of selflessness.\n*   **What happens to Madame Defarge?** She is killed by her own pistol during a struggle with Miss Pross.\n*   **What is Jerry Cruncher's secret occupation?** He is a \"Resurrection Man\" (grave robber/body snatcher).\n*   **What is Dr Manette's prison designation?** One Hundred and Five, North Tower.\n*   **How is the Marquis related to Darnay?** The Marquis St. Evr\u00e9monde is Darnay\u2019s uncle.",
+    "finish_reason": "stop",
+    "ttft_seconds": 127.52006450016052,
+    "elapsed_seconds": 135.93368073692545,
+    "decode_tps": 108.83419799858049,
+    "markers_present": true,
+    "markers_ordered": false
+  },
+  "cold_metrics_after": {
+    "vllm:kv_offload_load_bytes_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 63953510400.0,
+    "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 2508968.0,
+    "vllm:prefix_cache_queries_created{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1789152068.410857,
+    "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1666400.0,
+    "vllm:prefix_cache_hits_created{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1789152068.4108734,
+    "vllm:external_prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 842568.0,
+    "vllm:external_prefix_cache_queries_created{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1789152068.4108891,
+    "vllm:external_prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 10400.0,
+    "vllm:external_prefix_cache_hits_created{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 1789152068.410905,
+    "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 6.0,
+    "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-uncensored\"}": 18637.0,
+    "vllm:cache_config_info{_block_size_resolved=\"True\",block_size=\"800\",cache_dtype=\"auto\",enable_mamba_fine_grained_prefix_cache=\"False\",enable_prefix_caching=\"True\",engine=\"0\",gpu_memory_utilization=\"0.85\",is_attention_free=\"False\",kv_cache_dtype_skip_layers=\"[]\",kv_cache_layout=\"None\",kv_cache_max_concurrency=\"1.460388639760837\",kv_cache_memory_bytes=\"None\",kv_cache_size_tokens=\"765664\",kv_offloading_backend=\"native\",kv_offloading_size=\"128.0\",kv_sharing_fast_prefill=\"False\",mamba_block_size=\"16\",mamba_cache_dtype=\"auto\",mamba_cache_mode=\"align\",mamba_page_size_padded=\"None\",mamba_ssm_cache_dtype=\"float32\",num_cpu_blocks=\"None\",num_gpu_blocks=\"977\",num_gpu_blocks_override=\"None\",prefix_cache_retention_interval=\"0\",prefix_caching_hash_algo=\"sha256\",prefix_match_unit=\"None\",replayssm_buffer_len=\"16\",skip_page_size_padded=\"None\",sliding_window=\"None\",use_kda_recoverssm=\"False\",use_replayssm=\"False\",user_specified_block_size=\"False\",user_specified_mamba_block_size=\"False\"}": 1.0
+  }
+}

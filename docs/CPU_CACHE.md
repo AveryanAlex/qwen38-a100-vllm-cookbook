@@ -67,7 +67,7 @@ curl -fsS http://127.0.0.1:19088/metrics | rg 'kv_offload_(load|store)_bytes_tot
 
 Stores prove that blocks reached RAM. Loads must increase during a cache revisit to establish restoration. Counter values are engine-wide and include other clients, so use an otherwise quiet endpoint for precise attribution.
 
-Run the book test against the native 262K deployment:
+Run the approximately 190K book test against either context configuration (the measurements below used native 262K):
 
 ```bash
 python3 scripts/prepare_book.py

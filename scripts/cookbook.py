@@ -24,6 +24,10 @@ MODEL_ALIAS = 'qwen38-flash-next-uncensored'
 COMPILATION = {'mode': 0, 'cudagraph_mode': 'FULL_AND_PIECEWISE',
                'cudagraph_capture_sizes': [2, 4, 6, 8, 12, 16, 64, 256, 784, 4096],
                'max_cudagraph_capture_size': 4096}
+YARN_512K = {'text_config': {'rope_parameters': {
+    'rope_type': 'yarn', 'rope_theta': 10000000, 'factor': 2.0,
+    'original_max_position_embeddings': 262144, 'partial_rotary_factor': 0.25,
+    'mrope_section': [11, 11, 10], 'mrope_interleaved': True}}}
 
 
 def run(args, **kwargs):
@@ -34,7 +38,8 @@ def config(path):
     c = json.loads(path.read_text())
     c.setdefault('vision', False)  # Preserve existing text-only configurations.
     c.setdefault('kv_offloading_gib', 0)  # Existing configs must opt into host RAM allocation.
-    allowed = {'model_dir', 'state_dir', 'container_name', 'port', 'tuned_all_reduce', 'vision', 'kv_offloading_gib'}
+    c.setdefault('max_model_len', 262144)  # Existing configs retain native RoPE.
+    allowed = {'model_dir', 'state_dir', 'container_name', 'port', 'tuned_all_reduce', 'vision', 'kv_offloading_gib', 'max_model_len'}
     if set(c) != allowed:
         raise ValueError(f'Config must contain exactly {sorted(allowed)}')
     for key in ['model_dir', 'state_dir']:
@@ -54,6 +59,8 @@ def config(path):
         raise ValueError('tuned_all_reduce must be boolean')
     if type(c['kv_offloading_gib']) is not int or c['kv_offloading_gib'] < 0:
         raise ValueError('kv_offloading_gib must be a nonnegative integer (GiB total across TP ranks)')
+    if type(c['max_model_len']) is not int or c['max_model_len'] not in (262144, 524288):
+        raise ValueError('max_model_len must be 262144 (native) or 524288 (2x YaRN)')
     if any(ch in str(ROOT) for ch in ':\n\r'):
         raise ValueError('Repository path cannot contain colon or newline')
     return c
@@ -103,13 +110,15 @@ def create_command(c):
                  '--volume', f'{state(c) / "extensions"}:/opt/q38-ar:ro']
     args += [IMAGE, '/model', '--host', '127.0.0.1', '--port', str(c['port']),
              '--served-model-name', MODEL_ALIAS, '--tensor-parallel-size', '4',
-             '--enable-expert-parallel', '--max-model-len', '262144',
+             '--enable-expert-parallel', '--max-model-len', str(c.get('max_model_len', 262144)),
              '--max-num-seqs', '8', '--max-num-batched-tokens', '4096',
              '--gpu-memory-utilization', '0.85',
              '--enable-prefix-caching', '--enable-auto-tool-choice',
              '--tool-call-parser', 'qwen3_xml', '--reasoning-parser', 'qwen3',
              '--compilation-config', json.dumps(COMPILATION),
              '--speculative-config', json.dumps({'method': 'mtp', 'num_speculative_tokens': 1})]
+    if c.get('max_model_len', 262144) == 524288:
+        args += ['--hf-overrides', json.dumps(YARN_512K)]
     if c.get('kv_offloading_gib', 0):
         args += ['--kv-offloading-size', str(c['kv_offloading_gib']),
                  '--kv-offloading-backend', 'native']
@@ -198,6 +207,7 @@ def stop(c):
 def wait(c, timeout):
     deadline = time.monotonic() + timeout
     url = f'http://127.0.0.1:{c["port"]}'
+    expected_context = c.get('max_model_len', 262144)
     while time.monotonic() < deadline:
         item = inspect(c)
         if item and not item['State']['Running']:
@@ -208,9 +218,9 @@ def wait(c, timeout):
                     raise RuntimeError('Health check failed')
             with urllib.request.urlopen(url + '/v1/models', timeout=5) as r:
                 models = json.load(r)['data']
-            if not any(m['id'] == MODEL_ALIAS and m['max_model_len'] == 262144 for m in models):
+            if not any(m['id'] == MODEL_ALIAS and m['max_model_len'] == expected_context for m in models):
                 raise RuntimeError('Unexpected model alias or context length')
-            print(f'Ready: {url}/v1 — {MODEL_ALIAS}, context 262144')
+            print(f'Ready: {url}/v1 — {MODEL_ALIAS}, context {expected_context}')
             return
         except (OSError, ValueError):
             time.sleep(15)

@@ -37,7 +37,9 @@ base_messages=[{'role':'user','content':'x'}]
 base_count=len(token_ids(base_messages))
 probe=len(token_ids([{'role':'user','content':'x'+(' x'*100)}]))
 assert probe-base_count==100,(base_count,probe)
-for label,target_input,output in [('one_over_native',262144,1),('one_million_total',1048576-64,64)]:
+configured_limit=result['advertised_model']['max_model_len']
+assert configured_limit in (262144,524288), configured_limit
+for label,target_input,output in [('one_over_configured_limit',configured_limit,1),('one_million_total',1048576-64,64)]:
  text='x'+(' x'*(target_input-base_count))
  row=send(label,text,output)
  assert row['prompt_tokens_local_template']==target_input

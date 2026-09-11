@@ -8,6 +8,8 @@ On the tested **4 × A100-SXM4-40GB / NVLink** machine, matched single-request t
 
 **The example configuration also enables a 128 GiB native CPU KV cache.** The verified 190K book revisit after GPU eviction reached its first token in **1.52 s**, versus **20.35 s cold**, while single decode remained **108.56 tokens/s**. The recipe includes the required scratch-cache compatibility patch. [Setup, results and limitations](docs/CPU_CACHE.md).
 
+**512K context is enabled in the example configuration with 2× YaRN.** Production completed a 522,240-token prompt, retrieved all eight reference codes and answered seven book questions correctly. It swapped two codes in order; that quality limitation and the shared-load measurements are preserved in the [context runbook](docs/CONTEXT.md).
+
 This is an independently maintained cookbook for this specific checkpoint and runtime. The image's `v0.13.0-sm80` tag is a **backport version**, not upstream vLLM 0.13. Do not substitute a current upstream wheel or `latest` container tag and expect the same behavior.
 
 ## What you get
@@ -34,7 +36,7 @@ The measured configuration was:
 | NVIDIA driver | 580.126.09 |
 | Runtime | Rootless Podman 5.8.4 with NVIDIA CDI |
 | Model | AWQ W4A16 g32 routed experts; official FP8 PLE table offloaded to pinned CPU memory |
-| KV cache | BF16; native maximum context 262,144 tokens |
+| KV cache | BF16; 524,288 total context with 2× YaRN (native: 262,144) |
 
 Have at least **200 GiB of free fast disk** for the approximately 129 GiB checkpoint, image, and compiler caches. Initialization and the large CPU-resident PLE table require substantial host memory; the historical setup guidance was roughly 100 GiB free at minimum, but that minimum was not validated as a capacity target. Use ample headroom; the measurements came from a 503 GiB host. Four PCIe A100s without the same links may perform very differently. Smaller GPU configurations and eight concurrent 200K prompts were not tested.
 
@@ -76,7 +78,8 @@ Edit `config.json` for your machine:
   "port": 19088,
   "tuned_all_reduce": true,
   "vision": true,
-  "kv_offloading_gib": 128
+  "kv_offloading_gib": 128,
+  "max_model_len": 524288
 }
 ```
 
@@ -85,6 +88,8 @@ The launcher expands `~/`. Use absolute paths otherwise. Keep this checkout and 
 `vision: true` enables **image and video input** with the processor settings described in the [multimodal guide](docs/VISION.md). Both item counts are set to **999 per request**; context and memory still bound real requests. Video uses explicit frame and pixel budgets, described in the guide. Set it to `false` for the original text-only recipe. Existing configuration files without `vision` preserve text-only behavior.
 
 `kv_offloading_gib: 128` reserves approximately **128 GiB total host RAM across TP4** for the native CPU KV cache. It retains reusable prefixes beyond GPU-cache eviction. Budget this in addition to the model's CPU PLE table and other host memory, and ensure `/dev/shm` has sufficient space. Set it to `0` to disable; existing configs without the field default to `0`. See the [CPU cache runbook](docs/CPU_CACHE.md) for setup, verification and performance limits.
+
+`max_model_len: 524288` enables **512K total context with 2× YaRN**. The launcher preserves the checkpoint's native 262K position setting and supplies the multimodal-aware scaling override. Set this field to `262144` for native positions without scaling; existing configs without it remain native. The budget includes prompt, visual, reasoning and output tokens. See the [context-extension runbook](docs/CONTEXT.md).
 
 `tuned_all_reduce: true` selects the measured reduction-kernel tuning. Set it to `false` to use the existing custom all-reduce kernel and skip the extension build; this still includes the correctness fix and main speedups, reaching approximately 107.8 decode tokens/s in the matched 256-token tests. The extension adds about **0.62%**, not the main 22× gain.
 
@@ -227,7 +232,7 @@ Original text-only tuned configuration, four repeated 256-token suites (the imag
 
 Decode rate excludes time to first token. Aggregate rate includes request startup, so it is not simply the per-request decode rate multiplied by concurrency. SSE can batch multiple tokens per chunk, especially with MTP; these are client-observed streaming estimates using API token counts. Compare the same prompts, output length, cache state, and load. Results are workload-specific, not a hardware-wide guarantee.
 
-**Context limit:** this deployment supports a configured **262,144-token total context**, not 1M. An exact 1,048,576-token admission test returned HTTP 400. [Test details and reproduction](docs/CONTEXT.md).
+**Context limit:** the example configuration selects **524,288 total tokens with 2× YaRN**; the checkpoint's native limit is 262,144. This recipe does not enable 1M. [Test details and reproduction](docs/CONTEXT.md).
 
 ## 8. Verify a near-200K context with a real book
 

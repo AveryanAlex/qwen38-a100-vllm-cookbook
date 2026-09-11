@@ -1,0 +1,17 @@
+{
+  "text_config": {
+    "rope_parameters": {
+      "rope_type": "yarn",
+      "rope_theta": 10000000,
+      "factor": 2.0,
+      "original_max_position_embeddings": 262144,
+      "partial_rotary_factor": 0.25,
+      "mrope_section": [
+        11,
+        11,
+        10
+      ],
+      "mrope_interleaved": true
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "archive_id": "512K-20260911-quiet",
+  "sources": {
+    "moby-dick": {
+      "sha256": "907420db6c4b68c70e2988cd2ad9c8cf79138667a01b63376d18dd17fef1a18b",
+      "bytes": 1276267
+    },
+    "tale-of-two-cities": {
+      "sha256": "d54c2b80d40a40b982cd88852c6180bb944d95acdb028af3d0e01a1750681784",
+      "bytes": 807197
+    },
+    "pride-and-prejudice": {
+      "sha256": "3f6bb9d6f78e0293b56acd4714dd68cb7d6d1d293402031ce9d5a216bcaf9d75",
+      "bytes": 772386
+    }
+  },
+  "prompt_tokens_local": 522240,
+  "max_output_tokens": 2048,
+  "total_token_budget": 524288,
+  "prompt_sha256": "618090251af86686113f35f061a49b48f009f384e6aa15e5735fc7983a917933",
+  "markers": [
+    "LEDGER-875759AAB1CC",
+    "LEDGER-64F3152D0D9D",
+    "LEDGER-F9E5EED5D422",
+    "LEDGER-E17690B0B6A0",
+    "LEDGER-4A9740A78CFE",
+    "LEDGER-847BF7E4EB31",
+    "LEDGER-4CC9AE351227",
+    "LEDGER-57CB506B3D0F"
+  ],
+  "marker_content_token_offsets": [
+    11531,
+    81814,
+    155763,
+    229224,
+    302892,
+    375878,
+    446535,
+    511810
+  ],
+  "complete_book": "A Tale of Two Cities",
+  "book_start_content_token_offset": 170051,
+  "book_end_content_token_offset": 360281,
+  "started": 1789152510.9684827,
+  "advertised_model": {
+    "id": "qwen38-flash-next-uncensored",
+    "object": "model",
+    "created": 1789152511,
+    "owned_by": "vllm",
+    "root": "/model",
+    "parent": null,
+    "max_model_len": 524288,
+    "permission": [
+      {
+        "id": "modelperm-860a227e2d448e13",
+        "object": "model_permission",
+        "created": 1789152511,
+        "allow_create_engine": false,
+        "allow_sampling": true,
+        "allow_logprobs": true,
+        "allow_search_indices": false,
+        "allow_view": true,
+        "allow_fine_tuning": false,
+        "organization": "*",
+        "group": null,
+        "is_blocking": false
+      }
+    ]
+  },
+  "one_over_limit": {
+    "http_status": 400,
+    "error_body": "{\"error\":{\"message\":\"This model's maximum context length is 524288 tokens. However, you requested 2049 output tokens and your prompt contains at least 522240 input tokens, for a total of at least 524289 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=522240)\",\"type\":\"BadRequestError\",\"param\":\"input_tokens\",\"code\":400}}"
+  }
+}

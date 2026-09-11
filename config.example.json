@@ -5,5 +5,6 @@
   "port": 19088,
   "tuned_all_reduce": true,
   "vision": true,
-  "kv_offloading_gib": 128
+  "kv_offloading_gib": 128,
+  "max_model_len": 524288
 }
