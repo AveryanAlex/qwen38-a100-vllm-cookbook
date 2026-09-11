@@ -174,7 +174,9 @@ class LauncherTests(unittest.TestCase):
         cfg.write_text(json.dumps(self.c))
         output = subprocess.check_output(['python3', str(ROOT / 'scripts/experiment_command.py'),
                     '09-custom-ar-kernel-tuned', '--config', str(cfg)], text=True)
-        self.assertEqual(shlex.split(output), cookbook.create_command(self.c))
+        expected = cookbook.create_command(self.c)
+        expected.remove('--enable-prompt-tokens-details')
+        self.assertEqual(shlex.split(output), expected)
 
     def test_historical_baseline_has_original_graph_and_collective_settings(self):
         import shlex

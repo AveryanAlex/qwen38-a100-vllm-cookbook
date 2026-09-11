@@ -56,6 +56,30 @@ The launcher supplies these vLLM options:
 
 Keep `VLLM_USE_SIMPLE_KV_OFFLOAD` unset: the tested connector is `OffloadingConnector`. No LMCache service or extra package is required. The setting persists in `config.json`, so a service restart recreates the same configuration. Restarting the existing container also preserves its arguments. **CPU cache contents are ephemeral and start cold after a model-server restart.** Restarting Podman's API service alone does not restart the model.
 
+## Per-request cache usage in the API
+
+The cookbook launcher includes `--enable-prompt-tokens-details`. This exposes cached-token counts in Chat Completions usage, independently of whether CPU offloading is enabled:
+
+| Endpoint | Cached-token field |
+|---|---|
+| `/v1/chat/completions` | `usage.prompt_tokens_details.cached_tokens` |
+| `/v1/responses` | `usage.input_tokens_details.cached_tokens` |
+
+For streaming Chat Completions, send `"stream_options": {"include_usage": true}` and read the final usage chunk. Responses streaming includes usage in the final response object. The pinned backport already exposes Responses cached-token details without this flag; the flag enables the previously missing Chat Completions details. It does not enable request-content logging.
+
+The cached count includes both local GPU and external/CPU prefix hits. It does not break those tiers out per request. Counts reflect reusable cache boundaries and may be smaller than the identical input prefix. The backport also reports `created_cache_tokens` in Chat Completions details; that field is not a CPU-transfer counter. Use `/metrics` for separate aggregate local/external hits and CPU transfer bytes.
+
+After updating an existing checkout, restart through its usual manager to apply the launcher flag. Verify normal and streaming usage with:
+
+```bash
+mkdir -p results
+python3 benchmarks/check_cache_usage.py --port 19088 --output results/cache-usage.json
+```
+
+This sends a unique prompt three times to each endpoint and requires a numeric cached-token field plus positive cache hits on repeated requests. It does not change the server configuration or clear caches.
+
+Production verification on 2026-09-11 passed all six checks. Chat Completions reported 0 cached tokens initially and 800 on both the normal repeat and streaming repeat of a 2,142-token prompt. Responses reported 800 in both formats, reusing the same prompt already submitted to Chat Completions. Its stream ended with `response.completed`. The flag was the only serving-argument change; 512K context, image/video inputs, CPU-cache capacity and performance settings were preserved. [Recorded usage responses](../measurements/2026-09-11-cache-usage/verification.json) and [deployment audit](../measurements/2026-09-11-cache-usage/audit-public.json).
+
 ## Verify actual cache restoration
 
 Check startup logs for `OffloadingConnector` and the CPU shared-memory allocation, then inspect transfer metrics:

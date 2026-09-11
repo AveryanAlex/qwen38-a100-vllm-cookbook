@@ -113,7 +113,7 @@ def create_command(c):
              '--enable-expert-parallel', '--max-model-len', str(c.get('max_model_len', 262144)),
              '--max-num-seqs', '8', '--max-num-batched-tokens', '4096',
              '--gpu-memory-utilization', '0.85',
-             '--enable-prefix-caching', '--enable-auto-tool-choice',
+             '--enable-prefix-caching', '--enable-prompt-tokens-details', '--enable-auto-tool-choice',
              '--tool-call-parser', 'qwen3_xml', '--reasoning-parser', 'qwen3',
              '--compilation-config', json.dumps(COMPILATION),
              '--speculative-config', json.dumps({'method': 'mtp', 'num_speculative_tokens': 1})]

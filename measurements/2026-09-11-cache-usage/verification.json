@@ -1,0 +1,155 @@
+{
+  "started": 1789157677.216123,
+  "probe_id": "1789157677216109780",
+  "prompt_sha256": "7a13df0254e336c7ca294664fc51d9c1e813ba61ff7dc7a965749549cf5faf9b",
+  "cases": [
+    {
+      "http_status": 200,
+      "usage": {
+        "prompt_tokens": 2142,
+        "total_tokens": 2144,
+        "completion_tokens": 2,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": null
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "final_event": null,
+      "elapsed_seconds": 1.2030940330587327,
+      "endpoint": "chat/completions",
+      "case": "first",
+      "stream": false,
+      "cached_tokens": 0,
+      "passed": true
+    },
+    {
+      "http_status": 200,
+      "usage": {
+        "prompt_tokens": 2142,
+        "total_tokens": 2144,
+        "completion_tokens": 2,
+        "prompt_tokens_details": {
+          "cached_tokens": 800,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": null
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "final_event": null,
+      "elapsed_seconds": 0.2694003088399768,
+      "endpoint": "chat/completions",
+      "case": "repeat",
+      "stream": false,
+      "cached_tokens": 800,
+      "passed": true
+    },
+    {
+      "http_status": 200,
+      "usage": {
+        "prompt_tokens": 2142,
+        "total_tokens": 2144,
+        "completion_tokens": 2,
+        "prompt_tokens_details": {
+          "cached_tokens": 800,
+          "created_cache_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "final_event": "usage_chunk",
+      "elapsed_seconds": 0.28948799800127745,
+      "endpoint": "chat/completions",
+      "case": "stream_repeat",
+      "stream": true,
+      "cached_tokens": 800,
+      "passed": true
+    },
+    {
+      "http_status": 200,
+      "usage": {
+        "input_tokens": 2142,
+        "input_tokens_details": {
+          "cached_tokens": 800,
+          "input_tokens_per_turn": [],
+          "cached_tokens_per_turn": []
+        },
+        "output_tokens": 2,
+        "output_tokens_details": {
+          "reasoning_tokens": 0,
+          "tool_output_tokens": 0,
+          "output_tokens_per_turn": [],
+          "tool_output_tokens_per_turn": []
+        },
+        "total_tokens": 2144
+      },
+      "final_event": null,
+      "elapsed_seconds": 0.29451610893011093,
+      "endpoint": "responses",
+      "case": "first",
+      "stream": false,
+      "cached_tokens": 800,
+      "passed": true
+    },
+    {
+      "http_status": 200,
+      "usage": {
+        "input_tokens": 2142,
+        "input_tokens_details": {
+          "cached_tokens": 800,
+          "input_tokens_per_turn": [],
+          "cached_tokens_per_turn": []
+        },
+        "output_tokens": 2,
+        "output_tokens_details": {
+          "reasoning_tokens": 0,
+          "tool_output_tokens": 0,
+          "output_tokens_per_turn": [],
+          "tool_output_tokens_per_turn": []
+        },
+        "total_tokens": 2144
+      },
+      "final_event": null,
+      "elapsed_seconds": 0.28151613799855113,
+      "endpoint": "responses",
+      "case": "repeat",
+      "stream": false,
+      "cached_tokens": 800,
+      "passed": true
+    },
+    {
+      "http_status": 200,
+      "usage": {
+        "input_tokens": 2142,
+        "input_tokens_details": {
+          "cached_tokens": 800,
+          "input_tokens_per_turn": [],
+          "cached_tokens_per_turn": []
+        },
+        "output_tokens": 2,
+        "output_tokens_details": {
+          "reasoning_tokens": 0,
+          "tool_output_tokens": 0,
+          "output_tokens_per_turn": [],
+          "tool_output_tokens_per_turn": []
+        },
+        "total_tokens": 2144
+      },
+      "final_event": "response.completed",
+      "elapsed_seconds": 0.39584484696388245,
+      "endpoint": "responses",
+      "case": "stream_repeat",
+      "stream": true,
+      "cached_tokens": 800,
+      "passed": true
+    }
+  ],
+  "health_after": 200,
+  "finished": 1789157679.9586787
+}

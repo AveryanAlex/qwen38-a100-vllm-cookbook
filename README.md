@@ -90,6 +90,8 @@ The launcher expands `~/`. Use absolute paths otherwise. Keep this checkout and 
 
 `kv_offloading_gib: 128` reserves approximately **128 GiB total host RAM across TP4** for the native CPU KV cache. It retains reusable prefixes beyond GPU-cache eviction. Budget this in addition to the model's CPU PLE table and other host memory, and ensure `/dev/shm` has sufficient space. Set it to `0` to disable; existing configs without the field default to `0`. See the [CPU cache runbook](docs/CPU_CACHE.md) for setup, verification and performance limits.
 
+The launcher also enables per-request cache usage with `--enable-prompt-tokens-details`. Chat Completions reports `usage.prompt_tokens_details.cached_tokens`; Responses reports `usage.input_tokens_details.cached_tokens`. For streaming chat, request `stream_options.include_usage: true`. See the [API cache-usage check](docs/CPU_CACHE.md#per-request-cache-usage-in-the-api).
+
 `max_model_len: 524288` enables **512K total context with 2× YaRN**. The launcher preserves the checkpoint's native 262K position setting and supplies the multimodal-aware scaling override. Set this field to `262144` for native positions without scaling; existing configs without it remain native. The budget includes prompt, visual, reasoning and output tokens. See the [context-extension runbook](docs/CONTEXT.md).
 
 `tuned_all_reduce: true` selects the measured reduction-kernel tuning. Set it to `false` to use the existing custom all-reduce kernel and skip the extension build; this still includes the correctness fix and main speedups, reaching approximately 107.8 decode tokens/s in the matched 256-token tests. The extension adds about **0.62%**, not the main 22× gain.

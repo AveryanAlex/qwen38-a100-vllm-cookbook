@@ -22,6 +22,8 @@ c['kv_offloading_gib'] = historical.get('kv_offloading_gib', 0)
 c['vision'] = historical.get('vision', False)
 c['tuned_all_reduce'] = historical.get('env', {}).get('QWEN_SM80_AR_TUNING') == '1'
 args = create_command(c)
+# Preserve the historical API-usage setting as well as the inference settings.
+args.remove('--enable-prompt-tokens-details')
 # Retain just the three model-loading/PLE overlays plus historical performance overlays.
 mapping = {'low_latency_gemm_sm80.py': 'low_latency_gemm.py',
            '_skinny_gemm_sm80.py': '_skinny_gemm.py',

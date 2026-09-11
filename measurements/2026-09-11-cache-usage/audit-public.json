@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "only_serving_argument_change": true,
+    "prompt_tokens_details_enabled": true,
+    "image_unchanged": true,
+    "running": true,
+    "health": true,
+    "launcher_persistent": true,
+    "selected_profile_persistent": true
+  },
+  "configuration_audit": {
+    "health": true,
+    "running": true,
+    "all_overlay_hashes": true,
+    "configured_max_context": true,
+    "model_alias": true,
+    "functional_checks_13": true,
+    "lock_available": true,
+    "nccl_auto": true,
+    "args_match": true,
+    "image_pinned": true,
+    "tuned_env": true,
+    "hashed_files_mounted": true,
+    "model_readonly": true,
+    "vision_enabled": true,
+    "vision_processor_correct": true,
+    "vision_image_limit": true,
+    "pids_limit_8192": true
+  },
+  "functional_suite_note": "The final-audit functional checks reference the previously saved suite; this rollout ran the six cache-usage API checks instead.",
+  "restart_count": 0,
+  "oom_killed": false
+}
