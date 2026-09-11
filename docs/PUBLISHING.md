@@ -1,6 +1,6 @@
 # Publishing this prepared repository
 
-The cookbook is a standalone Git repository with branch `main`. It contains no remote configuration. Set your desired GitHub owner and visibility when publishing.
+The cookbook is published at [AveryanAlex/qwen38-a100-vllm-cookbook](https://github.com/AveryanAlex/qwen38-a100-vllm-cookbook), with default branch `main` and public visibility. The instructions below also describe publishing a separately prepared copy under your own account.
 
 ## Publication review, 2026-09-11
 
@@ -33,6 +33,6 @@ With the GitHub CLI authenticated, create and publish the repository:
 gh repo create qwen38-a100-vllm-cookbook --public --source=. --remote=origin --push
 ```
 
-Choose `--private` instead if desired. Alternatively create an empty repository in the GitHub UI, add its Git URL as `origin`, and push `main`. The preparation work does not create a GitHub repository or send any files to GitHub.
+For a separately prepared copy, choose `--private` instead if desired. Alternatively create an empty repository in the GitHub UI, add its Git URL as `origin`, and push `main`. For this repository, `origin` is already configured; subsequent committed updates use `git push origin main`.
 
 Keep config.json, downloaded model/book data, local results, compiler caches and extension binaries out of commits. `.gitignore` covers the standard local paths. If changing the image or overlays, update the manifest and validation evidence together; don't advertise the historical performance as a measurement of an untested revision.

@@ -64,6 +64,7 @@ Ubuntu 22.04’s original Podman package may be too old for CDI; install a newer
 Download or clone this repository, then enter its directory:
 
 ```bash
+git clone https://github.com/AveryanAlex/qwen38-a100-vllm-cookbook.git
 cd qwen38-a100-vllm-cookbook
 cp config.example.json config.json
 ```
