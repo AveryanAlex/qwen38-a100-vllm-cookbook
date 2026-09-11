@@ -1,0 +1,48 @@
+{
+  "incident_local_time": "2026-09-11 20:13:00\u201320:13:03 +03:00",
+  "torch_version": "2.13.0+cu130",
+  "torch_source_commit": "cf30153c4c131c8164ee7798e5022d810682e2cb",
+  "allocator_source": "https://github.com/pytorch/pytorch/blob/cf30153c4c131c8164ee7798e5022d810682e2cb/c10/cuda/CUDACachingAllocator.cpp",
+  "allocation_attempts_mib": [
+    {
+      "requested": 382,
+      "device_free": 106.25
+    },
+    {
+      "requested": 460,
+      "device_free": 370.25
+    },
+    {
+      "requested": 512,
+      "device_free": 508.25
+    }
+  ],
+  "affected_ranks": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "book_request": {
+    "prompt_tokens": 190422,
+    "started_local": "2026-09-11T20:12:51.933110+03:00",
+    "finished_local": "2026-09-11T20:13:20.254019+03:00",
+    "completion_tokens": 1105,
+    "finish_reason": "stop"
+  },
+  "fatal_to_tested_request": false,
+  "container_restarted": false,
+  "container_started_local": "2026-09-11T20:06:03.853363894+03:00",
+  "container_oom_killed": false,
+  "concurrent_production_traffic": true,
+  "observed_headroom": {
+    "kv_cache_gib": 10.55,
+    "kv_cache_gib_recommended_by_startup_log_for_nominal_budget": 8.28,
+    "cuda_graph_gib": 2.12,
+    "weights_and_non_torch_gib": 22.49,
+    "profiled_activation_gib": 0.53
+  },
+  "interpretation": "The pinned allocator logs failed cudaMalloc attempts before its cached-memory release/retry chain. The book finished normally without a container restart; this incident was recoverable allocation pressure. Exact tensor ownership and allocator retry counters were not captured. Timing coincides with long-context prefill under concurrent traffic. KV usage percentage measures occupancy of an allocated pool, not device-free VRAM.",
+  "additional_latency_event": "JIT compilation of _gumbel_sample_kernel at20:13:08; separate from the allocator warnings.",
+  "configuration_changed": false
+}
